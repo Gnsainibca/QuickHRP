@@ -1,0 +1,66 @@
+<div>
+   <div class="page-wrapper">
+      <div class="content container-fluid">
+         <!-- Page Header -->
+         <div class="crms-title row bg-white mb-3">
+            <div class="col">
+               <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white me-2">
+                     <i class="la la-table"></i>
+                  </span>
+                  <span>Hospital Charges Setup</span>
+               </h3>
+            </div>
+         </div>
+         <div>
+            <div class="col-12">
+               <div class="card flex-fill">
+                  <div class="card-header">
+                     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-solid bg-white">
+                        <li class="nav-item">
+                           <a href="#charges" data-bs-toggle="tab" class="nav-link active">Charges</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#charge-category" data-bs-toggle="tab" class="nav-link">Charge Category</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#charge-type" data-bs-toggle="tab" class="nav-link">Charge Type</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#tax-category" data-bs-toggle="tab" class="nav-link">Tax Category</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#unit-type" data-bs-toggle="tab" class="nav-link">Unit Type</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#payment-mode" data-bs-toggle="tab" class="nav-link">Payment Mode</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="card-body p-t-0">
+                     <div class="tab-content pt-0">
+                        <div id="charges" class="tab-pane fade show active">
+                           <app-setup-hospital-charge-list></app-setup-hospital-charge-list>
+                        </div>
+                        <div id="charge-category" class="tab-pane fade">
+                           <app-setup-hospital-charge-category-list></app-setup-hospital-charge-category-list>
+                        </div>
+                        <div id="charge-type" class="tab-pane fade">
+                           <app-setup-hospital-charge-type-list></app-setup-hospital-charge-type-list>
+                        </div>
+                        <div id="tax-category" class="tab-pane fade">
+                           <app-setup-hospital-tax-category-list></app-setup-hospital-tax-category-list>
+                        </div>
+                        <div id="unit-type" class="tab-pane fade">
+                           <app-setup-hospital-unit-type-list></app-setup-hospital-unit-type-list>
+                        </div>
+                        <div id="payment-mode" class="tab-pane fade">
+                           <app-setup-payment-mode-list></app-setup-payment-mode-list>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>

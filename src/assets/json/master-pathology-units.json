@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "name": "(U/L)",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Cells / cubic mm",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "million/mm3",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Nanometer",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Dalton (Da)",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "mmol/L",
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "Micrometer (oi)",
+      "isActive": true,
+      "id": 7
+    }
+  ]
+}

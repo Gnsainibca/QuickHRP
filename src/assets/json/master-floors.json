@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "name": "Ground  Floor",
+      "description": "A good choice here would be luxury vinyl tile (LVT), vinyl composition tile (VCT), sheet vinyl, rubber, or linoleum.",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "1st Floor",
+      "description": "Neonatal intensive care units (NICUs) which provide care for newborn infants.",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "2nd Floor",
+      "description": "The pediatric intensive care unit (PICU) where children receive critical care. Depending on the facility, newborns may be treated in a PICU or a neonatal ICU. Smaller facilities may have a PICU only, while larger facilities may offer both a PICU and a neonatal ICU.",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "3rd Floor",
+      "description": "A palliative or hospice unit is where end-of-life care is provided if you have a life-limiting illness, which may or may not be cancer-related. Hospice and palliative care focus on providing comfort and quality of life. In some facilities, oncology and hospice/palliative care may be provided in the same unit. ",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "4th Floor",
+      "description": "The coronary/cardiac care unit (CCU) is a specialized intensive care unit for cardiac issues. If you have heart disease, experienced a cardiac event such as a heart attack, or if you're recovering from open-heart surgery, you may be treated in the CCU. In some facilities, a separate open-heart recovery unit may be utilized for surgical patients.",
+      "isActive": true,
+      "id": 5
+    }
+  ]
+}

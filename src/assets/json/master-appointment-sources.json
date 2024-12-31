@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "name": "Online",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Offline",
+      "isActive": true,
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+.p-l-40 {
+	padding-left: 40px;
+}
+
+table {
+	width: 100%;
+}
+
+th,
+td {
+	padding: 10px;
+	text-align: left;
+}
+
+::ng-deep .size-full .modal-dialog {
+	max-width: 100% !important;
+	width: 100% !important;
+}
+
+hr{
+	margin : 0;
+}

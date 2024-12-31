@@ -1,0 +1,63 @@
+<div>
+   <div class="page-wrapper">
+      <div class="content container-fluid">
+         <!-- Page Header -->
+         <div class="crms-title row bg-white mb-3">
+            <div class="col">
+               <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white me-2">
+                     <i class="la la-table"></i>
+                  </span>
+                  <span>Appointment Setup</span>
+               </h3>
+            </div>
+         </div>
+         <div>
+            <div class="col-12">
+               <div class="card flex-fill">
+                  <div class="card-header">
+                     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-solid bg-white">
+                        <li class="nav-item">
+                           <a href="#doctor-shift" data-bs-toggle="tab" class="nav-link active">Doctor Shift</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#shift" data-bs-toggle="tab" class="nav-link">Shift</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#appointment-priority" data-bs-toggle="tab" class="nav-link">Appointment
+                              Priority</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#appointment-source" data-bs-toggle="tab" class="nav-link">Appointment
+                              Source</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#appointment-status" data-bs-toggle="tab" class="nav-link">Appointment
+                              Status</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="card-body p-t-0">
+                     <div class="tab-content pt-0">
+                        <div id="doctor-shift" class="tab-pane fade show active">
+                           <app-setup-doctor-shift-list></app-setup-doctor-shift-list>
+                        </div>
+                        <div id="shift" class="tab-pane fade">
+                           <app-setup-shift-list></app-setup-shift-list>
+                        </div>
+                        <div id="appointment-priority" class="tab-pane fade">
+                           <app-setup-appointment-priority-list></app-setup-appointment-priority-list>
+                        </div>
+                        <div id="appointment-status" class="tab-pane fade">
+                           <app-setup-appointment-status-list></app-setup-appointment-status-list>
+                        </div>
+                        <div id="appointment-source" class="tab-pane fade">
+                           <app-setup-appointment-source-list></app-setup-appointment-source-list>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>

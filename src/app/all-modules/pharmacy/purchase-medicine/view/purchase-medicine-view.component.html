@@ -1,0 +1,124 @@
+<div class="modal-header">
+   <h4 class="modal-title">Purchase Details</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <table *ngIf="purchasedMadicine">
+      <tr>
+         <td>Pharmacy Purchase No: &nbsp; <span [innerHtml]="purchasedMadicine.billNo"></span></td>
+         <td colspan="2" class="text-center">Bill No: &nbsp; <span [innerHtml]="purchasedMadicine.id"></span></td>
+         <td class="text-end">Purchase Date: &nbsp; <span
+               [innerHtml]="purchasedMadicine.purchaseDate | date : 'MMM dd, yyyy hh:mm a'"></span></td>
+      </tr>
+      <tr>
+         <td colspan="4">
+            <hr />
+         </td>
+      </tr>
+      <tr>
+         <td>Supplier Name:</td>
+         <td><span *ngIf="supplierDetails" [innerHtml]="supplierDetails.name"></span></td>
+         <td>Supplier Contact:</td>
+         <td><span *ngIf="supplierDetails" [innerHtml]="supplierDetails.phone"></span></td>
+      </tr>
+      <tr>
+         <td>Contact Person:</td>
+         <td><span *ngIf="supplierDetails" [innerHtml]="supplierDetails.contactPersonName"></span></td>
+         <td>Contact Person Phone</td>
+         <td><span *ngIf="supplierDetails" [innerHtml]="supplierDetails.contactPersonPhone"></span></td>
+      </tr>
+      <tr>
+         <td>Drug License Number:</td>
+         <td><span *ngIf="supplierDetails" [innerHtml]="supplierDetails.drugLicenseNo"></span></td>
+         <td>Address:</td>
+         <td><span *ngIf="supplierDetails" [innerHtml]="supplierDetails.address"></span></td>
+      </tr>
+      <tr>
+         <td colspan="4">
+            <hr />
+         </td>
+      </tr>
+      <tr>
+         <td colspan="6">
+            <table class="table table-nowrap mb-0">
+               <thead>
+                  <tr>
+                     <th>#</th>
+                     <th>Medicine Category</th>
+                     <th>Medicine Name</th>
+                     <th>Batch No</th>
+                     <th>Expiry Date</th>
+                     <th>MRP</th>
+                     <th>Batch Amount</th>
+                     <th>Sale Price</th>
+                     <th>Packing Qty</th>
+                     <th>Quantity</th>
+                     <th>Tax</th>
+                     <th>Purchase Price</th>
+                     <th>Amount</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr *ngFor="let innerForm of purchasedMadicine.medicineInnerForm; let i = index">
+                     <td>
+                        <span [innerHtml]="(i+1)"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="innerForm.category"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="innerForm.medicineName"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="innerForm.batchNo"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="innerForm.expiryDate | date : 'MMM dd, yyyy'"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="innerForm.mrp"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="innerForm.batchAmount"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="innerForm.salePrice"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="innerForm.packingQuantity"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="innerForm.quantity"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="innerForm.tax"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="innerForm.purchasePrice"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="innerForm.amount"></span>
+                     </td>
+               </tbody>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td>Payment Mode: <span [innerHtml]="purchasedMadicine.paymentMode"></span></td>
+         <td></td>
+         <td></td>
+         <td colspan="1">
+            <div><b>Total</b> <span style="float: right;" [innerHtml]="purchasedMadicine.totalAmount"></span></div>
+            <div><b>Discount (<span [innerHtml]="purchasedMadicine.discount"></span>%)</b> 
+               <span style="float: right;" >{{round(purchasedMadicine.totalAmount * purchasedMadicine.discount / 100,2)}}</span>
+            </div>
+            <div><b>Tax (<span [innerHtml]="purchasedMadicine.totalTax"></span>%)</b> 
+               <span style="float: right;">{{round((purchasedMadicine.totalAmount - (purchasedMadicine.totalAmount *
+                  purchasedMadicine.discount / 100)) *
+                  purchasedMadicine.totalTax / 100,2)}}</span>
+            </div>
+            <div><b>Net Amount</b> <span style="float: right;" [innerHtml]="purchasedMadicine.netAmount"></span></div>
+         </td>
+      </tr>
+   </table>
+</div>

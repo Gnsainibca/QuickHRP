@@ -1,0 +1,28 @@
+<div class="col-md-12 col-sm-12">
+   <div class="ribbon-wrapper card m-b-10">
+      <div class="card-body">
+         <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>TIMELINE</div>
+         <div class="col-md-12" *ngIf="timelines">
+
+            <ul class="timeline">
+               <li *ngFor="let item of timelines; let  i = index" [ngClass]="{'timeline-inverted' : i%2==1 }">
+                  <div class="timeline-badge success">
+                     <i class="fa fa-list-alt"></i>
+                  </div>
+                  <div class="timeline-panel">
+                     <div class="timeline-heading">
+                        <div>
+                           <u><span [innerHtml]="item.date | date : 'MMM dd, yyyy hh:mm a'"></span></u>
+                        </div>
+                        <h4 class="timeline-title"><b>{{item.title}}</b></h4>
+                     </div>
+                     <div class="timeline-body">
+                        <p>{{item.description}}</p>
+                     </div>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>

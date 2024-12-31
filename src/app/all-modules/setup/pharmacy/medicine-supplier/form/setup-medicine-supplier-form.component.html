@@ -1,0 +1,67 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Medicine Supplier</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="medicineSupplierForm" name="medicineSupplierForm" [formGroup]="medicineSupplierForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Supplier Name<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="name" id="name" formControlName="name"
+                     [ngClass]="{'is-invalid': f['name'].invalid && f['name'].touched}" />
+                  <div class="invalid-feedback" *ngIf="f['name'].invalid && f['name'].touched">
+                     Please provide the supplier name.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Supplier Contact</label>
+                  <input class="form-control" type="text" name="phone" id="phone" formControlName="phone" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Contact Person Name</label>
+                  <input class="form-control" type="text" name="contactPersonName" id="contactPersonName" formControlName="contactPersonName" />
+               </div>
+               <div class="col-md-6">
+                  <label>Contact Person Phone</label>
+                  <input class="form-control" type="text" name="contactPersonPhone" id="contactPersonPhone" formControlName="contactPersonPhone" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Drug License Number</label>
+                  <input class="form-control" type="text" name="drugLicenseNo" id="drugLicenseNo" formControlName="drugLicenseNo" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Address</label>
+                  <textarea class="form-control" name="address" id="address" formControlName="address"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

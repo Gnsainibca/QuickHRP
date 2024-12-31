@@ -1,0 +1,331 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Opd Patient</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form class="forms-opd" [formGroup]="opdForm" (ngSubmit)="onSubmit()">
+      <div class="row" style="margin-bottom: 10px;">
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-7">
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <label>Patient<span style="color: red">&nbsp;*</span></label>
+                                 <input [typeahead]="patientList" formControlName="patientName" class="form-control"
+                                    typeaheadOptionField="name"
+                                    placeholder="Search..." 
+                                    [typeaheadScrollable]="true"
+                                    [typeaheadOptionsInScrollableView]="10"
+                                    (typeaheadLoading)="changeTypeaheadLoading($event)"
+                                    (typeaheadNoResults)="changeTypeaheadNoResults($event)" 
+                                    (typeaheadOnSelect)="typeaheadOnSelect($event)" 
+                                    [ngClass]="{
+                                       'is-invalid': f['patientName'].touched && f['patientName'].invalid
+                                    }" />
+                                 <div *ngIf="typeaheadLoading===true">Loading</div>
+                                 <div *ngIf="typeaheadNoResults===true">&#10060; No Results Found</div>
+                                 <div class="invalid-feedback"
+                                    *ngIf="f['patientName'].invalid && f['patientName'].touched">
+                                    Please provide the patient.
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <button style="margin-top: 25px;" type="button"
+                                    class="border-0 btn btn-primary btn-gradient-primary btn-rounded" (click)="addPatient()">
+                                    + New Patient</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <label>Symptoms Type</label>
+                                 <ng-multiselect-dropdown [placeholder]="'Choose'" [settings]="dropdownSettings"
+                                    [data]="symptomsTypes" 
+                                    (onSelect)="setSymptomsTypeItemWise($event)"
+                                    (onDeSelect)="setSymptomsTypeItemWise($event)"
+                                    (onSelectAll)="setSymptomsTypeWithAllItems($event)"
+                                    (onDeSelectAll)="setSymptomsTypeWithAllItems($event)"
+                                    formControlName="symptomsTypes"></ng-multiselect-dropdown>
+                              </div>
+                              <div class="col-md-6">
+                                 <label>Symptoms Title</label>
+                                 <ng-multiselect-dropdown [placeholder]="'Choose'" [settings]="dropdownSettings"
+                                    [data]="filteredSymptomsTitles" 
+                                    (onSelect)="setSymptomsDescriptionItemWise($event)"
+                                    (onDeSelect)="setSymptomsDescriptionItemWise($event)"
+                                    (onSelectAll)="setSymptomsDescriptionWithAllItems($event)"
+                                    (onDeSelectAll)="setSymptomsDescriptionWithAllItems($event)"
+                                    formControlName="symptomsTitles"></ng-multiselect-dropdown>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <label>Symptoms Description</label>
+                                 <textarea class="form-control" type="text" name="symptomsDescription"
+                                    id="symptomsDescription" formControlName="symptomsDescription"></textarea>
+                              </div>
+                              <div class="col-md-6">
+                                 <label>Any Known Allergies</label>
+                                 <textarea class="form-control" type="text" name="anyKnownAllergies"
+                                    id="anyKnownAllergies" formControlName="anyKnownAllergies"></textarea>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label>Previous Medical Issue</label>
+                                 <textarea class="form-control" id="previousMedicalIssue" name="previousMedicalIssue"
+                                    formControlName="previousMedicalIssue"></textarea>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label>Note</label>
+                                 <textarea class="form-control" id="note" name="note" formControlName="note"></textarea>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-5" style="background-color:#f8f9fa">
+                     <div class="col-sm-12">
+                        <div class="form-group m-b-0">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <label>Appointment Date<span style="color: red">&nbsp;*</span></label>
+                                 <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YYYY"
+                                    matInput [matDatepicker]="picker1" name="appointmentDate" id="appointmentDate"
+                                    formControlName="appointmentDate" [ngClass]="{
+                                             'is-invalid': f['appointmentDate'].touched && f['appointmentDate'].invalid
+                                          }" />
+
+                                 <mat-datepicker #picker1></mat-datepicker>
+                                 <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                                    class="activity-datepicker"></mat-datepicker-toggle>
+                                 <div class="invalid-feedback"
+                                    *ngIf="f['appointmentDate'].invalid && f['appointmentDate'].touched">
+                                    Please provide the date.
+                                 </div>
+
+                              </div>
+                              <div class="col-md-6">
+                                 <label>Case<span style="color: red">&nbsp;*</span></label>
+                                 <input class="form-control" type="text" name="caseId" id="caseId" formControlName="caseId" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <label style="float: inline-start;" class="container-checkbox">
+                                    <input type="checkbox" formControlName="anyCasualty" />
+                                    <span class="checkmark"></span>
+                                 </label>
+                                 <span>Casualty</span>
+                              </div>
+                              <div class="col-md-6">
+                                 <label style="float: inline-start;" class="container-checkbox">
+                                    <input type="checkbox" formControlName="isOldPatient" />
+                                    <span class="checkmark"></span>
+                                 </label>
+                                 <span>Old Patient</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <label>Reference</label>
+                                 <input class="form-control" type="text" name="reference" id="reference"
+                                    formControlName="reference" />
+                              </div>
+                              <div class="col-md-6">
+                                 <label>Consultant Doctor<span style="color: red">&nbsp;*</span></label>
+                                 <select class="form-select form-control" formControlName="consultantDoctorId" [ngClass]="{
+                                       'is-invalid': f['consultantDoctorId'].touched && f['consultantDoctorId'].invalid
+                                    }">
+                                    <option value="">-Select-</option>
+                                    <option *ngFor="let item of doctors" [ngValue]="item.id">{{ item.name }}</option>
+                                 </select>
+                                 <div class="invalid-feedback"
+                                    *ngIf="f['consultantDoctorId'].invalid && f['consultantDoctorId'].touched">
+                                    Please provide the consultant doctor.
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label style="float: inline-start;" class="container-checkbox">
+                                    <input type="checkbox" formControlName="applyTPA" />
+                                    <span class="checkmark"></span>
+                                 </label>
+                                 <span>Apply TPA</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <label>Charge Category<span style="color: red">&nbsp;*</span></label>
+                                 <select class="form-select form-control" formControlName="chargeCategoryId"
+                                    (change)="onChargeCategoryChange()" [ngClass]="{
+                                 'is-invalid': f['chargeCategoryId'].touched && f['chargeCategoryId'].invalid
+                              }">
+                                    <option value="">-Select-</option>
+                                    <option *ngFor="let item of chargeTypeList" [ngValue]="item.id">{{
+                                       item.name }}</option>
+                                 </select>
+                                 <div class="invalid-feedback"
+                                    *ngIf="f['chargeCategoryId'].invalid && f['chargeCategoryId'].touched">
+                                    Please provide the charge category.
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <label>Charge<span style="color: red">&nbsp;*</span></label>
+                                 <select class="form-select form-control" formControlName="chargeId"
+                                    (change)="onChargeChange()" [ngClass]="{
+                                 'is-invalid': f['chargeId'].touched && f['chargeId'].invalid
+                              }">
+                                    <option value="">-Select-</option>
+                                    <option *ngFor="let item of chargeList" [ngValue]="item.id">{{ item.name }}
+                                    </option>
+                                 </select>
+                                 <div class="invalid-feedback" *ngIf="f['chargeId'].invalid && f['chargeId'].touched">
+                                    Please provide the charge.
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <label>Standard Charge (Rs)</label>
+                                 <input class="form-control" type="text" name="standardCharge" id="standardCharge"
+                                    formControlName="standardCharge" />
+                              </div>
+                              <div class="col-md-6">
+                                 <label>Applied Charge (Rs)<span style="color: red">&nbsp;*</span></label>
+                                 <input class="form-control" type="text" name="appliedCharge" id="appliedCharge"
+                                    formControlName="appliedCharge" [ngClass]="{
+                                                'is-invalid': f['appliedCharge'].touched && f['appliedCharge'].invalid
+                                             }" />
+                                 <div class="invalid-feedback"
+                                    *ngIf="f['appliedCharge'].invalid && f['appliedCharge'].touched">
+                                    Please provide the applied charge.
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <label>Discount</label>
+                                 <input class="form-control" type="number" name="discount" id="discount"
+                                    (keyup)="onDiscountInputKeyup($event)" formControlName="discount" [ngClass]="{
+                                       'is-invalid': f['discount'].touched && f['discount'].invalid
+                                    }" />
+                                 <div class="invalid-feedback" *ngIf="f['discount'].invalid && f['discount'].touched">
+                                    Please provide valid discount (between 1-100).
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <label>Tax</label>
+                                 <input class="form-control" type="text" name="tax" id="tax" formControlName="tax" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <label>Amount (Rs)</label>
+                                 <input class="form-control" type="text" name="amount" id="amount"
+                                    formControlName="amount" />
+                              </div>
+                              <div class="col-md-6">
+                                 <label>Paid Amount (Rs)</label>
+                                 <input class="form-control" type="text" name="paidAmount" id="paidAmount"
+                                    formControlName="paidAmount" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <label>Payment Mode<span style="color: red">&nbsp;*</span></label>
+                                 <select class="form-select form-control" formControlName="paymentMode" [ngClass]="{
+                                          'is-invalid': f['paymentMode'].touched && f['paymentMode'].invalid
+                                       }">
+                                    <option value="">-Select-</option>
+                                    <option value="Cash">Cash</option>
+                                    <option value="Cheque">Cheque</option>
+                                    <option value="Transfer to bank">Transfer to bank</option>
+                                    <option value="UPI">UPI</option>
+                                    <option value="Online">Online</option>
+                                    <option value="Other">Other</option>
+                                 </select>
+                                 <div class="invalid-feedback"
+                                    *ngIf="f['paymentMode'].invalid && f['paymentMode'].touched">
+                                    Please provide the payment mode.
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <br />
+                                 <label style="float: inline-start;" class="container-checkbox">
+                                    <input type="checkbox" formControlName="needLiveConsultation" />
+                                    <span class="checkmark"></span>
+                                 </label>
+                                 <span>Live Consultation</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center action-button-sticky">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded"
+            (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

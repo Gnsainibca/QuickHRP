@@ -1,0 +1,42 @@
+<div class="col-md-12 col-sm-12">
+   <div class="ribbon-wrapper card m-b-10">
+      <div class="card-body">
+         <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>KNOWN ALLERGIES</div>
+         <ul>
+            <li>
+               <span [innerHtml]="anyKnownAllergies"></span>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div class="ribbon-wrapper card m-b-10">
+      <div class="card-body">
+         <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>FINDINGS</div>
+         <ul>
+            <li style="margin-bottom: 10px;" *ngFor="let finding of findings;">
+               <span [innerHtml]="finding"></span>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div class="ribbon-wrapper card m-b-10">
+      <div class="card-body">
+         <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>SYMPTOMS</div>
+         <ul>
+            <li>
+               <span [innerHtml]="symptoms"></span>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div class="ribbon-wrapper card m-b-10">
+      <div class="card-body">
+         <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>CONSULTANT DOCTOR</div>
+         <ul>
+            <li>
+               <span [innerHtml]="consultantDoctor"></span>
+            </li>
+         </ul>
+      </div>
+   </div>
+</div>

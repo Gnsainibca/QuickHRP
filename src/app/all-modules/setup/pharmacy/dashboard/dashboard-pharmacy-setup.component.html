@@ -1,0 +1,78 @@
+<div>
+   <div class="page-wrapper">
+      <div class="content container-fluid">
+         <!-- Page Header -->
+         <div class="crms-title row bg-white mb-3">
+            <div class="col">
+               <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white me-2">
+                     <i class="la la-table"></i>
+                  </span>
+                  <span>Pharmacy Setup</span>
+               </h3>
+            </div>
+         </div>
+         <div>
+            <div class="col-12">
+               <div class="card flex-fill">
+                  <div class="card-header">
+                     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-solid bg-white">
+                        <li class="nav-item">
+                           <a href="#medicine-category" data-bs-toggle="tab" class="nav-link active">Medicine Category</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#supplier" data-bs-toggle="tab" class="nav-link">Supplier</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#medicine-dosage" data-bs-toggle="tab" class="nav-link">Medicine Dosage</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#dosage-interval" data-bs-toggle="tab" class="nav-link">Dosage Interval</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#dosage-duration" data-bs-toggle="tab" class="nav-link">Dosage Duration</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#unit" data-bs-toggle="tab" class="nav-link">Unit</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#company" data-bs-toggle="tab" class="nav-link">Company</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#medicine-group" data-bs-toggle="tab" class="nav-link">Medicine Group</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="card-body p-t-0">
+                     <div class="tab-content pt-0">
+                        <div id="medicine-category" class="tab-pane fade show active">
+                           <app-setup-medicine-category-list></app-setup-medicine-category-list>
+                        </div>
+                        <div id="supplier" class="tab-pane fade">
+                           <app-setup-medicine-supplier-list></app-setup-medicine-supplier-list>
+                        </div>
+                        <div id="medicine-dosage" class="tab-pane fade">
+                           <app-setup-medicine-dosage-list></app-setup-medicine-dosage-list>
+                        </div>
+                        <div id="dosage-interval" class="tab-pane fade">
+                           <app-setup-medicine-dose-interval-list></app-setup-medicine-dose-interval-list>
+                        </div>
+                        <div id="dosage-duration" class="tab-pane fade">
+                           <app-setup-medicine-dose-duration-list></app-setup-medicine-dose-duration-list>
+                        </div>
+                        <div id="unit" class="tab-pane fade">
+                           <app-setup-medicine-unit-list></app-setup-medicine-unit-list>
+                        </div>
+                        <div id="company" class="tab-pane fade">
+                           <app-setup-medicine-company-list></app-setup-medicine-company-list>
+                        </div>
+                        <div id="medicine-group" class="tab-pane fade">
+                           <app-setup-medicine-group-list></app-setup-medicine-group-list>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>

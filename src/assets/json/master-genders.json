@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "name": "Female",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Male",
+      "isActive": true,
+      "id": 2
+    }
+  ]
+}

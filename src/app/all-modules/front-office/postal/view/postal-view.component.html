@@ -1,0 +1,41 @@
+<div class="modal-header">
+   <h4 class="modal-title">View Postal</h4>
+   <button type="button" class="close md-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <table>
+      <tr>
+         <td><b>Type:</b></td>
+         <td colspan="4"><h4><span class="b-color-green" [innerHtml]="postal.type"></span></h4></td>
+      </tr>
+      <tr>
+         <td><b>To Title:</b></td>
+         <td><span [innerHtml]="postal.toTitle"></span></td>
+         <td></td>
+         <td><b>Reference No:</b></td>
+         <td><span [innerHtml]="postal.referenceNo"></span></td>
+      </tr>
+      <tr>
+         <td><b>From Title:</b></td>
+         <td><span [innerHtml]="postal.fromTitle"></span></td>
+         <td></td>
+         <td><b>Date:</b></td>
+         <td><span [innerHtml]="postal.date"></span></td>
+      </tr>
+      <tr>
+         <td><b>Address:</b></td>
+         <td><span [innerHtml]="postal.address"></span></td>
+         <td></td>
+         <td>
+            <b>Note:</b>
+         </td>
+         <td>
+            <span [innerHtml]="postal.note"></span>
+         </td>
+      </tr>
+   </table>
+</div>
+<div class="modal-footer text-center">
+   <button class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"
+   aria-label="Close" (click)="activeModal.dismiss('Cross click')">Ok</button>
+</div>

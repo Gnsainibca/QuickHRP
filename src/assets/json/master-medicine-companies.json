@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "name": "Medimax",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Lupin Limited",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Biocon Limited",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Alkem Laboratories",
+      "id": 4
+    },
+    {
+      "name": "Johnson & Johnson",
+      "isActive": true,
+      "id": 5
+    }
+  ]
+}

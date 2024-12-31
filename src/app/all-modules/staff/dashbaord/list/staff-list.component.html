@@ -1,0 +1,86 @@
+<div>
+   <div class="page-wrapper">
+      <div class="content container-fluid">
+         <!-- Page Header -->
+         <div class="crms-title row bg-white mb-3">
+            <div class="col">
+               <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white me-2">
+                     <i class="la la-table"></i>
+                  </span>
+                  <span>Staff Directory</span>
+               </h3>
+            </div>
+            <div class="col text-end">
+               <ul class="list-inline-item ps-0 m-0">
+                  <li class="list-inline-item">
+                     <button
+                        class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"
+                        id="add-task" data-bs-toggle="modal" (click)="add()">
+                        Add Staff
+                     </button>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div>
+
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="form-group">
+                     <div class="row">
+                        <div class="col-md-4">
+                           <label>Role</label>
+                           <select class="form-select form-control" (change)="onRoleChange($event)">
+                              <option value="">-Select-</option>
+                              <option *ngFor="let item of roleList" [ngValue]="item.id">{{
+                                 item.name }}</option>
+                           </select>
+                        </div>
+                        <div class="col-md-4">
+                           <label>Search by keyword</label>
+                           <input type="text" class="form-control" placeholder="Seatch by Staff ID, Name" (keyup.enter)="search()"
+                           [(ngModel)]="searchText" />
+                           
+                        </div>
+                        <div class="col-md-4">
+                           <br/>
+                           <button class="border-0 btn btn-primary btn-gradient-primary btn-rounded"
+                           id="add-task" (click)="search()">
+                           Search
+                        </button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+                  
+               <div class="card" style="width: 500px; height: 160px; margin-left: 10px;margin-bottom: 15px;padding: 0;" *ngFor="let item of filteredStaffList">
+                  <div class="card-body row" style="padding: 0;">
+                     <div class="col-md-4">
+                        <img class="border" style="width: 160px;height: 160px;border: 1px solid lightgray;" [src]="item.photo">
+                     </div>
+                     <div class="col-md-8 container" style="padding: 15px 0 0 20px;">
+                        <div><b><span [innerHtml]="item.firstName"></span>&nbsp;<span [innerHtml]="item.lastName"></span></b></div>
+                        <div><span [innerHtml]="item.staffId"></span></div>
+                        <div><span [innerHtml]="item.phone"></span></div>
+                        <div style="width: 97%;" class="ellipsis"><span [innerHtml]="item.workLocation"></span><span *ngIf="item.workLocation && item.department">,
+                           </span><span [innerHtml]="item.department"></span></div>
+                        <div style="margin-top: 10px;">
+                           <span style="padding: 5px 10px; background-color: gray;color: white; border-radius: .5cap;"[innerHtml]="item.role"></span>
+                           &nbsp;
+                           <span *ngIf="item.designation" style="padding: 5px 10px; background-color: gray;color: white; border-radius: .5cap;" [innerHtml]="item.designation"></span>
+                        </div>
+                        <div class="action">
+                           <i (click)="view(item.id)" class="btn" style="cursor:pointer;font-size: xx-large;color: white;" class="fa fa-align-justify"
+                              data-bs-toggle="tooltip" title="View"></i>
+                           <i (click)="edit(item.id)" class="btn" style="padding-left: 20px;cursor:pointer;font-size: xx-large;color: white"
+                              class="fa fa-edit" data-bs-toggle="tooltip" title="Edit"></i>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

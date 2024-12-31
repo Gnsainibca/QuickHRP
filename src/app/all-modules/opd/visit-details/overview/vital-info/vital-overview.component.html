@@ -1,0 +1,27 @@
+<div>
+   <div class="col-md-12 col-sm-12">
+      <div class="ribbon-wrapper card m-b-10">
+         <div class="card-body">
+            <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>CURRENT VITAL</div>
+            <div class="row" *ngFor="let vital of vitals; ">
+               <div class="col-md-3">
+                  <b><span [innerHtml]="vital?.name"></span></b>
+               </div>
+               <div class="col-md-6">
+                  <span [innerHtml]="vital?.value" class="font-weight-bold m-1"></span> {{vital.unit}}
+                  <span *ngIf="vital.status == vitalStatus.Low" class="vital-status low">Low</span>
+                  <span *ngIf="vital.status == vitalStatus.Normal" class="vital-status normal">Normal</span>
+                  <span *ngIf="vital.status == vitalStatus.High" class="vital-status high">High</span>
+                  <br />
+                  <div style="font-style: italic; font-size: smaller;color: darkgray;">
+                   <span [innerHtml]="getVitalRange(vital)"></span>
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <span [innerHtml]="vital?.date | date"></span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

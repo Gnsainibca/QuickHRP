@@ -1,0 +1,127 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Complain</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form class="forms-complain" [formGroup]="complainForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Complain Type<span style="color: red">&nbsp;*</span></label>
+                  <select id="complainTypeId" name="complainTypeId" class="form-select form-control"
+                     formControlName="complainTypeId"
+                     [ngClass]="{'is-invalid': f['complainTypeId'].touched && f['complainTypeId'].invalid}">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of complainTypeList" [ngValue]="item.id">{{
+                        item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['complainTypeId'].invalid && f['complainTypeId'].touched">
+                     Please provide the complain type.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Source<span style="color: red">&nbsp;*</span></label>
+                  <select id="sourceId" name="sourceId" class="form-select form-control"
+                     formControlName="sourceId"
+                     [ngClass]="{'is-invalid': f['sourceId'].touched && f['sourceId'].invalid}">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of sourceList" [ngValue]="item.id">{{
+                        item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['sourceId'].invalid && f['sourceId'].touched">
+                     Please provide the source.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Complain By<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="complainBy" id="complainBy" formControlName="complainBy"
+                     [ngClass]="{
+                        'is-invalid': f['complainBy'].touched && f['complainBy'].invalid
+                      }" />
+                  <div class="invalid-feedback" *ngIf="f['complainBy'].invalid && f['complainBy'].touched">
+                     Please provide the complain by.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Phone</label>
+                  <input class="form-control" type="text" name="phone" id="phone" formControlName="phone" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Date<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YYYY" matInput
+                     [matDatepicker]="picker1" name="date" id="date" formControlName="date" [ngClass]="{
+                           'is-invalid': f['date'].touched && f['date'].invalid
+                         }" />
+                  <mat-datepicker #picker1></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                     class="activity-datepicker"></mat-datepicker-toggle>
+                  <div class="invalid-feedback" *ngIf="f['date'].invalid && f['date'].touched">
+                     Please provide the date.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Description</label>
+                  <textarea class="form-control" id="description" name="description"
+                     formControlName="description"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Action Taken</label>
+                  <input class="form-control" type="text" name="actionTaken" id="actionTaken"
+                     formControlName="actionTaken" />
+               </div>
+               <div class="col-md-6">
+                  <label>Assigned</label>
+                  <input class="form-control" type="text" name="assigned" id="assigned" formControlName="assigned" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Note</label>
+                  <textarea class="form-control" id="note" name="note" formControlName="note"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Attach Document</label>
+                  <input class="form-control" type="file" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="button" type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded"
+            (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

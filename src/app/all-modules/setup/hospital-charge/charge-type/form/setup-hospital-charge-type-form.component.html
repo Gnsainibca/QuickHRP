@@ -1,0 +1,46 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Tax Category</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="chargeTypeForm" name="chargeTypeForm" [formGroup]="chargeTypeForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Charge Type<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="name" id="name" formControlName="name"
+                     [ngClass]="{'is-invalid': f['name'].invalid && f['name'].touched}" />
+                  <div class="invalid-feedback" *ngIf="f['name'].invalid && f['name'].touched">
+                     Please provide the charge type.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label style="margin-bottom: 2px;">Module</label>
+                  <div *ngFor="let item of modules; let indx=index" style="margin-top: 2px;">
+                     <label style="float: inline-start;" class="container-checkbox"
+                        formArrayName="moduleInnerForm">
+                        <input type="checkbox" [formControlName]="indx" />
+                        <span class="checkmark"></span>
+                     </label>
+                     <span [innerHtml]="item.name"></span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

@@ -1,0 +1,56 @@
+<div class="content">
+   <!-- Page Header -->
+   <div class="crms-title row bg-white">
+      <div style="display: contents;">
+         <h4 style="margin-top: 10px;">Charge Type List</h4>
+      </div>
+      <div class="col text-end">
+         <ul class="list-inline-item ps-0 m-0">
+            <li class="list-inline-item">
+               <button class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"
+                  id="add-task" data-bs-toggle="modal" (click)="add()">
+                  Add Charge Type
+               </button>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div>
+      <hr class="m-t-0" />
+      <div class="table-responsive">
+         <table class="table table-nowrap mb-0">
+            <thead>
+               <tr>
+                  <th style="width: 80px;">Action</th>
+                  <th>Charge Type</th>
+                  <th style="width: 10%;" *ngFor="let module of modules; let i = index"><span [innerHtml]="module.name"></span></th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let chargeType of chargeTypes; let i = index">
+                  <td class="break-word">
+                     <i (click)="edit(chargeType.id)" style="cursor:pointer;" class="fa fa-edit"
+                        data-bs-toggle="tooltip" title="Edit"></i>
+                     <i (click)="delete(chargeType.id)" style="padding-left: 10px;cursor:pointer;" class="fa fa-trash"
+                        data-bs-toggle="tooltip" title="Delete"></i>
+                  </td>
+                  <td>
+                     <span [innerHtml]="chargeType.name"></span>
+                  </td>
+                  <td *ngFor="let module of modules; let i = index">
+                     <i *ngIf="checkForEnabledModule(module, chargeType.moduleInnerForm)" class="fa fa-check" style="font-size:20px;color:green;"></i>
+                     <i *ngIf="!checkForEnabledModule(module, chargeType.moduleInnerForm)" class="fa fa-close" style="font-size:20px;color:red;"></i>
+                     <!-- <label style="float: inline-start;" class="container-checkbox">
+                        <input type="checkbox" disabled [checked]="checkForEnabledModule(module, chargeType.moduleInnerForm)" />
+                        <span class="checkmark"></span>
+                     </label> -->
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <div class="col-md-12" *ngIf="chargeTypes?.length==0" style="padding-top: 50px; min-height: 200px;display: inline-block;text-align: center;">
+            No Rows To Show
+         </div>
+      </div>
+   </div>
+</div>

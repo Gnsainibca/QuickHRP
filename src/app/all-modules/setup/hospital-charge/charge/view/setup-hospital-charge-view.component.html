@@ -1,0 +1,43 @@
+<div class="modal-header">
+   <h4 class="modal-title">View Call Log</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <table>
+      <tr>
+         <td><b>Name:</b></td>
+         <td><span [innerHtml]="hospitalCharge.name"></span></td>
+         <td></td>
+         <td><b>Charge Category:</b></td>
+         <td><span [innerHtml]="hospitalCharge.chargeCategory"></span></td>
+      </tr>
+      <tr>
+         <td><b>Charge Type:</b></td>
+         <td><span [innerHtml]="hospitalCharge.chargeType"></span></td>
+         <td></td>
+         <td><b>Tax Category:</b></td>
+         <td><span [innerHtml]="hospitalCharge.taxCategory"></span></td>
+      </tr>
+      <tr>
+         <td><b>Unit Type:</b></td>
+         <td><span [innerHtml]="hospitalCharge.unitType"></span></td>
+         <td></td>
+         <td><b>Tax :</b></td>
+         <td><span [innerHtml]="hospitalCharge.tax "></span></td>
+      </tr>
+      <tr>
+         <td><b>Standard Charge:</b></td>
+         <td colspan="4"><span [innerHtml]="hospitalCharge.standardCharge"></span></td>
+      </tr>
+      <tr>
+         <td style="vertical-align: baseline;"><b>Description:</b></td>
+         <td style="width:75%" colspan="4">
+            <span [innerHtml]="hospitalCharge.description"></span>
+         </td>
+      </tr>
+   </table>
+</div>
+<div class="modal-footer text-center">
+   <button class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"
+      aria-label="Close" (click)="activeModal.dismiss('Cross click')">Ok</button>
+</div>

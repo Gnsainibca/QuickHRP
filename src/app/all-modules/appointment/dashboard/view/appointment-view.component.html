@@ -1,0 +1,58 @@
+<div class="modal-header">
+   <h4 class="modal-title">View Opd Patient</h4>
+   <button type="button" class="close md-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <table>
+      <tr>
+         <td><b>Patient Name:</b></td>
+         <td><span [innerHtml]="appointment.patientName"></span></td>
+         <td></td>
+         <td><b>Appointment No:</b></td>
+         <td><span [innerHtml]="appointment.appointmentNo"></span></td>
+      </tr>
+      <tr>
+         <td><b>Appointment Date:</b></td>
+         <td><span [innerHtml]="appointment.appointmentDate"></span></td>
+         <td></td>
+         <td><b>Phone:</b></td>
+         <td><span [innerHtml]="appointment.phone"></span></td>
+      </tr>
+      <tr>
+         <td><b>Gender:</b></td>
+         <td><span [innerHtml]="appointment.gender"></span></td>
+         <td></td>
+         <td><b>Doctor:</b></td>
+         <td><span [innerHtml]="appointment.doctor"></span></td>
+      </tr>
+      <tr>
+         <td><b>Source:</b></td>
+         <td><span [innerHtml]="appointment.source"></span></td>
+         <td></td>
+         <td><b>Priority:</b></td>
+         <td><span [innerHtml]="appointment.priority"></span></td>
+      </tr>
+      <tr>
+         <td><b>Live Consultant:</b></td>
+         <td><span [innerHtml]="appointment.liveConsultant"></span></td>
+         <td></td>
+         <td><b>Alternate Address:</b></td>
+         <td><span [innerHtml]="appointment.alternateAddress"></span></td>
+      </tr>
+      <tr>
+         <td><b>Discount:</b></td>
+         <td><span [innerHtml]="appointment.discount"></span></td>
+         <td></td>
+         <td><b>Fees:</b></td>
+         <td><span [innerHtml]="appointment.fees"></span></td>
+      </tr>
+      <tr>
+         <td><b>Status:</b></td>
+         <td><span [innerHtml]="appointment.status"></span></td>
+      </tr>
+   </table>
+</div>
+<div class="modal-footer text-center">
+   <button class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"
+   aria-label="Close" (click)="activeModal.dismiss('Cross click')">Ok</button>
+</div>

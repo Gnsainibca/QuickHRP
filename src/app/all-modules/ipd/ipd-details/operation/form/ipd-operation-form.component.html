@@ -1,0 +1,143 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Operation</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="operationForm" name="operationForm" class="forms-operation" [formGroup]="operationForm"
+      (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Operation Category<span style="color: red">&nbsp;*</span></label>
+                  <select id="operationCategoryId" name="operationCategoryId" class="form-select form-control"
+                     formControlName="operationCategoryId" (change)="onOperationCategoryChange()" [ngClass]="{
+                        'is-invalid': f['operationCategoryId'].touched && f['operationCategoryId'].invalid
+                     }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of operationCategories" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback"
+                     *ngIf="f['operationCategoryId'].invalid && f['operationCategoryId'].touched">
+                     Please provide the operation category.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Operation Name<span style="color: red">&nbsp;*</span></label>
+                  <select id="operationId" name="operationId" class="form-select form-control"
+                     formControlName="operationId" [ngClass]="{
+                     'is-invalid': f['operationId'].touched && f['operationId'].invalid
+                  }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of filteredOperations" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['operationId'].invalid && f['operationId'].touched">
+                     Please provide the operation name.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Date<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YYYY" matInput
+                     [matDatepicker]="picker1" name="operationDate" id="operationDate" formControlName="operationDate" [ngClass]="{
+                           'is-invalid': f['operationDate'].touched && f['operationDate'].invalid
+                         }" />
+                  <mat-datepicker #picker1></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                     class="activity-datepicker"></mat-datepicker-toggle>
+                  <div class="invalid-feedback" *ngIf="f['operationDate'].invalid && f['operationDate'].touched">
+                     Please provide the date.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Consultant Doctor<span style="color: red">&nbsp;*</span></label>
+                  <select id="doctorId" name="doctorId" class="form-select form-control"
+                     formControlName="doctorId" [ngClass]="{
+                     'is-invalid': f['doctorId'].touched && f['doctorId'].invalid
+                  }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of doctors" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['doctorId'].invalid && f['doctorId'].touched">
+                     Please provide the consultant doctor.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Assistant Consultant 1</label>
+                  <input class="form-control" type="text" name="assistantConsultant1" id="assistantConsultant1" formControlName="assistantConsultant1"/>
+               </div>
+               <div class="col-md-6">
+                  <label>Assistant Consultant 2</label>
+                  <input class="form-control" type="text" name="assistantConsultant2" id="assistantConsultant2" formControlName="assistantConsultant2"/>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Anesthetist</label>
+                  <input class="form-control" type="text" name="anesthetist" id="anesthetist" formControlName="anesthetist"/>
+               </div>
+               <div class="col-md-6">
+                  <label>Anesthesia Type</label>
+                  <input class="form-control" type="text" name="anesthesiaType" id="anesthesiaType" formControlName="anesthesiaType"/>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>OT Technician</label>
+                  <input class="form-control" type="text" name="otTechnician" id="otTechnician" formControlName="otTechnician"/>
+               </div>
+               <div class="col-md-6">
+                  <label>OT Assistant</label>
+                  <input class="form-control" type="text" name="otAssistant" id="otAssistant" formControlName="otAssistant"/>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Remarks</label>
+                  <textarea class="form-control" id="remarks" name="remarks" formControlName="remarks"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Result</label>
+                  <textarea class="form-control" id="result" name="result" formControlName="result"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

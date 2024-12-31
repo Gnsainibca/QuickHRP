@@ -1,0 +1,114 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Postal</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form class="forms-postal" [formGroup]="postalForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Type<span style="color: red">&nbsp;*</span></label>
+                  <select class="form-select form-control" formControlName="type" [ngClass]="{
+                     'is-invalid': f['type'].touched && f['type'].invalid
+                  }">
+                     <option value="">-Select-</option>
+                     <option value="Received">Received</option>
+                     <option value="Dispatched">Dispatched</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['type'].invalid && f['type'].touched">
+                     Please provide the type.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>From Title<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="fromTitle" id="fromTitle" formControlName="fromTitle"
+                     [ngClass]="{
+                        'is-invalid': f['fromTitle'].touched && f['fromTitle'].invalid
+                      }" />
+                  <div class="invalid-feedback" *ngIf="f['fromTitle'].invalid && f['fromTitle'].touched">
+                     Please provide the from title.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Reference No<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="referenceNo" id="referenceNo"
+                     formControlName="referenceNo" [ngClass]="{
+                        'is-invalid': f['referenceNo'].touched && f['referenceNo'].invalid
+                      }" />
+                  <div class="invalid-feedback" *ngIf="f['referenceNo'].invalid && f['referenceNo'].touched">
+                     Please provide the reference no.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>To Title<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="toTitle" id="toTitle" formControlName="toTitle"
+                     [ngClass]="{
+                        'is-invalid': f['toTitle'].touched && f['toTitle'].invalid
+                      }" />
+                  <div class="invalid-feedback" *ngIf="f['toTitle'].invalid && f['toTitle'].touched">
+                     Please provide the to title.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Date<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YYYY" matInput
+                     [matDatepicker]="picker1" name="date" id="date" formControlName="date" [ngClass]="{
+                           'is-invalid': f['date'].touched && f['date'].invalid
+                         }" />
+                  <mat-datepicker #picker1></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                     class="activity-datepicker"></mat-datepicker-toggle>
+                  <div class="invalid-feedback" *ngIf="f['date'].invalid && f['date'].touched">
+                     Please provide the date.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Address</label>
+                  <textarea class="form-control" id="address" name="address" formControlName="address"></textarea>
+               </div>
+               <div class="col-md-6">
+                  <label>Note</label>
+                  <textarea class="form-control" id="note" name="note" formControlName="note"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Attach Document</label>
+                  <input class="form-control" type="file" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="button" type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded"
+            (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

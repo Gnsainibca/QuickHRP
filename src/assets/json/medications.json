@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "opdPatientId": "12",
+      "date": "2024-10-23T18:30:00.000Z",
+      "time": "08:00 AM",
+      "medicineCategoryId": 13,
+      "medicineId": 1,
+      "medicineUnitId": 10,
+      "remarks": "Before breakfast",
+      "id": 1
+    },
+    {
+      "opdPatientId": "12",
+      "date": "2024-10-23T18:30:00.000Z",
+      "time": "01:00 PM",
+      "medicineCategoryId": 3,
+      "medicineId": 2,
+      "medicineUnitId": 12,
+      "remarks": "After lunch",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "opdPatientId": 12,
+      "date": "2024-10-23T18:30:00.000Z",
+      "time": "01:00 PM",
+      "medicineCategoryId": 1,
+      "medicineId": 1,
+      "medicineUnitId": 1,
+      "remarks": "After lunch"
+    },
+    {
+      "opdPatientId": "12",
+      "date": "2024-10-24T18:30:00.000Z",
+      "time": "08:00 AM",
+      "medicineCategoryId": 13,
+      "medicineId": 1,
+      "medicineUnitId": 10,
+      "remarks": "Before breakfast",
+      "id": 4
+    },
+    {
+      "opdPatientId": "12",
+      "date": "2024-10-24T18:30:00.000Z",
+      "time": "01:00 PM",
+      "medicineCategoryId": 3,
+      "medicineId": 2,
+      "medicineUnitId": 12,
+      "remarks": "After lunch",
+      "id": 5
+    },
+    {
+      "opdPatientId": "11",
+      "date": "2024-10-23T18:30:00.000Z",
+      "time": "08:00 AM",
+      "medicineCategoryId": 3,
+      "medicineId": 2,
+      "medicineUnitId": 12,
+      "remarks": "Before breakfast",
+      "id": 6
+    },
+    {
+      "opdPatientId": "11",
+      "date": "2024-10-23T18:30:00.000Z",
+      "time": "01:00 PM",
+      "medicineCategoryId": 13,
+      "medicineId": 1,
+      "medicineUnitId": 10,
+      "remarks": "After lunch",
+      "id": 7
+    },
+    {
+      "opdPatientId": "11",
+      "date": "2024-10-25T18:30:00.000Z",
+      "time": "01:00 PM",
+      "medicineCategoryId": 3,
+      "medicineId": 2,
+      "medicineUnitId": 12,
+      "remarks": "After lunch",
+      "id": 8
+    },
+    {
+      "opdPatientId": "11",
+      "date": "2024-10-25T18:30:00.000Z",
+      "time": "01:00 PM",
+      "medicineCategoryId": 13,
+      "medicineId": 1,
+      "medicineUnitId": 10,
+      "remarks": null,
+      "id": 9
+    },
+    {
+      "opdPatientId": "1003",
+      "date": "2024-12-05T18:30:00.000Z",
+      "time": "8:00 AM",
+      "medicineCategoryId": 13,
+      "medicineId": 1,
+      "medicineUnitId": 10,
+      "remarks": null,
+      "id": 10
+    },
+    {
+      "opdPatientId": "1003",
+      "date": "2024-12-05T18:30:00.000Z",
+      "time": "12:00 PM",
+      "medicineCategoryId": 3,
+      "medicineId": 2,
+      "medicineUnitId": 12,
+      "remarks": null,
+      "id": 11
+    },
+    {
+      "opdPatientId": "1003",
+      "date": "2024-12-06T18:30:00.000Z",
+      "time": "8:00 AM",
+      "medicineCategoryId": 13,
+      "medicineId": 1,
+      "medicineUnitId": 10,
+      "remarks": null,
+      "id": 12
+    },
+    {
+      "opdPatientId": "1003",
+      "date": "2024-12-06T18:30:00.000Z",
+      "time": "12:00 PM",
+      "medicineCategoryId": 3,
+      "medicineId": 2,
+      "medicineUnitId": 12,
+      "remarks": null,
+      "id": 13
+    }
+  ]
+}

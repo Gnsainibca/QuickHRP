@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "name": "Teslas",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "(dGy×cm2)",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "KHz",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "HVL",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Mammography",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "MRI",
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "CT",
+      "isActive": true,
+      "id": 7
+    }
+  ]
+}

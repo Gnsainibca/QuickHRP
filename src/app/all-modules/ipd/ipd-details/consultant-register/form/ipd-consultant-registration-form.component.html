@@ -1,0 +1,87 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Consultant</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="consultantForm" name="consultantForm" class="forms-consultant" [formGroup]="consultantForm"
+      (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Applied Date<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YYYY" matInput
+                     [matDatepicker]="picker1" name="appliedDate" id="appliedDate" formControlName="appliedDate" [ngClass]="{
+                           'is-invalid': f['appliedDate'].touched && f['appliedDate'].invalid
+                         }" />
+                  <mat-datepicker #picker1></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                     class="activity-datepicker"></mat-datepicker-toggle>
+                  <div class="invalid-feedback" *ngIf="f['appliedDate'].invalid && f['appliedDate'].touched">
+                     Please provide the applied date.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Consultant Date<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YYYY" matInput
+                     [matDatepicker]="picker2" name="consultantDate" id="consultantDate" formControlName="consultantDate" [ngClass]="{
+                           'is-invalid': f['consultantDate'].touched && f['consultantDate'].invalid
+                         }" />
+                  <mat-datepicker #picker2></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker2"
+                     class="activity-datepicker"></mat-datepicker-toggle>
+                  <div class="invalid-feedback" *ngIf="f['consultantDate'].invalid && f['consultantDate'].touched">
+                     Please provide the consultant date.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Consultant Doctor<span style="color: red">&nbsp;*</span></label>
+                  <select id="doctorId" name="doctorId" class="form-select form-control"
+                     formControlName="doctorId" [ngClass]="{
+                        'is-invalid': f['doctorId'].touched && f['doctorId'].invalid
+                     }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of doctors" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback"
+                     *ngIf="f['doctorId'].invalid && f['doctorId'].touched">
+                     Please provide the consultant doctor.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Instruction<span style="color: red">&nbsp;*</span></label>
+                  <textarea class="form-control" id="instruction" name="instruction" formControlName="instruction" 
+                  class="form-select form-control"
+                     formControlName="instruction" [ngClass]="{
+                        'is-invalid': f['instruction'].touched && f['instruction'].invalid
+                     }">
+                  </textarea>
+                  <div class="invalid-feedback"
+                  *ngIf="f['instruction'].invalid && f['instruction'].touched">
+                  Please provide the instruction.
+               </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

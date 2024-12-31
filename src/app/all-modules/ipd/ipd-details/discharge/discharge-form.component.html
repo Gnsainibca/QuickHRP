@@ -1,0 +1,91 @@
+<div class="modal-header">
+   <h4 class="modal-title">Patient Discharge</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="dischargeForm" name="dischargeForm" [formGroup]="dischargeForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Discharge Date<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control datetimepicker" type="text" name="dischargeDate" id="dischargeDate"
+                     formControlName="dischargeDate" placeholder="MM/DD/YY" matInput [ngClass]="{
+                     'is-invalid': f['dischargeDate'].touched && f['dischargeDate'].invalid
+                  }" [matDatepicker]="picker1" />
+                  <mat-datepicker #picker1></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                     class="activity-datepicker"></mat-datepicker-toggle>
+                  <div class="invalid-feedback" *ngIf="f['dischargeDate'].invalid && f['dischargeDate'].touched">
+                     Please provide the discharge Date.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Discharge Status<span style="color: red">&nbsp;*</span></label>
+                  <select class="form-select form-control" formControlName="dischargeStatusId" [ngClass]="{
+                     'is-invalid': f['dischargeStatusId'].touched && f['dischargeStatusId'].invalid
+                  }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of dischargeStatusList" [ngValue]="item.id">{{
+                        item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback"
+                     *ngIf="f['dischargeStatusId'].invalid && f['dischargeStatusId'].touched">
+                     Please provide the discharge status.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Note</label>
+                  <textarea class="form-control" id="dischargeNote" name="dischargeNote"
+                     formControlName="dischargeNote"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Operation</label>
+                  <textarea class="form-control" name="dischargeOperation" id="dischargeOperation"
+                     formControlName="dischargeOperation"></textarea>
+               </div>
+               <div class="col-md-6">
+                  <label>Diagnosis</label>
+                  <textarea class="form-control" name="dischargeDiagnosis" id="dischargeDiagnosis"
+                     formControlName="dischargeDiagnosis"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Investigation</label>
+                  <textarea class="form-control" name="dischargeInvestigation" id="dischargeInvestigation"
+                     formControlName="dischargeInvestigation"></textarea>
+               </div>
+               <div class="col-md-6">
+                  <label>Treatment Home</label>
+                  <textarea class="form-control" name="dischargeTreatmentHome" id="dischargeTreatmentHome"
+                     formControlName="dischargeTreatmentHome"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

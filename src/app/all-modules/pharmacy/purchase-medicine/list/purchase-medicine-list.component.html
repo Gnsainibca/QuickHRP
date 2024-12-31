@@ -1,0 +1,45 @@
+<div>
+   <div class="page-wrapper">
+      <div class="content container-fluid">
+         <!-- Page Header -->
+         <div class="crms-title row bg-white mb-3">
+            <div class="col">
+               <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white me-2">
+                     <i class="la la-table"></i>
+                  </span>
+                  <ul class="breadcrumb bg-white display-inline-flex m-0 ps-0 pe-0">
+                     <li class="breadcrumb-item"><a [routerLink]="routes.pharmacy">Pharmacy</a></li>
+                     <li class="breadcrumb-item"><a [routerLink]="routes.pharmacyMedicine">Medicine</a></li>
+                     <li class="breadcrumb-item active">Purchase</li>
+                  </ul>
+               </h3>
+            </div>
+            <div class="col text-end">
+               <ul class="list-inline-item ps-0 m-0">
+                  <li class="list-inline-item">
+                     <button
+                        class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"
+                        id="add-task" data-bs-toggle="modal" (click)="add()">
+                        <i class="fa fa-plus"></i> Purchase Medicine
+                     </button>
+                  </li>
+                  <li class="list-inline-item">
+                     <button [routerLink]="routes.pharmacyMedicine"
+                        class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"
+                        id="add-task" >
+                        <i class="fa fa-reorder"></i> Medicines
+                     </button>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div>
+            <!-- /Page Header -->
+            <ag-grid-angular class="ag-theme-quartz" style="height: 750px;" [pagination]="pagination"
+               [paginationPageSize]="paginationPageSize" [paginationPageSizeSelector]="paginationPageSizeSelector"
+               [rowData]="purchaseMedicineList" [columnDefs]="colDefs" [scrollbarWidth]="11" [context]="this" />
+         </div>
+      </div>
+   </div>
+</div>

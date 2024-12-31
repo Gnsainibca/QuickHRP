@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "name": "(ML)",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Litter",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "(nm)",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "per day",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Hour",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Insurance",
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "g/dl",
+      "isActive": true,
+      "id": 7
+    },
+    {
+      "name": "MG",
+      "isActive": true,
+      "id": 8
+    },
+    {
+      "name": "per km",
+      "isActive": true,
+      "id": 9
+    },
+    {
+      "name": "per hour",
+      "isActive": true,
+      "id": 10
+    },
+    {
+      "name": "Digital mammography",
+      "isActive": true,
+      "id": 11
+    },
+    {
+      "name": "PET/CT scan",
+      "isActive": true,
+      "id": 12
+    },
+    {
+      "name": "Bone density scan",
+      "isActive": true,
+      "id": 13
+    },
+    {
+      "name": "10-21 mm Hg",
+      "isActive": true,
+      "id": 14
+    }
+  ]
+}

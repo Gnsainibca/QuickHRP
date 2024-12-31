@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "appointmentNo": "APPNO1",
+      "patientId": 1,
+      "doctorId": 1,
+      "fees": 500,
+      "shiftId": 1,
+      "appointmentDate": "09/30/2024 11:00 AM",
+      "slotId": 1,
+      "priorityId": 1,
+      "paymentModeId" : 1,
+      "statusId": 2,
+      "discount": "0.00",
+      "phone": "9896764563",
+      "message": "Test Message",
+      "liveConsultant": true,
+      "alternateAddress": "1505 Beech Street Oakland, CA 94612",
+      "sourceId": 1
+    }
+  ]
+}

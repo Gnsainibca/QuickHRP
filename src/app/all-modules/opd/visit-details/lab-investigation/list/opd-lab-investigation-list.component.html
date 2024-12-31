@@ -1,0 +1,61 @@
+<div class="content container-fluid">
+   <!-- Page Header -->
+   <div class="crms-title row bg-white">
+      <div class="col">
+         <h3 class="page-title">
+            <span class="page-title-icon bg-gradient-primary text-white me-2">
+               <i class="la la-table"></i>
+            </span>
+            <ul class="breadcrumb bg-white display-inline-flex m-0 ps-0 pe-0">
+               <li class="breadcrumb-item"><a [routerLink]="routes.ipd">IPD</a></li>
+               <li class="breadcrumb-item active">Lab Investigation</li>
+           </ul>
+         </h3>
+      </div>
+   </div>
+   <div style="border-top: 2px solid lightgray;">
+      <div class="table-responsive">
+         <table class="table table-nowrap mb-0">
+            <thead>
+               <tr>
+                  <th>Test Name</th>
+                  <th>Lab</th>
+                  <th>Sample Collected</th>
+                  <th>Expected Date</th>
+                  <th>Approved By</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let test of tests; let  i = index">
+                  <td>
+                     <span [innerHtml]="test.name"></span>
+                  </td>
+                  <td>
+                     <span [innerHtml]="test.lab"></span>
+                  </td>
+                  <td>
+                     <span *ngIf="test.sampleCollected?.collectedBy">
+                        <span [innerHtml]="test.sampleCollected?.collectedBy"></span>
+                        <br />
+                        <b><span [innerHtml]="test.lab"></span> Center:</b>&nbsp;<span [innerHtml]="test.sampleCollected?.pathologyCenter"></span>
+                        <br />
+                        <span [innerHtml]="test.sampleCollected?.collectedDate | date : 'MMM dd, yyyy hh:mm aaa'"></span>
+                     </span>
+                  </td>
+                  <td>
+                     <span [innerHtml]="test.reportDate | date : 'MMM dd, yyyy'"></span>
+                  </td>
+                  <td>
+                     <span [innerHtml]="test.approveReport?.approvedBy"></span>
+                     <br />
+                     <span [innerHtml]="test.approveReport?.approvedDate | date : 'MMM dd, yyyy hh:mm aaa'"></span>
+                  </td>
+               </tr>
+               <tr *ngIf="tests?.length==0" style="padding-top: 50px; min-height: 200px;display: inline-block;">
+                  No Rows To Show 
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

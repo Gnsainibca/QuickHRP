@@ -1,0 +1,140 @@
+{
+  "data": [
+    {
+      "ipdPatientId": "1003",
+      "headerNote": null,
+      "footerNote": null,
+      "findingCategories": [
+        {
+          "id": 2,
+          "name": "Eye Diseases"
+        }
+      ],
+      "findings": [
+        {
+          "id": 1,
+          "name": "Refractive Errors"
+        }
+      ],
+      "findingDescription": "Refractive Errors : \nA refractive error is a very common eye disorder. It occurs when the eye cannot clearly focus the images from the outside world. The result of refractive errors is blurred vision, which is sometimes so severe that it causes visual impairment",
+      "printFindings": false,
+      "medicineInnerForm": [
+        {
+          "medicineCategoryId": 13,
+          "medicineId": 1,
+          "unitId": 10,
+          "doseIntervalId": 1,
+          "doseDurationId": 1,
+          "instrunction": null,
+          "filteredMedicines": [
+            {
+              "id": 1,
+              "name": "Amlodipine",
+              "parentId": 13
+            }
+          ],
+          "filteredMedicineDosages": [
+            {
+              "medicineCategoryId": 13,
+              "name": "1",
+              "medicineUnitId": 5,
+              "isActive": true,
+              "id": 10,
+              "medicineCategory": "Syrup",
+              "medicineUnit": "mg/mL"
+            }
+          ]
+        }
+      ],
+      "prescribeById": 3,
+      "pathologyIds": [
+        {
+          "id": 1,
+          "name": "Chest X-rays"
+        },
+        {
+          "id": 2,
+          "name": "Abdomen X-rays"
+        },
+        {
+          "id": 3,
+          "name": "Liver test"
+        }
+      ],
+      "radiologyIds": [
+        {
+          "id": 1,
+          "name": "Functional MRI (RI)"
+        },
+        {
+          "id": 2,
+          "name": "Cardiopulmonary Exercise Test"
+        }
+      ],
+      "userRoleInnerForm": [],
+      "date": "2024-12-27T04:26:21.553Z",
+      "id": 1
+    },
+    {
+      "ipdPatientId": "1003",
+      "headerNote": null,
+      "footerNote": null,
+      "findingCategories": [
+        {
+          "id": 3,
+          "name": "Hair Problems"
+        },
+        {
+          "id": 4,
+          "name": "Bone Density Problems"
+        }
+      ],
+      "findings": [
+        {
+          "id": 2,
+          "name": "Damaged Hair"
+        },
+        {
+          "id": 3,
+          "name": "Osteoporosis"
+        }
+      ],
+      "findingDescription": "Damaged Hair : \nHair damage is more than just split ends. Extremely damaged hair develops cracks in the outside layer (cuticle). Once the cuticle lifts (opens), your hair is at risk for further damage and breakage. It may also look dull or frizzy and be difficult to manage\n\nOsteoporosis : \nBone density problems may occur because the body loses too much bone tissue, makes too little of it, or some combination of both. It tends to be symptomless. That is, people with osteoporosis tend not to know they have it – until a bone fracture has them visiting a doctor who makes the diagnosis.",
+      "printFindings": false,
+      "medicineInnerForm": [
+        {
+          "medicineCategoryId": 13,
+          "medicineId": 1,
+          "unitId": 10,
+          "doseIntervalId": 1,
+          "doseDurationId": 1,
+          "instrunction": null,
+          "filteredMedicines": [
+            {
+              "id": 1,
+              "name": "Amlodipine",
+              "parentId": 13
+            }
+          ],
+          "filteredMedicineDosages": [
+            {
+              "medicineCategoryId": 13,
+              "name": "1",
+              "medicineUnitId": 5,
+              "isActive": true,
+              "id": 10,
+              "medicineCategory": "Syrup",
+              "medicineUnit": "mg/mL"
+            }
+          ]
+        }
+      ],
+      "prescribeById": 3,
+      "pathologyIds": "",
+      "radiologyIds": "",
+      "userRoleInnerForm": [],
+      "date": "2024-12-27T04:26:06.491Z",
+      "id": 2
+    }
+  ]
+}

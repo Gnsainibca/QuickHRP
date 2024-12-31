@@ -1,0 +1,32 @@
+<div>
+   <div class="col-md-12 col-sm-12">
+      <div class="ribbon-wrapper card m-b-10">
+         <div class="card-body">
+            <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>TREATMENT HISTORY</div>
+            <div class="table-responsive">
+               <table class="table table-responsive mb-0">
+                  <thead>
+                     <tr>
+                        <th>IPD No</th>
+                        <th style="min-width: 100px;">Date</th>
+                        <th>Symptoms</th>
+                        <th>Consultant</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let ipdPatient of ipdPatientList;">
+                        <td><span [innerHtml]="ipdPatient.ipdNo"></span></td>
+                        <td><span [innerHtml]="ipdPatient.appointmentDate | date : 'MMM dd, yyyy'"></span></td>
+                        <td><span [innerHtml]="ipdPatient.symptomsDescription"></span></td>
+                        <td><span [innerHtml]="ipdPatient.consultantDoctor"></span></td>
+                     </tr>
+                     <tr *ngIf="ipdPatientList?.length==0" style="padding-top: 30px; min-height: 70px;display: inline-block;">
+                        No Rows To Show 
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

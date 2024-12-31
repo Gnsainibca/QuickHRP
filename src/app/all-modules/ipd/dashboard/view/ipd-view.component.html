@@ -1,0 +1,76 @@
+<div class="modal-header">
+   <h4 class="modal-title">View Ipd Patient</h4>
+   <button type="button" class="close md-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <table>
+      <tr>
+         <td><b>IPD Number:</b></td>
+         <td><span [innerHtml]="ipdPatient.ipdNo"></span></td>
+         <td></td>
+         <td><b>Case Id:</b></td>
+         <td><span [innerHtml]="ipdPatient.caseId"></span></td>
+      </tr>
+      <tr>
+         <td><b>Patient Name:</b></td>
+         <td><span [innerHtml]="ipdPatient.patientName"></span></td>
+         <td></td>
+         <td><b> Old Patient:</b></td>
+         <td><span>{{ipdPatient.isOldPatient?'Yes' : 'No'}}</span></td>
+      </tr>
+      <tr>
+         <td><b>Appointment Date:</b></td>
+         <td><span [innerHtml]="ipdPatient.appointmentDate"></span></td>
+         <td></td>
+         <td><b>Casualty:</b></td>
+         <td><span>{{ipdPatient.anyCasualty?'Yes' : 'No'}}</span></td>
+      </tr>
+      <tr>
+         <td><b>Reference:</b></td>
+         <td><span [innerHtml]="ipdPatient.reference"></span></td>
+         <td></td>
+         <td><b>Consultant Doctor:</b></td>
+         <td><span [innerHtml]="ipdPatient.consultantDoctor"></span></td>
+      </tr>
+      <tr>
+         <td><b>Apply TPA:</b></td>
+         <td colspan="4"><span>{{ipdPatient.applyTPA?'Yes' : 'No'}}</span></td>
+      </tr>
+      <tr>
+         <td>
+            <b>Symptoms:</b>
+         </td>
+         <td colspan="4">
+            <span [innerHtml]="ipdPatient.symptomsDescription"></span>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <b>Note:</b>
+         </td>
+         <td colspan="4">
+            <span [innerHtml]="ipdPatient.note"></span>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <b>Any Known Allergies:</b>
+         </td>
+         <td colspan="4">
+            <span [innerHtml]="ipdPatient.anyKnownAllergies"></span>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <b>Previous Medical Issue:</b>
+         </td>
+         <td colspan="4">
+            <span [innerHtml]="ipdPatient.previousMedicalIssue"></span>
+         </td>
+      </tr>
+   </table>
+</div>
+<div class="modal-footer text-center">
+   <button class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"
+   aria-label="Close" (click)="activeModal.dismiss('Cross click')">Ok</button>
+</div>

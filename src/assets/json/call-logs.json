@@ -1,0 +1,137 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Garry",
+      "phone": "98906787755",
+      "description" : "",
+      "nextFollowUpDate": "22-Aug-2024",
+      "callDuration": "02:05",
+      "callType" : "Incoming",
+      "date": "20-Aug-2024",
+      "note" : "Thank You for calling Mr. Garry."
+    },
+    {
+      "id": 2,
+      "name": "Yash Dull",
+      "phone": "9845645664",
+      "description" : "",
+      "nextFollowUpDate": "26-Aug-2024",
+      "callDuration": "02:05",
+      "callType" : "Incoming",
+      "date": "25-Aug-2024",
+      "note" : "Thank You for calling Mr. Yash Dull."
+    },
+    {
+      "id": 3,
+      "name": "Vinay Martin",
+      "description" : "",
+      "nextFollowUpDate": "30-Aug-2024",
+      "callDuration": "02:05",
+      "callType" : "Incoming",
+      "phone": "8967856735",
+      "date": "29-Aug-2024",
+      "note" : "Thank You for calling Mr. Vinay Martin."
+    },
+    {
+      "id": 4,
+      "name": "Arvind",
+      "description" : "",
+      "nextFollowUpDate": "30-Aug-2024",
+      "callDuration": "02:05",
+      "callType" : "Incoming",
+      "phone": "9806786453",
+      "date": "29-Aug-2024",
+      "note" : "Thank You for calling Mr. Arvind."
+    },
+    {
+      "id": 5,
+      "name": "Alishter",
+      "description" : "",
+      "nextFollowUpDate": "01-Sept-2024",
+      "callDuration": "02:05",
+      "callType" : "Incoming",
+      "phone": "8906753455",
+      "date": "30-Aug-2024",
+      "note" : "Thank You for calling Mr. Alishter."
+    },
+    {
+      "id": 6,
+      "name": "Harpreet",
+      "description" : "",
+      "nextFollowUpDate": "22-Sept-2024",
+      "callDuration": "02:05",
+      "callType" : "Incoming",
+      "phone": "980768567",
+      "date": "20-Sept-2024",
+      "note" : "Thank You for calling Mr. Harpreet."
+    },
+    {
+      "id": 7,
+      "name": "Edwin",
+      "description" : "",
+      "nextFollowUpDate": "23-Sept-2024",
+      "callDuration": "02:05",
+      "callType" : "Outgoing",
+      "phone": "654801425",
+      "date": "21-Sept-2024",
+      "note" : "Thank You for calling Mr. Edwin."
+    },
+    {
+      "id": 8,
+      "name": "Alwin",
+      "description" : "",
+      "nextFollowUpDate": "23-Sept-2024",
+      "callDuration": "02:05",
+      "callType" : "Incoming",
+      "phone": "548489021",
+      "date": "21-Sept-2024",
+      "note" : "Thank You for calling Mr. Alwin."
+    },
+    {
+      "id": 9,
+      "name": "Brinly",
+      "description" : "",
+      "nextFollowUpDate": "24-Sept-2024",
+      "callDuration": "02:05",
+      "callType" : "Outgoing",
+      "phone": "6568441320",
+      "date": "22-Sept-2024",
+      "note" : "Thank You for calling Mr. Brinly."
+    },
+    {
+      "id": 10,
+      "name": "Sterling",
+      "description" : "",
+      "nextFollowUpDate": "25-Sept-2024",
+      "callDuration": "02:05",
+      "callType" : "Incoming",
+      "relatedTo": "John  Hook (9006)",
+      "phone": "216566515",
+      "date": "23-Sept-2024",
+      "note" : "Thank You for calling Mr. Sterling."
+    },
+    {
+      "id": 11,
+      "name": "David Wood",
+      "description" : "",
+      "nextFollowUpDate": "24-Sept-2024",
+      "callDuration": "02:05",
+      "callType" : "Outgoing",
+      "phone": "90907686785",
+      "date": "23-Sept-2024",
+      "note" : "Thank You for calling Mr. David Wood."
+    },
+    {
+      "id": 12,
+      "name": "Donald",
+      "description" : "",
+      "nextFollowUpDate": "25-Sept-2024",
+      "callDuration": "02:05",
+      "callType" : "Outgoing",
+      "phone": "8796765734",
+      "date": "23-Sept-2024",
+      "note" : "Thank You for calling Mr. Donald."
+    }
+  ]
+}

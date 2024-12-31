@@ -1,0 +1,19 @@
+.ag-grid-wrapper {
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  :host ::ng-deep .ag-root-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  :host ::ng-deep .ag-body-horizontal-scroll {
+    order: -1;
+  }
+  :host ::ng-deep .ag-body-viewport {
+    overflow-x: hidden !important;
+  }
+  :host ::ng-deep .ag-body-horizontal-scroll-viewport{
+    scrollbar-width: thin;
+  }

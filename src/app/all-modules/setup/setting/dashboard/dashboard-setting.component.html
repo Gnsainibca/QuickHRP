@@ -1,0 +1,62 @@
+<div>
+   <div class="page-wrapper">
+      <div class="content container-fluid">
+         <!-- Page Header -->
+         <div class="crms-title row bg-white mb-3">
+            <div class="col">
+               <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white me-2">
+                     <i class="la la-table"></i>
+                  </span>
+                  <span>Settings</span>
+               </h3>
+            </div>
+         </div>
+         <div>
+
+            <div class="col-12">
+               <div class="card flex-fill">
+                  <div class="card-header">
+                     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-solid bg-white">
+                        <li class="nav-item">
+                           <a href="#general-settings" data-bs-toggle="tab" class="nav-link active">General Setting</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#prefix" data-bs-toggle="tab" class="nav-link">Prefix Setting</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#gender" data-bs-toggle="tab" class="nav-link">Gender</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#blood-group" data-bs-toggle="tab" class="nav-link">Blood Group</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#marital-status" data-bs-toggle="tab" class="nav-link">Marital Status</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="card-body">
+                     <div class="tab-content pt-0">
+                        <div id="general-settings" class="tab-pane fade show active">
+                           <app-setup-general-setting></app-setup-general-setting>
+                        </div>
+                        <div id="prefix" class="tab-pane fade">
+                           <app-setup-prefix-setting></app-setup-prefix-setting>
+                        </div>
+                        <div id="gender" class="tab-pane fade">
+                           <app-setup-gender-list></app-setup-gender-list>
+                        </div>
+                        <div id="blood-group" class="tab-pane fade">
+                           <app-setup-blood-group-list></app-setup-blood-group-list>
+                        </div>
+                        <div id="marital-status" class="tab-pane fade">
+                           <app-setup-marital-status-list></app-setup-marital-status-list>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </div>

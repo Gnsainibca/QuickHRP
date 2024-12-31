@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "name": "TSH (Thyroid Stimulating Hormone)",
+      "referenceRange": "0.5 to 3.0",
+      "pathologyUnitId": 1,
+      "description": "A TSH level > 20 milli-International Units/L in association with a low free thyroxine (T4) confirms the diagnosis of hypothyroidism.",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Liver Function Test",
+      "referenceRange": "7 to 55 units per liter",
+      "pathologyUnitId": 1,
+      "description": "Liver function tests (LFTs or LFs), also referred to as a hepatic panel, are groups of blood tests ... ranges are given, these will vary depending on age, gender and his/her health, ethnicity, method of analysis, and units of measurement.",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "RBC",
+      "referenceRange": "4.1 to 5.1 million/mm3",
+      "pathologyUnitId": 3,
+      "description": "RBC blood test",
+      "isActive": true,
+      "id": 3
+    }
+  ]
+}

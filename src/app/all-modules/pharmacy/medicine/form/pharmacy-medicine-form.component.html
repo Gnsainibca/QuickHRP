@@ -1,0 +1,144 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Medicine</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="pharmacyMedicineForm" name="pharmacyMedicineForm" class="forms-pharmacyMedicine" [formGroup]="pharmacyMedicineForm"
+      (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-3">
+                     <label>Medicine Name<span style="color: red">&nbsp;*</span></label>
+                     <input type="text" class="form-control" name="name" id="name" formControlName="name" [ngClass]="{
+                        'is-invalid': f['name'].touched && f['name'].invalid
+                        } " />
+                     <div class="invalid-feedback" *ngIf="f['name'].invalid && f['name'].touched">
+                        Please provide the medicine name.
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <label>Medicine Category<span style="color: red">&nbsp;*</span></label>
+                     <select id="categoryId" name="categoryId" class="form-select form-control" formControlName="categoryId" [ngClass]="{
+                                       'is-invalid': f['categoryId'].touched && f['categoryId'].invalid
+                                       }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of medicineCategories" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['categoryId'].invalid && f['categoryId'].touched">
+                        Please provide the medicine category.
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <label>Medicine Company<span style="color: red">&nbsp;*</span></label>
+                     <select id="companyId" name="companyId" class="form-select form-control" formControlName="companyId" [ngClass]="{
+                                       'is-invalid': f['companyId'].touched && f['companyId'].invalid
+                                       }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of medicineCompanies" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['companyId'].invalid && f['companyId'].touched">
+                        Please provide the medicine company.
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <label>Medicine Composition</label>
+                     <input type="text" class="form-control" name="composition" id="composition" formControlName="composition" />
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-3">
+                     <label>Medicine Group</label>
+                     <select id="groupId" name="groupId" class="form-select form-control" formControlName="groupId">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of medicineGroups" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                  </div>
+                  <div class="col-md-3">
+                     <label>Unit<span style="color: red">&nbsp;*</span></label>
+                     <select id="unitId" name="unitId" class="form-select form-control" formControlName="unitId" [ngClass]="{
+                                       'is-invalid': f['unitId'].touched && f['unitId'].invalid
+                                       }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of units" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['unitId'].invalid && f['unitId'].touched">
+                        Please provide the unit.
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <label>Min Level</label>
+                     <input type="text" class="form-control" name="minLevel" id="minLevel" formControlName="minLevel" />
+                  </div>
+                  <div class="col-md-3">
+                     <label>Re-Order Level</label>
+                     <input type="text" class="form-control" name="reOrderLevel" id="reOrderLevel" formControlName="reOrderLevel" />
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-3">
+                     <label>Tax</label>
+                     <input type="text" class="form-control" name="tax" id="tax" formControlName="tax" />
+                  </div>
+                  <div class="col-md-3">
+                     <label>Box/Packing<span style="color: red">&nbsp;*</span></label>
+                     <input type="text" class="form-control" name="packing" id="packing" formControlName="packing" [ngClass]="{
+                        'is-invalid': f['packing'].touched && f['packing'].invalid
+                        }" />
+                        <div class="invalid-feedback" *ngIf="f['packing'].invalid && f['packing'].touched">
+                           Please provide the box/packing.
+                        </div>
+                  </div>
+                  <div class="col-md-3">
+                     <label>VAT A/C</label>
+                     <input type="text" class="form-control" name="vatAC" id="vatAC" formControlName="vatAC" />
+                  </div>
+                  <div class="col-md-3">
+                     <label>Rack Number</label>
+                     <input type="text" class="form-control" name="rackNumber" id="rackNumber" formControlName="rackNumber" />
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-6">
+                     <label>Note</label>
+                     <textarea type="text" class="form-control" name="note" id="note" formControlName="note"></textarea>
+                  </div>
+                  <div class="col-md-6">
+                     <label>Medicine Photo ( JPG | JPEG | PNG )</label>
+                     <input type="file" class="form-control" id="attachment" name="attachment" (change)="handleMedicineImageInput($event)"
+                        accept="image/*">
+                     <img *ngIf="f['image'].value" style="width: auto;height: 120px;" [src]="f['image'].value" (click)="viewImage()" />
+                     <br />
+                     <a *ngIf="f['imageName'].value" href="javascript:void(0);" (click)="downloadMedicineImage()"><i
+                        class="fa fa-download"></i>&nbsp;<span [innerHtml]="f['imageName'].value"></span></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

@@ -1,0 +1,115 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Call Log</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form class="forms-callLog" [formGroup]="callLogForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Name<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="name" id="name" formControlName="name" [ngClass]="{
+                        'is-invalid': f['name'].touched && f['name'].invalid
+                      }" />
+                  <div class="invalid-feedback" *ngIf="f['name'].invalid && f['name'].touched">
+                     Please provide the name.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Phone<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="phone" id="phone" formControlName="phone" [ngClass]="{
+                        'is-invalid': f['phone'].touched && f['phone'].invalid
+                      }" />
+                  <div class="invalid-feedback" *ngIf="f['phone'].invalid && f['phone'].touched">
+                     Please provide the phone.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Date<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YYYY" matInput
+                     [matDatepicker]="picker1" name="date" id="date" formControlName="date" [ngClass]="{
+                           'is-invalid': f['date'].touched && f['date'].invalid
+                         }" />
+                  <mat-datepicker #picker1></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                     class="activity-datepicker"></mat-datepicker-toggle>
+                  <div class="invalid-feedback" *ngIf="f['date'].invalid && f['date'].touched">
+                     Please provide the date.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Description</label>
+                  <textarea class="form-control" id="description" name="description"
+                     formControlName="description"></textarea>
+                  <div class="invalid-feedback" *ngIf="f['description'].invalid && f['description'].touched">
+                     Please provide the description.
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Next Follow Up Date</label>
+                  <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YY" matInput
+                     [matDatepicker]="picker2" name="nextFollowUpDate" id="nextFollowUpDate"
+                     formControlName="nextFollowUpDate" />
+                  <mat-datepicker #picker2></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker2"
+                     class="activity-datepicker"></mat-datepicker-toggle>
+               </div>
+               <div class="col-md-6">
+                  <label>Call Duration</label>
+                  <input class="form-control" type="text" name="callDuration" id="callDuration"
+                     formControlName="callDuration" placeholder="hh:mm" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Note</label>
+                  <textarea class="form-control" id="note" name="note" formControlName="note"></textarea>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group">
+                     <label>Call Type</label>
+                     <br />
+                     &nbsp;
+                     <label class="form-check-label">
+                        <input type="radio" class="form-check-input" value="Incoming" formControlName="callType" />
+                        Incoming<i class="input-helper"></i>
+                     </label>
+                     &nbsp;
+                     &nbsp;
+                     <label class="form-check-label">
+                        <input type="radio" class="form-check-input" value="Outgoing" formControlName="callType" />
+                        Outgoing<i class="input-helper"></i>
+                     </label>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="button" type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded"
+            (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

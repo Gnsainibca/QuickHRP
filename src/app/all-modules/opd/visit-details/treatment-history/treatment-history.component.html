@@ -1,0 +1,23 @@
+<div class="content container-fluid">
+   <!-- Page Header -->
+   <div class="crms-title row bg-white">
+      <div class="col">
+         <h3 class="page-title">
+            <span class="page-title-icon bg-gradient-primary text-white me-2">
+               <i class="la la-table"></i>
+            </span>
+            <ul class="breadcrumb bg-white display-inline-flex m-0 ps-0 pe-0">
+               <li class="breadcrumb-item"><a [routerLink]="routes.opd">OPD</a></li>
+               <li class="breadcrumb-item active">Treatment History</li>
+           </ul>
+         </h3>
+      </div>
+   </div>
+   <div>
+      <!-- /Page Header -->
+      <ag-grid-angular class="ag-theme-quartz" [domLayout]="'autoHeight'" [pagination]="pagination"
+         [paginationPageSize]="paginationPageSize" [paginationPageSizeSelector]="paginationPageSizeSelector"
+         [rowData]="opdPatientList" [columnDefs]="colDefs"
+         [scrollbarWidth]="11" [context]="this" />
+   </div>
+</div>

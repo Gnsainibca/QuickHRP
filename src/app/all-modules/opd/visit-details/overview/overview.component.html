@@ -1,0 +1,39 @@
+<div class="content container-fluid">
+   <div class="col-sm-12">
+      <div class="form-group">
+         <div class="row">
+            <div class="col-md-6">
+               <div class="row">
+                  <app-patient-overview></app-patient-overview>
+               </div>
+               <div class="row">
+                  <app-vital-overview [opdPatientId]="opdPatientId"></app-vital-overview>
+               </div>
+               <div class="row">
+                  <app-visit-overview [opdPatientId]="opdPatientId"></app-visit-overview>
+               </div>
+               <div class="row">
+                  <app-timeline-overview [opdPatientId]="opdPatientId"></app-timeline-overview>
+               </div>
+            </div>
+            <div class="col-md-6 mb-2" style="border-left: 1px solid lightgrey;">
+               <div class="row">
+                  <app-billing-overview [opdPatientId]="opdPatientId"></app-billing-overview>
+               </div>
+               <div class="row">
+                  <app-medication-overview [opdPatientId]="opdPatientId"></app-medication-overview>
+               </div>
+               <div class="row">
+                  <app-operation-overview [opdPatientId]="opdPatientId"></app-operation-overview>
+               </div>
+               <div class="row">
+                  <app-charge-overview [opdPatientId]="opdPatientId"></app-charge-overview>
+               </div>
+               <div class="row">
+                  <app-payment-overview [opdPatientId]="opdPatientId"></app-payment-overview>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

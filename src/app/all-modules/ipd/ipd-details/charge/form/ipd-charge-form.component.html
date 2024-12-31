@@ -1,0 +1,246 @@
+<div style="overflow:scroll;max-height: 90vh;">
+   <form id="chargeForm" name="chargeForm" class="forms-charge" [formGroup]="chargeForm" (ngSubmit)="add()">
+      <div style="border-bottom: 1px inset;">
+         <div class="modal-header">
+            <h4 class="modal-title bg-white">Add Charge</h4>
+            <span>
+               <label style="float: inline-start;margin-left: 200px;" class="container-checkbox">
+                  <input type="checkbox" formControlName="applyTPA" />
+                  <span class="checkmark"></span>
+               </label>
+               <span>Apply TPA</span>
+            </span>
+            <button type="button" class="btn-close" aria-label="Close"
+               (click)="activeModal.dismiss('Cross click')"></button>
+         </div>
+         <div class="modal-body">
+            <div class="col-sm-12">
+               <div class="form-group">
+                  <div class="row">
+                     <div class="col-md-2">
+                        <label>Date<span style="color: red">&nbsp;*</span></label>
+                        <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YYYY" matInput
+                           [matDatepicker]="picker1" name="date" id="date" formControlName="date" [ngClass]="{
+                           'is-invalid': f['date'].touched && f['date'].invalid
+                         }" />
+                        <mat-datepicker #picker1></mat-datepicker>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                           class="activity-datepicker"></mat-datepicker-toggle>
+                        <div class="invalid-feedback" *ngIf="f['date'].invalid && f['date'].touched">
+                           Please provide the date.
+                        </div>
+                     </div>
+                     <div class="col-md-2">
+                        <label>Charge Type<span style="color: red">&nbsp;*</span></label>
+                        <select class="form-select form-control" formControlName="chargeTypeId"
+                           (change)="onChargeTypeChange()" [ngClass]="{
+                  'is-invalid': f['chargeTypeId'].touched && f['chargeTypeId'].invalid
+               }">
+                           <option value="">-Select-</option>
+                           <option *ngFor="let item of chargeTypeList" [ngValue]="item.id">{{
+                              item.name }}</option>
+                        </select>
+                        <div class="invalid-feedback" *ngIf="f['chargeTypeId'].invalid && f['chargeTypeId'].touched">
+                           Please provide the charge type.
+                        </div>
+                     </div>
+                     <div class="col-md-2">
+                        <label>Charge Category<span style="color: red">&nbsp;*</span></label>
+                        <select class="form-select form-control" formControlName="chargeCategoryId"
+                           (change)="onChargeCategoryChange()" [ngClass]="{
+                  'is-invalid': f['chargeCategoryId'].touched && f['chargeCategoryId'].invalid
+               }">
+                           <option value="">-Select-</option>
+                           <option *ngFor="let item of filteredChargeCategoriesList" [ngValue]="item.id">{{
+                              item.name }}</option>
+                        </select>
+                        <div class="invalid-feedback"
+                           *ngIf="f['chargeCategoryId'].invalid && f['chargeCategoryId'].touched">
+                           Please provide the charge category.
+                        </div>
+                     </div>
+                     <div class="col-md-2">
+                        <label>Charge Name<span style="color: red">&nbsp;*</span></label>
+                        <select class="form-select form-control" formControlName="chargeId" (change)="onChargeChange()"
+                           [ngClass]="{
+                  'is-invalid': f['chargeId'].touched && f['chargeId'].invalid
+               }">
+                           <option value="">-Select-</option>
+                           <option *ngFor="let item of filteredChargeList" [ngValue]="item.id">{{
+                              item.name }}</option>
+                        </select>
+                        <div class="invalid-feedback" *ngIf="f['chargeId'].invalid && f['chargeId'].touched">
+                           Please provide the charge name.
+                        </div>
+                     </div>
+                     <div class="col-md-2">
+                        <label>Standard Charge (Rs)</label>
+                        <input class="form-control" type="text" name="standardCharge" id="standardCharge"
+                           formControlName="standardCharge" />
+                     </div>
+                     <div class="col-md-1">
+                        <label>TPA Charge</label>
+                        <input class="form-control" type="text" name="tpaCharge" id="tpaCharge"
+                           formControlName="tpaCharge" />
+                     </div>
+                     <div class="col-md-1">
+                        <label>Quantity</label>
+                        <input class="form-control" type="number" name="quantity" id="quantity"
+                           (keyup)="onQuantityInputKeyup($event)" formControlName="quantity" />
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-12">
+               <div class="form-group">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="row">
+                           <div class="col-md-4">
+                              Total
+                           </div>
+                           <div class="col-md-4">
+                              &nbsp;
+                           </div>
+                           <div class="col-md-4 border-bottom text-end">
+                              <span [innerHtml]="f['total'].value"></span>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-4">
+                              Discount (%)
+                           </div>
+                           <div class="col-md-4">
+                              <input type="number" name="discountPercentage" id="discountPercentage"
+                                 style="width: inherit;" (keyup)="onDiscountInputKeyup($event)"
+                                 formControlName="discountPercentage" />
+                           </div>
+                           <div class="col-md-4 border-bottom text-end">
+                              <span>{{f['total'].value * f['discountPercentage'].value / 100}}</span>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-4">
+                              Tax (%)
+                           </div>
+                           <div class="col-md-4">
+                              <span [innerHtml]="f['tax'].value"></span>%
+                           </div>
+                           <div class="col-md-4 border-bottom text-end">
+                              <span>{{(f['total'].value - (f['total'].value * f['discountPercentage'].value / 100)) *
+                                 f['tax'].value / 100}}</span>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-4">
+                              Net Amount (Rs)
+                           </div>
+                           <div class="col-md-4">
+                              &nbsp;
+                           </div>
+                           <div class="col-md-4 border-bottom text-end">
+                              <span [innerHtml]="f['netAmount'].value"></span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-8">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-10">
+                                 <label>Note</label>
+                                 <textarea class="form-control" id="note" name="note" formControlName="note"></textarea>
+                              </div>
+                              <div *ngIf="!isEdit" class="col-md-2">
+                                 <br />
+                                 <br />
+                                 <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded"
+                                    style="float: right;">
+                                    Add</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div *ngIf="isEdit" class="text-center m-1">
+         <button type="button" class="border-0 btn btn-primary btn-gradient-primary btn-rounded" (click)="save()">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+   <div *ngIf="!isEdit">
+      <div class="table-responsive">
+         <table class="table table-nowrap mb-0">
+            <thead>
+               <tr>
+                  <th>Date</th>
+                  <th>Charge Type</th>
+                  <th>Charge Category</th>
+                  <th>Charge Name</th>
+                  <th>Standard Charge</th>
+                  <th>TPA Charge</th>
+                  <th>Qty</th>
+                  <th>Discount </th>
+                  <th>Tax </th>
+                  <th>Net Amount</th>
+                  <th>Charge Note</th>
+                  <th></th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let charge of patientCharges;; let i = index">
+                  <td>
+                     <span [innerHtml]="charge.date|date"></span>
+                  </td>
+                  <td>
+                     <span [innerHtml]="charge.chargeType"></span>
+                  </td>
+                  <td>
+                     <span [innerHtml]="charge.chargeCategory"></span>
+                  </td>
+                  <td>
+                     <span [innerHtml]="charge.charge"></span>
+                  </td>
+                  <td>
+                     <span [innerHtml]="charge.standardCharge"></span>
+                  </td>
+                  <td>
+                     <span [innerHtml]="charge.tpaCharge"></span>
+                  </td>
+                  <td>
+                     <span [innerHtml]="charge.quantity"></span>
+                  </td>
+                  <td>
+                     <span [innerHtml]="charge.discountPercentage"></span>
+                  </td>
+                  <td>
+                     <span [innerHtml]="charge.tax"></span>
+                  </td>
+                  <td>
+                     <span [innerHtml]="charge.netAmount"></span>
+                  </td>
+                  <td class="break-word">
+                     <span [innerHtml]="charge.note"></span>
+                  </td>
+                  <td class="break-word">
+                     <i class="fa fa-trash pointer" style="color: red;cursor: pointer;font-size: large;"
+                        (click)="removeAt(i)"></i>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>
+<div *ngIf="!isEdit" class="text-center action-button-sticky">
+   <button type="button" class="border-0 btn btn-primary btn-gradient-primary btn-rounded" (click)="save()">
+      Save</button>&nbsp;&nbsp;
+   <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+      Cancel
+   </button>
+</div>

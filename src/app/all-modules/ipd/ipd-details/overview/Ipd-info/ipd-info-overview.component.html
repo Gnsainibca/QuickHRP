@@ -1,0 +1,66 @@
+<div class="col-md-12 col-sm-12">
+   <div class="ribbon-wrapper card m-b-10">
+      <div class="card-body">
+         <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>IPD INFORMATION</div>
+         <div class="row">
+            <div class="col-md-12">
+               <div class="row mb-2">
+                  <div class="col-md-4">
+                     <label><b>Case Id</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span [innerHtml]="caseId"></span>
+                  </div>
+               </div>
+               <div class="row mb-2">
+                  <div class="col-md-4">
+                     <label><b>IPD No</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span [innerHtml]="ipdNo"></span>
+                  </div>
+               </div>
+               <div class="row mb-2">
+                  <div class="col-md-4">
+                     <label><b>Admission Date</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span [innerHtml]="admissionDate | date : 'MMM dd, yyyy'"></span>
+                  </div>
+               </div>
+               <div class="row mb-2" *ngIf="bed">
+                  <div class="col-md-4">
+                     <label><b>Bed</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span [innerHtml]="bed"></span>
+                  </div>
+               </div>
+               <div class="row mb-2" *ngIf="dischargeDate">
+                  <div class="col-md-4">
+                     <label><b>Discharged Date</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span [innerHtml]="dischargeDate | date : 'MMM dd, yyyy'"></span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr />
+         <div class="row">
+            <apx-chart [series]="chartOptionsOne.series" [chart]="chartOptionsOne.chart"
+               [labels]="chartOptionsOne.labels" [responsive]="chartOptionsOne.responsive"
+               [colors]="chartOptionsOne.colors"></apx-chart>
+            <div>
+               <ul>
+                  <li><label>Credit Limit:</label> Rs <span [innerHtml]="creditLimit"></span></li>
+                  <li style="color: #FF0000;"><label>Used Credit Limit:</label> Rs <span
+                        [innerHtml]="usedCreditLimit"></span></li>
+                  <li style="color: #218925;"><label>Balance Credit Limit:</label> Rs <span
+                        [innerHtml]="balanceCreditLimit"></span></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

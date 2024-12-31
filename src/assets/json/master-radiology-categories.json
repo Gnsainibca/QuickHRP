@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "name": "MRI CARDIAC WITH CONTRAST",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "M. R. C. P.",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "CT 3D STUDY",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "CT CHEST PLAIN",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "CT ORBITS",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "DOPPLER PERIPHERAL BILATERAL (VENOUS)",
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "ULTRASOUND WHOLE ABDOMEN",
+      "isActive": true,
+      "id": 7
+    },
+    {
+      "name": "X-RAY LUMBOSACRAL SPINE AP AND LAT VIEWS",
+      "isActive": true,
+      "id": 8
+    },
+    {
+      "name": "X-RAY PNS (WATER'S VIEW)",
+      "isActive": true,
+      "id": 9
+    },
+    {
+      "name": "X-RAY CHEST PA VIEW",
+      "isActive": true,
+      "id": 10
+    }
+  ]
+}

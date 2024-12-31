@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "name": "1 Week",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "2 Week",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "1 Month",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Afternoon",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Morning",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Evening",
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "Night",
+      "isActive": true,
+      "id": 7
+    }
+  ]
+}

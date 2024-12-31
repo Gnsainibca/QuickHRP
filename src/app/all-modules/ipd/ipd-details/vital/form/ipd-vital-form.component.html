@@ -1,0 +1,79 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Vital</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form class="forms-vital" [formGroup]="vitalForm" (ngSubmit)="onSubmit()">
+      <div formArrayName="vitalInnerForm">
+         <table class="table table-nowrap mb-0">
+            <thead>
+               <tr>
+                  <th>Name<span style="color: red">&nbsp;*</span></th>
+                  <th>Date<span style="color: red">&nbsp;*</span></th>
+                  <th>Value<span style="color: red">&nbsp;*</span></th>
+                  <th style="width: 25%;">Status<span style="color: red">&nbsp;*</span></th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let innerForm of vitalInnerForm.controls; let pointIndex=index" [formGroupName]="pointIndex">
+                  <td>
+                     <select class="form-select form-control" formControlName="vitalId" (change)="onVitalChange(pointIndex)"
+                     [ngClass]="{
+                           'is-invalid': innerForm.get('vitalId')?.invalid && innerForm.get('vitalId')?.touched
+                        }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of vitalTypes" [ngValue]="item.id"><span
+                              [innerHtml]="getVitalRange(item)"></span></option>
+                     </select>
+                     <div class="invalid-feedback"
+                        *ngIf="innerForm.get('vitalId')?.invalid && innerForm.get('vitalId')?.touched">
+                        Please provide the name.
+                     </div>
+                  </td>
+                  <td>
+                     <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YYYY" matInput
+                        [matDatepicker]="picker1" formControlName="date" [ngClass]="{
+                              'is-invalid': innerForm.get('date')?.invalid && innerForm.get('date')?.touched
+                            }" />
+                     <mat-datepicker #picker1></mat-datepicker>
+                     <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                        class="activity-datepicker"></mat-datepicker-toggle>
+                     <div class="invalid-feedback"
+                        *ngIf="innerForm.get('date')?.invalid && innerForm.get('date')?.touched">
+                        Please provide the date.
+                     </div>
+                  </td>
+                  <td>
+                     <input class="form-control" type="text" formControlName="value" 
+                     (keyup)="onVitalValueChange(pointIndex)"
+                     [ngClass]="{
+                           'is-invalid': innerForm.get('value')?.invalid && innerForm.get('value')?.touched
+                        }" />
+                     <div class="invalid-feedback"
+                        *ngIf="innerForm.get('value')?.invalid && innerForm.get('value')?.touched">
+                        Please provide the value.
+                     </div>
+                  </td>
+                  <td>
+                     <div [ngClass]="innerForm.get('status')?.value == vitalStatus.Normal ? 'custom-slider-normal' : (innerForm.get('status')?.value == vitalStatus.High ? 'custom-slider-high' : 'custom-slider-low')">
+                        <ngx-slider formControlName="status" [options]="options"></ngx-slider>
+                     </div>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <div *ngIf="!isEdit" style="margin-top: 5px;">
+         <button type="button" (click)="addVital()"
+            class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            <i class="fa fa-plus"></i> Add More</button>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

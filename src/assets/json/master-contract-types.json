@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "name": "Permanent",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Probation",
+      "isActive": true,
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "name": "BP",
+      "fromValue": "90/60",
+      "toValue": "140/90",
+      "unit": "mmHg",
+      "id": 1
+    },
+    {
+      "name": "Temperature",
+      "fromValue": "95.8",
+      "toValue": "99.3",
+      "unit": "Fahrenheit",
+      "id": 2
+    },
+    {
+      "name": "Pulse",
+      "fromValue": "70",
+      "toValue": "100",
+      "unit": "Beats per minute",
+      "id": 3
+    },
+    {
+      "name": "Weight",
+      "fromValue": "1",
+      "toValue": "150",
+      "unit": "Kilograms",
+      "id": 4
+    },
+    {
+      "name": "Height",
+      "fromValue": "1",
+      "toValue": "200",
+      "unit": "Centimeters",
+      "id": 5
+    }
+  ]
+}

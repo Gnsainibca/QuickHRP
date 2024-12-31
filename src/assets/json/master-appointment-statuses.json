@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "name": "Cancel",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Approved",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Pending",
+      "isActive": true,
+      "id": 3
+    }
+  ]
+}

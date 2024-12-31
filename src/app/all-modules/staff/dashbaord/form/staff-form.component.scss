@@ -1,0 +1,26 @@
+.activity-datepicker {
+	margin-left: -42px;
+}
+
+.datetimepicker {
+	display: inline-block;
+}
+
+.crms-task-item.active .accordion-body {
+	display: block;
+}
+
+.action-button-sticky {
+    background-color: #f7f5f5;
+	margin: -12px;
+    height: 50px;
+    padding-top: 5px;
+	position: fixed;
+	width: -webkit-fill-available;
+	bottom: 10px;
+}
+
+::ng-deep .size-full .modal-dialog { 
+	max-width: 100% !important;
+	width:  100% !important;
+}

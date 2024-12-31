@@ -1,0 +1,42 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Tax Category</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="doctorShiftForm" name="doctorShiftForm" [formGroup]="doctorShiftForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Doctor Name</label>
+                  <span class="form-control">{{f['doctorName'].value}}</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label style="margin-bottom: 2px;">Shift</label>
+                  <div *ngFor="let item of shifts; let indx=index" style="margin-top: 2px;">
+                     <label style="float: inline-start;" class="container-checkbox"
+                        formArrayName="shiftInnerForm">
+                        <input type="checkbox" [formControlName]="indx" />
+                        <span class="checkmark"></span>
+                     </label>
+                     <span [innerHtml]="item.name"></span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

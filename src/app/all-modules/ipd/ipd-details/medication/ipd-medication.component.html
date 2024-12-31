@@ -1,0 +1,70 @@
+<div class="content container-fluid">
+   <!-- Page Header -->
+   <div class="crms-title row bg-white">
+      <div class="col">
+         <h3 class="page-title">
+            <span class="page-title-icon bg-gradient-primary text-white me-2">
+               <i class="la la-table"></i>
+            </span>
+            <ul class="breadcrumb bg-white display-inline-flex m-0 ps-0 pe-0">
+               <li class="breadcrumb-item"><a [routerLink]="routes.ipd">IPD</a></li>
+               <li class="breadcrumb-item active">Medication</li>
+           </ul>
+         </h3>
+      </div>
+      <div class="col text-end" *ngIf="!hasPatientDischarged">
+         <ul class="list-inline-item ps-0 m-0">
+            <li class="list-inline-item">
+               <button class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"
+                  id="add-task" (click)="add()">
+                  Add Medication Dose
+               </button>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div style="border-top: 2px solid lightgray;">
+      <div class="table-responsive">
+         <table class="table table-nowrap mb-0">
+            <thead>
+               <tr>
+                  <th>Date</th>
+                  <th style="margin-left: 26px;display: inline-block;">Medicine Name</th>
+                  <th style="padding-left: 80px;">Dose</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let groupedMedication of groupedMedications">
+                  <td><span [innerHtml]="groupedMedication.date | date"></span></td>
+                  <td>
+               <tr *ngFor="let medication of groupedMedication.medications; let  i = index">
+                  <td style="min-width: 25px;display: block;margin-top: -5px;padding-bottom: 10px;">
+                     <i *ngIf="i>0" class="fa fa-level-up fa-level-roated"></i>&nbsp;
+                  </td>
+                  <td>
+                     <span [innerHtml]="medication.medicine"></span> (<span [innerHtml]="medication.medicineCategory"></span>)
+                  </td>
+               </tr>
+               </td>
+               <td>
+                  <tr *ngFor="let medication of groupedMedication.medications" style="display: block;margin-bottom: 10px;">
+                     <td *ngIf="!hasPatientDischarged">
+                              <i (click)="addMore(groupedMedication.date, medication.time)" title="Add more" class="fa fa-plus" 
+                              style="padding-left: 10px;font-size: 15px; cursor: pointer;"></i>
+                              <i (click)="edit(medication.id)" title="Edit" class="fa fa-edit" style="padding-left: 10px; cursor: pointer;"></i>
+                              <i (click)="delete(medication.id)" title="Delete" class="fa fa-trash" style="padding-left: 10px; cursor: pointer;"></i>
+                              &nbsp;
+                     </td>
+                     <td> Time : <span [innerHtml]="medication.time"></span>, <span
+                           [innerHtml]="medication.medicineUnit"></span></td>
+                  </tr>
+               </td>
+               </tr>
+               <tr *ngIf="groupedMedications?.length==0" style="padding-top: 50px; min-height: 200px;display: inline-block;">
+                  No Rows To Show 
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

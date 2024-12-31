@@ -1,0 +1,495 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Staff</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form class="forms-staff" [formGroup]="staffForm" (ngSubmit)="onSubmit(staffForm)">
+      <mat-accordion>
+         <mat-expansion-panel expanded>
+            <mat-expansion-panel-header style="border: 1px solid lightgray;background-color: aliceblue;">
+               <mat-panel-title style="font-size:larger;"> Basic Information </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="row" style="margin-top: 15px;">
+               <div class="col-sm-12">
+                  <div class="row">
+                     <div class="col-md-10">
+                        <div class="col-sm-12">
+                           <div class="form-group">
+                              <div class="row">
+                                 <div class="col-md-2">
+                                    <label>Staff ID<span style="color: red">&nbsp;*</span></label>
+                                    <input class="form-control" type="text" name="staffId" id="staffId"
+                                       formControlName="staffId" [ngClass]="{
+                                    'is-invalid': f['staffId'].touched && f['staffId'].invalid
+                                  }" />
+                                    <div class="invalid-feedback" *ngIf="f['staffId'].invalid && f['staffId'].touched">
+                                       Please provide the staff id.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-2">
+                                    <label>Role<span style="color: red">&nbsp;*</span></label>
+                                    <select class="form-select form-control" formControlName="roleId" [ngClass]="{
+                                       'is-invalid': f['roleId'].touched && f['roleId'].invalid
+                                    }">
+                                       <option value="">-Select-</option>
+                                       <option *ngFor="let item of roleList" [ngValue]="item.id">{{
+                                          item.name }}</option>
+                                    </select>
+                                    <div class="invalid-feedback" *ngIf="f['roleId'].invalid && f['roleId'].touched">
+                                       Please provide the role.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-2">
+                                    <label>Designation</label>
+                                    <select class="form-select form-control" formControlName="designationId">
+                                       <option value="">-Select-</option>
+                                       <option *ngFor="let item of designationList" [ngValue]="item.id">{{
+                                          item.name }}</option>
+                                    </select>
+                                 </div>
+                                 <div class="col-md-2">
+                                    <label>Department</label>
+                                    <select class="form-select form-control" formControlName="departmentId">
+                                       <option value="">-Select-</option>
+                                       <option *ngFor="let item of departmentList" [ngValue]="item.id">{{
+                                          item.name }}</option>
+                                    </select>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <label>Specialist</label>
+                                    <ng-multiselect-dropdown [placeholder]="'Choose'" [settings]="dropdownSettings"
+                                       [data]="specialistList"
+                                       formControlName="specialistIds"></ng-multiselect-dropdown>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-12">
+                           <div class="form-group">
+                              <div class="row">
+                                 <div class="col-md-2">
+                                    <label>First Name<span style="color: red">&nbsp;*</span></label>
+                                    <input class="form-control" type="text" name="firstName" id="firstName"
+                                       formControlName="firstName" [ngClass]="{
+                                       'is-invalid': f['firstName'].touched && f['firstName'].invalid
+                                     }" />
+                                    <div class="invalid-feedback"
+                                       *ngIf="f['firstName'].invalid && f['firstName'].touched">
+                                       Please provide the first name.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-2">
+                                    <label>Last Name</label>
+                                    <input class="form-control" type="text" name="lastName" id="lastName"
+                                       formControlName="lastName" />
+                                 </div>
+                                 <div class="col-md-3">
+                                    <label>Father Name<span style="color: red">&nbsp;*</span></label>
+                                    <input class="form-control" type="text" name="fatherName" id="fatherName"
+                                       formControlName="fatherName" [ngClass]="{
+                                          'is-invalid': f['fatherName'].touched && f['fatherName'].invalid
+                                        }" />
+                                    <div class="invalid-feedback"
+                                       *ngIf="f['fatherName'].invalid && f['fatherName'].touched">
+                                       Please provide the father name.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-3">
+                                    <label>Mother Name</label>
+                                    <input class="form-control" type="text" name="motherName" id="motherName"
+                                       formControlName="motherName" />
+                                 </div>
+                                 <div class="col-md-2">
+                                    <label>Gender<span style="color: red">&nbsp;*</span></label>
+                                    <select class="form-select form-control" formControlName="genderId" [ngClass]="{
+                                       'is-invalid': f['genderId'].touched && f['genderId'].invalid
+                                    }">
+                                       <option value="">-Select-</option>
+                                       <option *ngFor="let item of genderList" [ngValue]="item.id">{{
+                                          item.name }}</option>
+                                    </select>
+                                    <div class="invalid-feedback"
+                                       *ngIf="f['genderId'].invalid && f['genderId'].touched">
+                                       Please provide the gender.
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-2">
+                        <img
+                           style="width: 90px; height: 100px;margin-bottom: 5px;display: block;margin: auto;border: 1px solid;"
+                           [src]="f['photo'].value">
+                        <div class="mb-2"></div>
+                        <input type="file" class="form-control" id="attachment" name="attachment"
+                           (change)="handleFileInput($event)" accept=".png,.jpg,.jpeg" style="display:none;" #file>
+                        <button type="button" (click)="file.click()" style="display: block;margin: auto;"
+                           class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Upload
+                           photo</button>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-12" style="height: 88px;">
+                  <div class="row">
+                     <div class="col-md-2">
+                        <label>Date Of Birth<span style="color: red">&nbsp;*</span></label>
+                        <input class="form-control datetimepicker" type="text" name="dob" id="dob" formControlName="dob"
+                           placeholder="MM/DD/YY" matInput [matDatepicker]="picker1" [ngClass]="{
+                                                         'is-invalid': f['dob'].touched && f['dob'].invalid}" />
+                        <mat-datepicker #picker1></mat-datepicker>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                           class="activity-datepicker"></mat-datepicker-toggle>
+                        <div class="invalid-feedback" *ngIf="f['dob'].invalid && f['dob'].touched">
+                           Please provide the date of birth.
+                        </div>
+                     </div>
+                     <div class="col-md-2">
+                        <label>Date Of Joining</label>
+                        <input class="form-control datetimepicker" type="text" name="doj" id="doj" formControlName="doj"
+                           placeholder="MM/DD/YY" matInput [matDatepicker]="picker2" />
+                        <mat-datepicker #picker2></mat-datepicker>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker2"
+                           class="activity-datepicker"></mat-datepicker-toggle>
+                     </div>
+                     <div class="col-md-2">
+                        <label>Marital Status</label>
+                        <select class="form-select form-control" formControlName="maritalStatusId">
+                           <option value="">-Select-</option>
+                           <option *ngFor="let item of maritalStatusList" [ngValue]="item.id">{{
+                              item.name }}</option>
+                        </select>
+                     </div>
+                     <div class="col-md-2">
+                        <label>Blood Group</label>
+                        <select class="form-select form-control" formControlName="bloodGroupId">
+                           <option value="">-Select-</option>
+                           <option *ngFor="let item of bloodGroupList" [ngValue]="item.id">{{
+                              item.name }}</option>
+                        </select>
+                     </div>
+                     <div class="col-md-2">
+                        <label>Phone Number</label>
+                        <input class="form-control" type="text" name="phone" id="phone" formControlName="phone" />
+                     </div>
+                     <div class="col-md-2">
+                        <label>Emergency Contact</label>
+                        <input class="form-control" type="text" name="alternatePhone" id="alternatePhone"
+                           formControlName="alternatePhone" />
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-12">
+                  <div class="form-group">
+                     <div class="row">
+                        <div class="col-md-2">
+                           <label>Email</label>
+                           <input class="form-control" type="text" name="email" id="email" formControlName="email" />
+                        </div>
+                        <div class="col-md-2">
+                           <label>Pan Number</label>
+                           <input class="form-control" type="text" name="panNumber" id="panNumber"
+                              formControlName="panNumber" />
+                        </div>
+                        <div class="col-md-2">
+                           <label>National Identification Number</label>
+                           <input class="form-control" type="text" name="nationalIdentificationNumber"
+                              id="nationalIdentificationNumber" formControlName="nationalIdentificationNumber" />
+                        </div>
+                        <div class="col-md-2">
+                           <label>Local Identification Number</label>
+                           <input class="form-control" type="text" name="localIdentificationNumber"
+                              id="localIdentificationNumber" formControlName="localIdentificationNumber" />
+                        </div>
+                        <div class="col-md-2">
+                           <label>Reference Contact</label>
+                           <textarea class="form-control" name="referenceContact" id="referenceContact"
+                              formControlName="referenceContact"></textarea>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-12">
+                  <div class="form-group">
+                     <div class="row">
+                        <div class="col-md-2">
+                           <label>Current Address</label>
+                           <textarea class="form-control" name="currentAddress" id="currentAddress"
+                              formControlName="currentAddress"></textarea>
+                        </div>
+                        <div class="col-md-2">
+                           <label>Permanent Address</label>
+                           <textarea class="form-control" name="permanentAddress" id="permanentAddress"
+                              formControlName="permanentAddress"></textarea>
+                        </div>
+                        <div class="col-md-2">
+                           <label>Qualification</label>
+                           <textarea class="form-control" name="qualification" id="qualification"
+                              formControlName="qualification"></textarea>
+                        </div>
+                        <div class="col-md-2">
+                           <label>Work Experience</label>
+                           <textarea class="form-control" name="workExperience" id="workExperience"
+                              formControlName="workExperience"></textarea>
+                        </div>
+                        <div class="col-md-2">
+                           <label>Specialization</label>
+                           <textarea class="form-control" name="specialization" id="specialization"
+                              formControlName="specialization"></textarea>
+                        </div>
+                        <div class="col-md-2">
+                           <label>Note</label>
+                           <textarea class="form-control" name="note" id="note" formControlName="note"></textarea>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </mat-expansion-panel>
+         <mat-expansion-panel style="margin-bottom: 50px;">
+            <mat-expansion-panel-header style="border: 1px solid lightgray;background-color: aliceblue;">
+               <mat-panel-title style="font-size:larger;"> Add More Details </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="row" style="margin-top: 15px;margin-bottom: 15px;">
+               <div class="col-sm-12">
+                  <div class="form-group">
+                     <div class="card flex-fill">
+                        <div class="card-header">
+                           <h5 class="card-title mb-0">Payroll</h5>
+                        </div>
+                        <div class="card-body">
+                           <div class="row">
+                              <div class="col-md-2">
+                                 <label>EPF No</label>
+                                 <input type="text" class="form-control" name="epfNo" id="epfNo"
+                                    formControlName="epfNo" />
+                              </div>
+                              <div class="col-md-2">
+                                 <label>Basic Salary</label>
+                                 <input type="text" class="form-control" name="basicSalary" id="basicSalary"
+                                    formControlName="basicSalary" />
+                              </div>
+                              <div class="col-md-2">
+                                 <label>Contract Type</label>
+                                 <select class="form-select form-control" formControlName="contractTypeId">
+                                    <option value="">-Select-</option>
+                                    <option *ngFor="let item of contractTypeList" [ngValue]="item.id">{{
+                                       item.name }}</option>
+                                 </select>
+                              </div>
+                              <div class="col-md-3">
+                                 <label>Work Shift</label>
+                                 <input type="text" class="form-control" name="workShift" id="workShift"
+                                    formControlName="workShift" />
+                              </div>
+                              <div class="col-md-3">
+                                 <label>Work Location</label>
+                                 <input type="text" class="form-control" name="workLocation" id="workLocation"
+                                    formControlName="workLocation" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col-sm-12">
+                  <div class="form-group">
+                     <div class="card flex-fill">
+                        <div class="card-header">
+                           <h5 class="card-title mb-0">Leaves</h5>
+                        </div>
+                        <div class="card-body">
+                           <div class="row">
+                              <div class="col-md-2">
+                                 <label>Casual Leave</label>
+                                 <input type="number" class="form-control" name="casualLeave" id="casualLeave"
+                                    formControlName="casualLeave" />
+                              </div>
+                              <div class="col-md-2">
+                                 <label>Privilege Leave</label>
+                                 <input type="number" class="form-control" name="privilegeLeave" id="privilegeLeave"
+                                    formControlName="privilegeLeave" />
+                              </div>
+                              <div class="col-md-2">
+                                 <label>Sick Leave</label>
+                                 <input type="number" class="form-control" name="sickLeave" id="sickLeave"
+                                    formControlName="sickLeave" />
+                              </div>
+                              <div class="col-md-2">
+                                 <label>Maternity/Paternity Leave</label>
+                                 <input type="number" class="form-control" name="maternityLeave" id="maternityLeave"
+                                    formControlName="maternityLeave" />
+                              </div>
+                              <div class="col-md-2">
+                                 <label>Floater Leave</label>
+                                 <input type="number" class="form-control" name="floaterLeave" id="floaterLeave"
+                                    formControlName="floaterLeave" />
+                              </div>
+                              <div class="col-md-2">
+                                 <label>Fixed Leave</label>
+                                 <input type="number" class="form-control" name="fixedLeave" id="fixedLeave"
+                                    formControlName="fixedLeave" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col-sm-12">
+                  <div class="form-group">
+                     <div class="card flex-fill">
+                        <div class="card-header">
+                           <h5 class="card-title mb-0">Bank Account Details</h5>
+                        </div>
+                        <div class="card-body">
+                           <div class="row">
+                              <div class="col-md-2">
+                                 <label>Account Title</label>
+                                 <input type="text" class="form-control" name="accountTitle" id="accountTitle"
+                                    formControlName="accountTitle" />
+                              </div>
+                              <div class="col-md-2">
+                                 <label>Bank Account No</label>
+                                 <input type="text" class="form-control" name="bankAccountNo" id="bankAccountNo"
+                                    formControlName="bankAccountNo" />
+                              </div>
+                              <div class="col-md-3">
+                                 <label>Bank Name</label>
+                                 <input type="text" class="form-control" name="bankName" id="bankName"
+                                    formControlName="bankName" />
+                              </div>
+                              <div class="col-md-3">
+                                 <label>Bank Branch Name</label>
+                                 <input type="text" class="form-control" name="bankBranchName" id="bankBranchName"
+                                    formControlName="bankBranchName" />
+                              </div>
+                              <div class="col-md-2">
+                                 <label>IFSC Code</label>
+                                 <input type="text" class="form-control" name="ifscCode" id="ifscCode"
+                                    formControlName="ifscCode" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col-sm-12">
+                  <div class="form-group">
+                     <div class="card flex-fill">
+                        <div class="card-header">
+                           <h5 class="card-title mb-0">Social Media Link</h5>
+                        </div>
+                        <div class="card-body">
+                           <div class="col-sm-12">
+                              <div class="form-group">
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <label>Facebook URL</label>
+                                       <input type="text" class="form-control" name="facebookURL" id="facebookURL"
+                                          formControlName="facebookURL" />
+                                    </div>
+                                    <div class="col-md-6">
+                                       <label>Twitter URL</label>
+                                       <input type="text" class="form-control" name="twitterURL" id="twitterURL"
+                                          formControlName="twitterURL" />
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="col-sm-12">
+                              <div class="form-group">
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <label>Linkedin URL</label>
+                                       <input type="text" class="form-control" name="linkedinURL" id="linkedinURL"
+                                          formControlName="linkedinURL" />
+                                    </div>
+                                    <div class="col-md-6">
+                                       <label>Instagram URL</label>
+                                       <input type="text" class="form-control" name="instagramURL" id="instagramURL"
+                                          formControlName="instagramURL" />
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col-sm-12">
+                  <div class="form-group">
+                     <div class="card flex-fill">
+                        <div class="card-header">
+                           <h5 class="card-title mb-0">Upload Documents</h5>
+                        </div>
+                        <div class="card-body">
+                           <div class="col-sm-12">
+                              <div class="form-group">
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <label>Resume</label>
+                                       <input type="file" class="form-control" id="attachment1" name="attachment1"
+                                          (change)="handleResumeFileInput($event)">
+                                       <a *ngIf="f['resumeFileName'].value" href="javascript:void(0);"
+                                          (click)="downloadResume()"><i class="fa fa-download"></i>&nbsp;<span
+                                             [innerHtml]="f['resumeFileName'].value"></span></a>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <label>Joining Letter</label>
+                                       <input type="file" class="form-control" id="attachment2" name="attachment2"
+                                          (change)="handleJoiningLetterFileInput($event)">
+                                       <a *ngIf="f['joiningLetterFileName'].value" href="javascript:void(0);"
+                                          (click)="downloadJoiningLetter()"><i class="fa fa-download"></i>&nbsp;<span
+                                             [innerHtml]="f['joiningLetterFileName'].value"></span></a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="col-sm-12">
+                              <div class="form-group">
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <label>Resignation Letter</label>
+                                       <input type="file" class="form-control" id="attachment3" name="attachment3"
+                                          (change)="handleResignationLetterFileInput($event)">
+                                       <a *ngIf="f['resignationLetterFileName'].value" href="javascript:void(0);"
+                                          (click)="downloadResignationLetter()"><i
+                                             class="fa fa-download"></i>&nbsp;<span
+                                             [innerHtml]="f['resignationLetterFileName'].value"></span></a>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <label>Other Documents</label>
+                                       <input type="file" class="form-control" id="attachment4" name="attachment4"
+                                          (change)="handleOtherDocumentsFileInput($event)">
+                                       <a *ngIf="f['otherFileName'].value" href="javascript:void(0);"
+                                          (click)="downloadOtherDocuments()"><i class="fa fa-download"></i>&nbsp;<span
+                                             [innerHtml]="f['otherFileName'].value"></span></a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </mat-expansion-panel>
+      </mat-accordion>
+
+      <div class="text-center action-button-sticky">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

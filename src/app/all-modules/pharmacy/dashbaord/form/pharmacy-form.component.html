@@ -1,0 +1,281 @@
+<div class="modal-header">
+   <h4 class="modal-title">Pharmacy Bill</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="pharmacyForm" name="pharmacyForm" class="forms-charge" [formGroup]="pharmacyForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12" style="background-color: lightgrey;">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <span><b>Bill No</b></span>&nbsp;
+                  <span [innerHtml]="billNo"></span>
+               </div>
+               <div class="col-md-6" style="text-align: right;">
+                  <label><b>Date</b></label> &nbsp;
+                  <span [innerHtml]="date | date : 'dd-MM-yyyy hh:mm a'"></span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-4">
+                  <label>Patient<span style="color: red">&nbsp;*</span></label>
+                  <select id="patientId" name="patientId" class="form-select form-control" formControlName="patientId"
+                     [ngClass]="{'is-invalid': f['patientId'].touched && f['patientId'].invalid}">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of patients" [ngValue]="item.id">{{
+                        item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['patientId'].invalid && f['patientId'].touched">
+                     Please provide patient.
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <label>Search patient by prescription no</label>
+                  <input type="text" class="form-control" name="prescriptionNo" id="prescriptionNo" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12" style="background-color:#f8f9fa">
+         <div class="form-group">
+            <div class="row">
+               <div formArrayName="medicineInnerForm">
+                  <table class="table table-nowrap mb-0">
+                     <thead>
+                        <tr>
+                           <th style="width: 15%;">Medicine Category<span style="color: red">&nbsp;*</span></th>
+                           <th style="width: 15%;">Medicine Name<span style="color: red">&nbsp;*</span></th>
+                           <th style="width: 15%;">Batch No<span style="color: red">&nbsp;*</span></th>
+                           <th style="width: 15%;">Expiry Date</th>
+                           <th style="width: 10%;">Quantity<span style="color: red">&nbsp;*</span></th>
+                           <th style="width: 10%;">Sale Price</th>
+                           <th style="width: 10%;">Tax (%)</th>
+                           <th style="width: 10%;">Amount</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let innerForm of medicineInnerForm.controls; let inxd=index" [formGroupName]="inxd">
+                           <td>
+                              <select id="categoryId" name="categoryId" (change)="onCategoryChange(inxd)"
+                                 class="form-select form-control" formControlName="categoryId" [ngClass]="{
+                                             'is-invalid': innerForm.get('categoryId')?.touched && innerForm.get('categoryId')?.invalid
+                                          }">
+                                 <option value="">-Select-</option>
+                                 <option *ngFor="let item of medicineCategories" [ngValue]="item.id">{{
+                                    item.name }}</option>
+                              </select>
+                           </td>
+                           <td>
+                              <select id="medicineId" name="medicineId" class="form-select form-control"
+                                 formControlName="medicineId" (change)="onMedicineChange(inxd)" [ngClass]="{
+                                             'is-invalid': innerForm.get('medicineId')?.touched && innerForm.get('medicineId')?.invalid
+                                          }">
+                                 <option value="">-Select-</option>
+                                 <option *ngFor="let item of innerForm.get('filteredPharmacyMedicines')?.value"
+                                    [ngValue]="item.id">{{
+                                    item.name }}</option>
+                              </select>
+                           </td>
+                           <td>
+                              <select class="form-select form-control" formControlName="batchNo"
+                                 (change)="onBatchChange(inxd)" [ngClass]="{
+                                 'is-invalid': innerForm.get('batchNo')?.touched && innerForm.get('batchNo')?.invalid
+                              }">
+                                 <option value="">-Select-</option>
+                                 <option *ngFor="let item of innerForm.get('filteredBatches')?.value"
+                                    [ngValue]="item.batchNo">{{ item.batchNo }}</option>
+                              </select>
+                           </td>
+                           <td>
+                              <span class="form-control bg-gray"
+                                 [innerHtml]="innerForm.get('expiryDate')?.value | date : 'MMM, yyyy'"></span>
+                           </td>
+                           <td>
+                              <input type="number" class="form-control" name="quantity" id="quantity"
+                                 formControlName="quantity" (keyup)="calculateTotalAmount()" [ngClass]="{
+                                 'is-invalid': innerForm.get('quantity')?.touched && innerForm.get('quantity')?.invalid
+                              }" />
+                           </td>
+                           <td>
+                              <span class="form-control bg-gray" [innerHtml]="innerForm.get('salePrice')?.value"></span>
+                           </td>
+                           <td>
+                              <span class="form-control bg-gray" [innerHtml]="innerForm.get('tax')?.value"></span>
+                           </td>
+                           <td>
+                              <span class="form-control bg-gray" [innerHtml]="innerForm.get('amount')?.value"></span>
+                           </td>
+                           <td>
+                              <i *ngIf="medicineInnerForm?.controls?.length! >1" (click)="deleteMedicine(inxd)"
+                                 class="fa fa-close"
+                                 style="font-size: 20px;cursor: pointer;margin-top: 10px;color: red;"
+                                 data-bs-toggle="tooltip" title="Delete"></i>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <div>
+                     <button type="button" (click)="addMedicine()" style="margin-bottom: 10px;margin-top: 10px;"
+                        class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+                        <i class="fa fa-plus"></i> Add Medicine</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div>
+         <hr />
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <label>Referral Doctor</label>
+                              <select id="referralDoctorId" name="referralDoctorId" class="form-select form-control"
+                                 formControlName="referralDoctorId" (change)="onReferralDoctorChange()">
+                                 <option value="">-Select-</option>
+                                 <option *ngFor="let item of doctors" [ngValue]="item.id">{{
+                                    item.name }}</option>
+                              </select>
+                           </div>
+                           <div class="col-md-6">
+                              <label>Doctor Name</label>
+                              <input *ngIf="!f['referralDoctorId'].value" type="text" class="form-control"
+                                 name="doctorName" id="doctorName" formControlName="doctorName" />
+                              <span *ngIf="f['referralDoctorId'].value" class="form-control"
+                                 style="background-color: #e9ecef;"></span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <label>Note</label>
+                              <textarea class="form-control" id="note" name="note" formControlName="note"></textarea>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6" style="background-color:#f8f9fa">
+                  <br />
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="col-sm-12">
+                                 <div class="form-group">
+                                    <div class="row">
+                                       <div class="col-md-4">
+                                          Total Amount (Rs)
+                                       </div>
+                                       <div class="col-md-4">
+                                          &nbsp;
+                                       </div>
+                                       <div class="col-md-4 border-bottom text-end">
+                                          <span [innerHtml]="f['totalAmount'].value"></span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-sm-12">
+                                 <div class="form-group">
+                                    <div class="row">
+                                       <div class="col-md-4">
+                                          Discount (%)
+                                       </div>
+                                       <div class="col-md-4">
+                                          <input type="number" name="discount" id="discount" style="width: inherit;"
+                                             (keyup)="onDiscountInputKeyup($event)" formControlName="discount" /> %
+                                       </div>
+                                       <div class="col-md-4 border-bottom text-end">
+                                          <span>{{round(f['totalAmount'].value * f['discount'].value / 100,2)}}</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-sm-12">
+                                 <div class="form-group">
+                                    <div class="row">
+                                       <div class="col-md-4">
+                                          Tax (%)
+                                       </div>
+                                       <div class="col-md-4">
+                                          <span [innerHtml]="f['totalTax'].value"></span>%
+                                       </div>
+                                       <div class="col-md-4 border-bottom text-end">
+                                          <span>{{round((f['totalAmount'].value - (f['totalAmount'].value *
+                                             f['discount'].value / 100)) *
+                                             f['totalTax'].value / 100,2)}}</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-sm-12">
+                                 <div class="form-group">
+                                    <div class="row">
+                                       <div class="col-md-4">
+                                          Net Amount (Rs)
+                                       </div>
+                                       <div class="col-md-4">
+                                          &nbsp;
+                                       </div>
+                                       <div class="col-md-4 border-bottom text-end">
+                                          <span [innerHtml]="f['netAmount'].value"></span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-sm-12">
+                                 <div class="form-group">
+                                    <div class="row">
+                                       <div class="col-md-6">
+                                          <label>Payment Mode<span style="color: red">&nbsp;*</span></label>
+                                          <select id="paymentModeId" name="paymentModeId"
+                                             class="form-select form-control" formControlName="paymentModeId" [ngClass]="{
+                                                'is-invalid': f['paymentModeId'].touched && f['paymentModeId'].invalid
+                                             }">
+                                             <option value="">-Select-</option>
+                                             <option *ngFor="let item of paymentModes" [ngValue]="item.id">{{
+                                                item.name }}</option>
+                                          </select>
+                                          <div class="invalid-feedback"
+                                             *ngIf="f['paymentModeId'].invalid && f['paymentModeId'].touched">
+                                             Please provide the payment mode.
+                                          </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                          <label>Payment Amount</label>
+                                          <span class="form-control text-end bg-gray"
+                                             [innerHtml]="f['paymentAmount'].value"></span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center action-button-sticky">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

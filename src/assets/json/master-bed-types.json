@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "name": "Normal",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "VIP",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Standard",
+      "isActive": true,
+      "id": 3
+    }
+  ]
+}

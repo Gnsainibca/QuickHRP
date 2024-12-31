@@ -1,0 +1,63 @@
+<div class="content container-fluid">
+   <!-- Page Header -->
+   <div class="crms-title row bg-white">
+      <div class="col">
+         <h3 class="page-title">
+            <span class="page-title-icon bg-gradient-primary text-white me-2">
+               <i class="la la-table"></i>
+            </span>
+            <ul class="breadcrumb bg-white display-inline-flex m-0 ps-0 pe-0">
+               <li class="breadcrumb-item"><a [routerLink]="routes.ipd">IPD</a></li>
+               <li class="breadcrumb-item active">Vital</li>
+            </ul>
+         </h3>
+      </div>
+      <div class="col text-end" *ngIf="!hasPatientDischarged">
+         <ul class="list-inline-item ps-0 m-0">
+            <li class="list-inline-item">
+               <button class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"
+                  id="add-task" data-bs-toggle="modal" (click)="add()">
+                  Add Vital
+               </button>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div style="border-top: 2px solid lightgray;">
+      <div class="table-responsive">
+         <table class="table table-nowrap mb-0">
+            <thead>
+               <tr>
+                  <th>Date</th>
+                  <th *ngFor="let vitalType of vitalTypes; let  i = index"><span
+                        [innerHtml]="getVitalRange(vitalType)"></span></th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let vital of vitalList; let  i = index">
+                  <td>
+                     <span [innerHtml]="vital.date|date"></span>
+                  </td>
+                  <td *ngFor="let vitalItem of vital.list; let j = index">
+                     <div *ngFor="let item of vitalItem.list; let k = index">
+                        <span
+                           [ngClass]="item.status == vitalStatus.Normal ? 'normal' : (item.status == vitalStatus.High ? 'high' : 'low')">
+                           <span [innerHtml]="item.value"></span> (<span
+                              [innerHtml]="item.date| date :'shortTime'"></span>)
+                        </span>
+                        <i *ngIf="!hasPatientDischarged" (click)="edit(item.id)" title="Edit" class="fa fa-edit"
+                           style="padding-left: 10px; cursor: pointer;"></i>
+                        <i *ngIf="!hasPatientDischarged" (click)="delete(item.id)" title="Delete" class="fa fa-trash"
+                           style="padding-left: 5px; cursor: pointer;"></i>
+                        <br />
+                     </div>
+                  </td>
+               </tr>
+               <tr *ngIf="vitalList?.length==0" style="padding-top: 50px; min-height: 200px;display: inline-block;">
+                  No Rows To Show
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

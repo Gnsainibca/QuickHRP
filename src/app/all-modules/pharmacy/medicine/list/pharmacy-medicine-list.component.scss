@@ -1,0 +1,80 @@
+.p-l-40 {
+	padding-left: 40px;
+}
+
+table {
+	width: 100%;
+}
+
+th,
+td {
+	padding: 10px;
+	text-align: left;
+}
+
+.ag-grid-wrapper {
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  :host ::ng-deep .ag-root-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  :host ::ng-deep .ag-body-horizontal-scroll {
+    order: -1;
+  }
+  :host ::ng-deep .ag-body-viewport {
+    overflow-x: hidden !important;
+  }
+  :host ::ng-deep .ag-body-horizontal-scroll-viewport{
+    scrollbar-width: thin;
+  }
+
+
+
+  .ag-grid-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /*
+   Ag-grid's default row hover and row selected colour have some transparency. But, since our action buttons column is placed absolutely over other columns, its background looks darker because of the way those transparent colours blend. So, it is better to use background colours with no transparency in this method.
+  */
+  ::ng-deep .ag-theme-alpine {
+    --ag-row-hover-color: hsl(207, 90%, 94%);
+    --ag-selected-row-background-color: hsl(207, 87%, 86%);
+  }
+  
+  /* Hide right header and spacer */
+  ::ng-deep .ag-pinned-right-header,
+  ::ng-deep .ag-horizontal-right-spacer {
+    width: 0 !important;
+    min-width: 0 !important;
+  }
+  
+  /* Add absolute position so that action buttons column will appear on top of other columns. pointer-events: none to pass on mousemove event to behind columns */
+  ::ng-deep .ag-pinned-right-cols-container {
+    position: absolute !important;
+    right: 0;
+    pointer-events: none;
+  }
+  /* Reset pointer-events so that click can happen on action buttons */
+  ::ng-deep .ag-pinned-right-cols-container * {
+    pointer-events: initial;
+  }
+  
+  /* Hide border of right-cols-container */
+  ::ng-deep .ag-pinned-right-cols-container .ag-cell {
+    border: none !important;
+  }
+  
+  /* Show action buttons only for row that is being hovered. For rows which are not being hovered, hide them by setting their width and padding to 0.*/
+  ::ng-deep .ag-pinned-right-cols-container .ag-row:not(.ag-row-hover),
+  ::ng-deep .ag-pinned-right-cols-container .ag-row:not(.ag-row-hover) .ag-cell {
+    width: 0 !important;
+    padding: 0 !important;
+  }
+  

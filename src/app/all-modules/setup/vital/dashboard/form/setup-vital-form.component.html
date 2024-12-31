@@ -1,0 +1,65 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Vital</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="vitalForm" name="vitalForm" [formGroup]="vitalForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Name<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="name" id="name" formControlName="name"
+                     [ngClass]="{'is-invalid': f['name'].invalid && f['name'].touched}" />
+                  <div class="invalid-feedback" *ngIf="f['name'].invalid && f['name'].touched">
+                     Please provide the name.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <b>Reference Range</b> (IF vital is having single value rather than range then enter only from range value)
+         <br />
+         <br />
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>From Range<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="fromValue" id="fromValue" formControlName="fromValue"
+                     [ngClass]="{'is-invalid': f['fromValue'].invalid && f['fromValue'].touched}" />
+                  <div class="invalid-feedback" *ngIf="f['fromValue'].invalid && f['fromValue'].touched">
+                     Please provide the from range.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>To Range</label>
+                  <input class="form-control" type="text" name="toValue" id="toValue" formControlName="toValue"
+                     [ngClass]="{'is-invalid': f['toValue'].invalid && f['toValue'].touched}" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Unit<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="unit" id="unit" formControlName="unit"
+                     [ngClass]="{'is-invalid': f['unit'].invalid && f['unit'].touched}" />
+                  <div class="invalid-feedback" *ngIf="f['unit'].invalid && f['unit'].touched">
+                     Please provide the unit.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

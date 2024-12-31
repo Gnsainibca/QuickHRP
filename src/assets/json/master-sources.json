@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "name": "Advertisement",
+      "description": null,
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Online Front Site",
+      "description": null,
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Front Office",
+      "description": null,
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "From visitors",
+      "description": "Visitor centers used to provide fairly basic information about the place, corporation or event they are celebrating, acting more as the entry way to a place. The role of the visitor center has been rapidly evolving over the past 10 years to become more of an experience and to tell the story of the place or brand it represents. Many have become destinations and experiences in their own right.",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Online Advertising",
+      "description": "Online advertising, also known as online marketing, Internet advertising, digital advertising or web advertising, is a form of marketing and advertising which uses the Internet to deliver promotional marketing messages to consumers.",
+      "isActive": true,
+      "id": 5
+    }
+  ]
+}

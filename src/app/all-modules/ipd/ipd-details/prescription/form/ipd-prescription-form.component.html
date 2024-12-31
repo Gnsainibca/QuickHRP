@@ -1,0 +1,262 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Prescription</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form class="forms-ipdPrescriptionForm" [formGroup]="ipdPrescriptionForm" (ngSubmit)="onSubmit()">
+      <div class="row" style="margin-bottom:10px;">
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-9">
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label>Header Note</label>
+                                 <angular-editor [placeholder]="'Enter text here...'" formControlName="headerNote"
+                                    [config]="config"></angular-editor>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-3">
+                                 <label>Finding Category</label>
+                                 <ng-multiselect-dropdown [placeholder]="'Choose'" [settings]="dropdownSettings"
+                                    [data]="findingCategories" 
+                                    (onSelect)="setFindingsItemWise($event)"
+                                    (onDeSelect)="setFindingsItemWise($event)"
+                                    (onSelectAll)="setFindingsWithAllItems($event)"
+                                    (onDeSelectAll)="setFindingsWithAllItems($event)"
+                                    formControlName="findingCategories"></ng-multiselect-dropdown>
+                              </div>
+                              <div class="col-md-3">
+                                 <label>Findings</label>
+                                 <ng-multiselect-dropdown [placeholder]="'Choose'" [settings]="dropdownSettings"
+                                    [data]="findingsByCategory" 
+                                    (onSelect)="setFindingDescriptionItemWise($event)"
+                                    (onDeSelect)="setFindingDescriptionItemWise($event)"
+                                    (onSelectAll)="setFindingDescriptionWithAllItems($event)"
+                                    (onDeSelectAll)="setFindingDescriptionWithAllItems($event)"
+                                    formControlName="findings"></ng-multiselect-dropdown>
+                              </div>
+                              <div class="col-md-4">
+                                 <label>Finding Description</label>
+                                 <textarea class="form-control" type="text" name="findingDescription"
+                                    id="findingDescription" formControlName="findingDescription"></textarea>
+                              </div>
+                              <div class="col-md-2">
+                                 <label>Print Finding</label>
+                                 <label class="container-checkbox">
+                                    <input type="checkbox" formControlName="printFindings" />
+                                    <span class="checkmark"></span>
+                                 </label>
+
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12" style="background-color:#f8f9fa">
+                        <div class="form-group">
+                           <div class="row">
+                              <div formArrayName="medicineInnerForm">
+
+                                 <table class="table table-nowrap mb-0">
+                                    <thead>
+                                       <tr>
+                                          <th>Medicine Category<span style="color: red">&nbsp;*</span></th>
+                                          <th>Medicine<span style="color: red">&nbsp;*</span></th>
+                                          <th>Dosage</th>
+                                          <th>Dose Interval<span style="color: red">&nbsp;*</span></th>
+                                          <th>Dose Duration<span style="color: red">&nbsp;*</span></th>
+                                          <th>Instruction</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr *ngFor="let innerForm of medicineInnerForm.controls; let inxd=index"
+                                          [formGroupName]="inxd">
+                                          <td>
+                                             <select id="medicineCategoryId" name="medicineCategoryId"
+                                                (change)="onMedicineCategoryChange(inxd)"
+                                                class="form-select form-control" formControlName="medicineCategoryId"
+                                                [ngClass]="{
+                                                'is-invalid': innerForm.get('medicineCategoryId')?.touched && innerForm.get('medicineCategoryId')?.invalid
+                                             }">
+                                                <option value="">-Select-</option>
+                                                <option *ngFor="let item of medicineCategories" [ngValue]="item.id">{{
+                                                   item.name }}</option>
+                                             </select>
+                                             <div class="invalid-feedback"
+                                                *ngIf="innerForm.get('medicineCategoryId')?.invalid && innerForm.get('medicineCategoryId')?.touched">
+                                                Please provide the medicine category.
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <select id="medicineId" name="medicineId" class="form-select form-control"
+                                                formControlName="medicineId" [ngClass]="{
+                                                'is-invalid': innerForm.get('medicineId')?.touched && innerForm.get('medicineId')?.invalid
+                                             }">
+                                                <option value="">-Select-</option>
+                                                <option *ngFor="let item of innerForm.get('filteredMedicines')?.value"
+                                                   [ngValue]="item.id">{{
+                                                   item.name }}</option>
+                                             </select>
+                                             <div class="invalid-feedback"
+                                                *ngIf="innerForm.get('medicineId')?.invalid && innerForm.get('medicineId')?.touched">
+                                                Please provide the medicine.
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <select id="unitId" name="unitId" class="form-select form-control"
+                                                formControlName="unitId">
+                                                <option value="">-Select-</option>
+                                                <option
+                                                   *ngFor="let item of innerForm.get('filteredMedicineDosages')?.value"
+                                                   [ngValue]="item.id">{{
+                                                   item.name }}</option>
+                                             </select>
+                                          </td>
+                                          <td>
+                                             <select id="doseIntervalId" name="doseIntervalId"
+                                                class="form-select form-control" formControlName="doseIntervalId"
+                                                [ngClass]="{
+                                                'is-invalid': innerForm.get('doseIntervalId')?.touched && innerForm.get('doseIntervalId')?.invalid
+                                             }">
+                                                <option value="">-Select-</option>
+                                                <option *ngFor="let item of dosageIntervals" [ngValue]="item.id">{{
+                                                   item.name }}</option>
+                                             </select>
+                                             <div class="invalid-feedback"
+                                                *ngIf="innerForm.get('doseIntervalId')?.invalid && innerForm.get('doseIntervalId')?.touched">
+                                                Please provide the dose interval.
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <select id="doseDurationId" name="doseDurationId"
+                                                class="form-select form-control" formControlName="doseDurationId"
+                                                [ngClass]="{
+                                                'is-invalid': innerForm.get('doseDurationId')?.touched && innerForm.get('doseDurationId')?.invalid
+                                             }">
+                                                <option value="">-Select-</option>
+                                                <option *ngFor="let item of dosageDurations" [ngValue]="item.id">{{
+                                                   item.name }}</option>
+                                             </select>
+                                             <div class="invalid-feedback"
+                                                *ngIf="innerForm.get('doseDurationId')?.invalid && innerForm.get('doseDurationId')?.touched">
+                                                Please provide the dose duration.
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <textarea class="form-control" type="text" name="instrunction"
+                                                id="instrunction" formControlName="instrunction"></textarea>
+                                          </td>
+                                          <td>
+                                             <i (click)="deleteMedicine(inxd)" class="fa fa-close"
+                                                style="font-size: 20px;cursor: pointer;margin-top: 12px;color: red;"
+                                                data-bs-toggle="tooltip" title="Delete"></i>
+                                          </td>
+                                       </tr>
+                                       <tr *ngIf="medicineInnerForm.controls?.length==0">
+                                          <td colspan="7" style="text-align: center;background-color: var(--bs-gray-400);;font-weight: bold;">No Medicines</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                 <div>
+                                    <button type="button" (click)="addMedicine()"
+                                       class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+                                       + Add Medicine</button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label>Footer Note</label>
+                                 <angular-editor [placeholder]="'Enter text here...'" formControlName="footerNote"
+                                    [config]="config"></angular-editor>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-3" style="background-color:#f8f9fa">
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label>Prescribe By<span style="color: red">&nbsp;*</span></label>
+                                 <select id="prescribeById" name="prescribeById" class="form-select form-control"
+                                    formControlName="prescribeById" [ngClass]="{
+                              'is-invalid': f['prescribeById'].touched && f['prescribeById'].invalid
+                           }">
+                                    <option value="">-Select-</option>
+                                    <option *ngFor="let item of doctors" [ngValue]="item.id">{{
+                                       item.name }}</option>
+                                 </select>
+                                 <div class="invalid-feedback"
+                                    *ngIf="f['prescribeById'].invalid && f['prescribeById'].touched">
+                                    Please provide the prescribe by.
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label>Pathology</label>
+                                 <ng-multiselect-dropdown [placeholder]="'Choose'" [settings]="dropdownSettings"
+                                    [data]="pathologyTests" formControlName="pathologyIds"></ng-multiselect-dropdown>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label>Radiology</label>
+                                 <ng-multiselect-dropdown [placeholder]="'Choose'" [settings]="dropdownSettings"
+                                    [data]="radiologyTests" formControlName="radiologyIds"></ng-multiselect-dropdown>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label style="margin-bottom: 2px;">Notification To</label>
+                                 <div *ngFor="let item of userRoles; let indx=index" style="margin-top: 2px;">
+                                    <label style="float: inline-start;" class="container-checkbox"
+                                       formArrayName="userRoleInnerForm">
+                                       <input type="checkbox" [formControlName]="indx" />
+                                       <span class="checkmark"></span>
+                                    </label>
+                                    <span [innerHtml]="item.name"></span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center action-button-sticky">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

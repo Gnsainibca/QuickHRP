@@ -1,0 +1,31 @@
+<div>
+   <div class="col-md-12 col-sm-12">
+      <div class="ribbon-wrapper card m-b-10">
+         <div class="card-body">
+            <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>OPERATION</div>
+            <div class="table-responsive">
+               <table class="table table-nowrap mb-0">
+                  <thead>
+                     <tr>
+                        <th>Reference #</th>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>OT Technician</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let operation of operations;">
+                        <td>OTREF<span [innerHtml]="operation.id"></span></td>
+                        <td><span [innerHtml]="operation.operationDate|date"></span></td>
+                        <td><span [innerHtml]="operation.operationName"></span></td>
+                        <td><span [innerHtml]="operation.operationCategory"></span></td>
+                        <td><span [innerHtml]="operation.otTechnician"></span></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

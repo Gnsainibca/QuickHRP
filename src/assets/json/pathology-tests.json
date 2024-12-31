@@ -1,0 +1,67 @@
+{
+  "data": [
+    {
+      "name": "Chest X-rays",
+      "shortName": "C X-rays",
+      "type": "COPD",
+      "categoryId": 3,
+      "subCategory": "COPD",
+      "method": "COPD",
+      "reportDays": 1,
+      "chargeCategoryId": 11,
+      "chargeId": 18,
+      "amount": 150,
+      "tax": 18,
+      "testParameterInnerForm": [
+        {
+          "testParameterId": 3,
+          "referenceRange": "4.1 to 5.1 million/mm3",
+          "unit": "million/mm3"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Abdomen X-rays",
+      "shortName": "AX",
+      "type": "Abdomen X-rays",
+      "categoryId": 6,
+      "subCategory": "Abdomen X-rays",
+      "method": "\tIonizing radiation",
+      "reportDays": 1,
+      "chargeCategoryId": 11,
+      "chargeId": 18,
+      "amount": 150,
+      "tax": 18,
+      "testParameterInnerForm": [
+        {
+          "testParameterId": 2,
+          "referenceRange": "7 to 55 units per liter",
+          "unit": "(U/L)"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "Liver test",
+      "shortName": "LFT",
+      "type": "Liver test ",
+      "categoryId": 6,
+      "subCategory": "LFT",
+      "method": "Liver test",
+      "reportDays": 2,
+      "chargeCategoryId": 11,
+      "chargeId": 18,
+      "amount": 150,
+      "tax": 18,
+      "testParameterInnerForm": [
+        {
+          "testParameterId": 1,
+          "referenceRange": "0.5 to 3.0",
+          "unit": "(U/L)"
+        }
+      ],
+      "id": 3
+    }
+  ]
+}

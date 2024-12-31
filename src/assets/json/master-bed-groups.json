@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "name": "Non AC",
+      "floorId": 5,
+      "description": null,
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "AC (Normal)",
+      "floorId": 2,
+      "description": null,
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "NICU",
+      "floorId": 3,
+      "description": "The NICU may be either the neurological intensive care unit or the neonatal intensive care unit, depending on whether the facility treats adults or children. In some facilities, the neurological ICU.",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "ICU",
+      "floorId": 3,
+      "description": "The intensive care unit (ICU) is where you're sent if you require close monitoring. The ICU is also referred to as a critical care unit.2﻿ Nurses in the ICU typically have just one or two patients",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "General Ward Male",
+      "floorId": 4,
+      "description": null,
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Private Ward",
+      "floorId": 4,
+      "description": "The operating room (OR) is where both inpatient and outpatient surgeries are performed.",
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "VIP Ward",
+      "floorId": 1,
+      "description": "A palliative or hospice unit is where end-of-life care is provided if you have a life-limiting illness, which may or may not be cancer-related.",
+      "isActive": true,
+      "id": 7
+    }
+  ]
+}

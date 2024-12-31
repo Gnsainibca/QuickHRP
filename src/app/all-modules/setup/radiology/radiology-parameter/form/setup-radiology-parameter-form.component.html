@@ -1,0 +1,72 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Radiology Parameter</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="radiologyParameterForm" name="radiologyParameterForm" [formGroup]="radiologyParameterForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Parameter Name<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="name" id="name" formControlName="name"
+                     [ngClass]="{'is-invalid': f['name'].invalid && f['name'].touched}" />
+                  <div class="invalid-feedback" *ngIf="f['name'].invalid && f['name'].touched">
+                     Please provide the parameter name.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Reference Range<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="referenceRange" id="referenceRange" formControlName="referenceRange"
+                     [ngClass]="{'is-invalid': f['referenceRange'].invalid && f['referenceRange'].touched}" />
+                  <div class="invalid-feedback" *ngIf="f['referenceRange'].invalid && f['referenceRange'].touched">
+                     Please provide the reference range.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Unit<span style="color: red">&nbsp;*</span></label>
+                  <select id="radiologyUnitId" name="radiologyUnitId" class="form-select form-control"
+                     formControlName="radiologyUnitId" [ngClass]="{
+                        'is-invalid': f['radiologyUnitId'].touched && f['radiologyUnitId'].invalid
+                     }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of radiologyUnits" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['radiologyUnitId'].invalid && f['radiologyUnitId'].touched">
+                     Please provide the unit.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Description</label>
+                  <textarea class="form-control" name="description" id="description" formControlName="description"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

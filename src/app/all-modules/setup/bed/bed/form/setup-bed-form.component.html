@@ -1,0 +1,81 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Bed</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="bedForm" name="bedForm" [formGroup]="bedForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Name<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="name" id="name" formControlName="name"
+                     [ngClass]="{'is-invalid': f['name'].invalid && f['name'].touched}" />
+                  <div class="invalid-feedback" *ngIf="f['name'].invalid && f['name'].touched">
+                     Please provide the name.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Bed Type<span style="color: red">&nbsp;*</span></label>
+                  <select id="bedTypeId" name="bedTypeId" class="form-select form-control"
+                     formControlName="bedTypeId" [ngClass]="{
+                        'is-invalid': f['bedTypeId'].touched && f['bedTypeId'].invalid
+                     }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of bedTypes" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['bedTypeId'].invalid && f['bedTypeId'].touched">
+                     Please provide the bed type.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Bed Group<span style="color: red">&nbsp;*</span></label>
+                  <select id="bedGroupId" name="bedGroupId" class="form-select form-control"
+                     formControlName="bedGroupId" [ngClass]="{
+                        'is-invalid': f['bedGroupId'].touched && f['bedGroupId'].invalid
+                     }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of bedGroups" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['bedGroupId'].invalid && f['bedGroupId'].touched">
+                     Please provide the bed group.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <br />
+                  <label style="float: inline-start;" class="container-checkbox">
+                     <input type="checkbox" formControlName="isAvailable" />
+                     <span class="checkmark"></span>
+                  </label>
+                  <span>Is available for use?</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

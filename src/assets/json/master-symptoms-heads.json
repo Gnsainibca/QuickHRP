@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "name": "Asthma",
+      "typeId": 1,
+      "description": "Asthma is a condition in which your airways narrow and swell and may produce extra mucus. This can make breathing difficult and trigger coughing, a whistling sound (wheezing) when you breathe out and shortness of breath. For some people, asthma is a minor nuisance.",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Constant or severe abdominal pain",
+      "typeId": 2,
+      "description": "Diseases that affect the digestive system can also cause chronic abdominal pain. The most common are: gastroesophageal reflux disease (GERD) irritable bowel syndrome or spastic colon (a disorder that causes abdominal pain, cramping, and changes in bowel movements)",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Bladder leakage",
+      "typeId": 3,
+      "description": "Urinary incontinence — the loss of bladder control — is a common and often embarrassing problem. The severity ranges from occasionally leaking urine when you cough or sneeze to having an urge to urinate that's so sudden and strong you don't get to a toilet in time.",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Atopic dermatitis (Eczema)",
+      "typeId": 4,
+      "description": "Atopic dermatitis usually develops in early childhood and is more common in people who have a family history of the condition.",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Cramps and injuries",
+      "typeId": 5,
+      "description": "Muscle pain: Muscle spasms, cramps and injuries can all cause muscle pain. Some infections or tumors may also lead to muscle pain. Tendon and ligament pain: Ligaments and tendons are strong bands of tissue that connect your joints and bones. Sprains, strains and overuse injuries can lead to tendon or ligament pain.",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Feeling sad or down",
+      "typeId": 6,
+      "description": "Personality change in a way that seems different for that person.",
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "Thirst",
+      "typeId": 7,
+      "description": "Thirst is the feeling of needing to drink something. It occurs whenever the body is dehydrated for any reason. Any condition that can result in a loss of body water can lead to thirst or excessive thirst.",
+      "isActive": true,
+      "id": 7
+    }
+  ]
+}

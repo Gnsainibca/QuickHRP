@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "opdPatientId": 12,
+      "operationCategoryId": 1,
+      "operationId": 1,
+      "operationDate": "2024-10-23T18:30:00.000Z",
+      "doctorId": 1,
+      "assistantConsultant1": "Mr. Vijay",
+      "assistantConsultant2": "Mr. Gaurav",
+      "anesthetist": "Mr. Ajeet Singh",
+      "anesthesiaType": "general",
+      "otTechnician": "Mr. Deepak Sharma",
+      "otAssistant": "Mr. Mukesh",
+      "remarks": "Test Remark",
+      "result": "Test Result"
+    },
+    {
+      "operationCategoryId": 2,
+      "opdPatientId": "12",
+      "operationId": 3,
+      "operationDate": "2024-10-24T18:30:00.000Z",
+      "doctorId": 2,
+      "assistantConsultant1": "Mr. Vijay",
+      "assistantConsultant2": "Mr. Gaurav",
+      "anesthetist": "Mr. Ajeet Singh",
+      "anesthesiaType": "general",
+      "otTechnician": "Mr. Deepak Sharma",
+      "otAssistant": "Mr. Mukesh",
+      "remarks": "Test Remark",
+      "result": "Test Result",
+      "id": 2
+    },
+    {
+      "id": 2,
+      "opdPatientId": 11,
+      "operationCategoryId": 3,
+      "operationId": 3,
+      "operationDate": "2024-10-20T18:30:00.000Z",
+      "doctorId": 3,
+      "assistantConsultant1": "Mr. Vijay",
+      "assistantConsultant2": "Mr. Gaurav",
+      "anesthetist": "Mr. Ajeet Singh",
+      "anesthesiaType": "general",
+      "otTechnician": "Mr. Deepak Sharma",
+      "otAssistant": "Mr. Mukesh",
+      "remarks": "Test Remark",
+      "result": "Test Result"
+    }
+  ]
+}

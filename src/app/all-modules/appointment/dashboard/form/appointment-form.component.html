@@ -1,0 +1,231 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Appointment</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form class="forms-visitor" [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-6">
+                     <label>Patient<span style="color: red">&nbsp;*</span></label>
+                     <select class="form-select form-control" formControlName="patientId" [ngClass]="{
+                        'is-invalid': f['patientId'].touched && f['patientId'].invalid
+                     }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of patients" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['patientId'].invalid && f['patientId'].touched">
+                        Please provide the patient.
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <br />
+                     <button type="button" class="border-0 btn btn-primary btn-gradient-primary btn-rounded"
+                        (click)="addPatient()">
+                        <i class="fa fa-plus"></i> New Patient</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-6">
+                     <label>Doctor<span style="color: red">&nbsp;*</span></label>
+                     <select class="form-select form-control" formControlName="doctorId" [ngClass]="{
+                        'is-invalid': f['doctorId'].touched && f['doctorId'].invalid
+                     }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of doctors" [ngValue]="item.id">{{
+                        item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['doctorId'].invalid && f['doctorId'].touched">
+                        Please provide the doctor.
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <label>Doctor Fees (Rs)<span style="color: red">&nbsp;*</span></label>
+                     <input class="form-control" type="number" name="fees" id="fees" formControlName="fees" [ngClass]="{
+                        'is-invalid': f['fees'].touched && f['fees'].invalid
+                      }" />
+                     <div class="invalid-feedback" *ngIf="f['fees'].invalid && f['fees'].touched">
+                        Please provide the doctor fees.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-6">
+                     <label>Shift<span style="color: red">&nbsp;*</span></label>
+                     <select class="form-select form-control" formControlName="shiftId" [ngClass]="{
+                        'is-invalid': f['shiftId'].touched && f['shiftId'].invalid
+                     }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of shifts" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['shiftId'].invalid && f['shiftId'].touched">
+                        Please provide the shift.
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <label>Appointment Date<span style="color: red">&nbsp;*</span></label>
+                     <input class="form-control datetimepicker" type="text" name="appointmentDate" id="appointmentDate"
+                        formControlName="appointmentDate" placeholder="MM/DD/YY" matInput [ngClass]="{
+                        'is-invalid': f['appointmentDate'].touched && f['appointmentDate'].invalid
+                     }" [matDatepicker]="picker1" />
+                     <mat-datepicker #picker1></mat-datepicker>
+                     <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                        class="activity-datepicker"></mat-datepicker-toggle>
+                     <div class="invalid-feedback"
+                        *ngIf="f['appointmentDate'].invalid && f['appointmentDate'].touched">
+                        Please provide the Appointment Date.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-6">
+                     <label>Slot<span style="color: red">&nbsp;*</span></label>
+                     <select class="form-select form-control" formControlName="slotId" [ngClass]="{
+                        'is-invalid': f['slotId'].touched && f['slotId'].invalid
+                     }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of slots" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['slotId'].invalid && f['slotId'].touched">
+                        Please provide the slot.
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <label>Appointment Priority<span style="color: red">&nbsp;*</span></label>
+                     <select class="form-select form-control" formControlName="priorityId" [ngClass]="{
+                        'is-invalid': f['priorityId'].touched && f['priorityId'].invalid
+                     }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of priorityList" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['priorityId'].invalid && f['priorityId'].touched">
+                        Please provide the priority.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-6">
+                     <label>Payment Mode<span style="color: red">&nbsp;*</span></label>
+                     <select class="form-select form-control" formControlName="paymentModeId" [ngClass]="{
+                        'is-invalid': f['paymentModeId'].touched && f['paymentModeId'].invalid
+                     }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of paymentModes" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['paymentModeId'].invalid && f['paymentModeId'].touched">
+                        Please provide the Payment Mode.
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <label>Status<span style="color: red">&nbsp;*</span></label>
+                     <select class="form-select form-control" formControlName="statusId" [ngClass]="{
+                        'is-invalid': f['statusId'].touched && f['statusId'].invalid
+                     }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of statusList" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['statusId'].invalid && f['statusId'].touched">
+                        Please provide the status.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-6">
+                     <label>Discount Percentage<span style="color: red">&nbsp;*</span></label>
+                     <input class="form-control" type="number" name="discount" id="discount" formControlName="discount"
+                        [ngClass]="{
+                        'is-invalid': f['discount'].touched && f['discount'].invalid
+                      }" />
+                     <div class="invalid-feedback" *ngIf="f['discount'].invalid && f['discount'].touched">
+                        Please provide the discount percentage.
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <label>Source<span style="color: red">&nbsp;*</span></label>
+                     <select class="form-select form-control" formControlName="sourceId" [ngClass]="{
+                                          'is-invalid': f['sourceId'].touched && f['sourceId'].invalid
+                                       }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of sourceList" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['sourceId'].invalid && f['sourceId'].touched">
+                        Please provide the source.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-12">
+                     <br />
+                     <label style="float: inline-start;" class="container-checkbox">
+                        <input type="checkbox" formControlName="liveConsultant" />
+                        <span class="checkmark"></span>
+                     </label>
+                     <span>Live Consultant (On Video Conference)</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-12">
+                     <label>Message</label>
+                     <textarea class="form-control" id="message" name="message" formControlName="message"></textarea>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-12">
+                     <label>Alternate Address</label>
+                     <textarea class="form-control" id="alternateAddress" name="alternateAddress"
+                        formControlName="alternateAddress"></textarea>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="button" type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

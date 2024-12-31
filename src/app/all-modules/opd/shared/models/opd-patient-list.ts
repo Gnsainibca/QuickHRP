@@ -1,0 +1,35 @@
+export interface OpdPatientList {
+    id: number,
+    opdNo : string,
+    caseId : string,
+    patientId : number,
+    opdPatientId : number,
+    patientVisitId : number,
+    patientName : string,
+    symptomsTypes: Array<number>,
+    symptomsTitles: Array<number>,
+    symptomsDescription: string,
+    note: string,
+    anyKnownAllergies : string,
+    previousMedicalIssue : string,
+
+    appointmentDate : Date,
+    anyCasualty : boolean,
+    isOldPatient : boolean,
+    reference: string,
+    consultantDoctorId:number;
+    consultantDoctor:string;
+    applyTPA : boolean,
+    chargeCategoryId : number,
+    chargeCategory : string,
+    chargeId : number,
+    charge : string,
+    standardCharge : number,
+    appliedCharge : number,
+    discount : number,
+    tax : number,
+    amount  : number,
+    paymentMode  : number,
+    paidAmount  : number,
+    needLiveConsultation : boolean
+  }

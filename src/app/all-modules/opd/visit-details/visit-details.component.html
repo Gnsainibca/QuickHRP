@@ -1,0 +1,125 @@
+<div>
+   <div class="page-wrapper">
+      <div class="content container-fluid">
+         <div>
+            <div style="overflow-x: scroll;scrollbar-width: thin;">
+               <!-- /Page Header -->
+               <ul class="nav nav-tabs nav-tabs-solid nav-tabs-solid bg-white"
+                  style="border-bottom: 2px solid;width: max-content;">
+                  <li class="nav-item">
+                     <a class="nav-link" [ngClass]="{'active': selectedTab===tab.Overview}"
+                        (click)="selectedTab=tab.Overview"
+                        [routerLink]="['/opd/patient/visit-details',opdPatientId,'Overview']"><i
+                           class="fa fa-table"></i> Overview</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" [ngClass]="{'active': selectedTab===tab.Visits}"
+                        (click)="selectedTab=tab.Visits"
+                        [routerLink]="['/opd/patient/visit-details',opdPatientId,'Visits']"><i
+                           class="far fa-caret-square-down"></i> Visits</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" [ngClass]="{'active': selectedTab===tab.Medication}"
+                        (click)="selectedTab=tab.Medication"
+                        [routerLink]="['/opd/patient/visit-details',opdPatientId,'Medication']"><i
+                           class="ion-medkit"></i>
+                        Medication</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" [ngClass]="{'active': selectedTab===tab.LabInvestigation}"
+                        (click)="selectedTab=tab.LabInvestigation"
+                        [routerLink]="['/opd/patient/visit-details',opdPatientId,'LabInvestigation']"><i
+                           class="ion-beaker"></i> Lab
+                        Investigation</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" [ngClass]="{'active': selectedTab===tab.Operations}"
+                        (click)="selectedTab=tab.Operations"
+                        [routerLink]="['/opd/patient/visit-details',opdPatientId,'Operations']"><i
+                           class="fas fa-cut"></i>
+                        Operations</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" [ngClass]="{'active': selectedTab===tab.Charges}"
+                        (click)="selectedTab=tab.Charges"
+                        [routerLink]="['/opd/patient/visit-details',opdPatientId,'Charges']"><i
+                           class="fas fa-donate"></i> Charges</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" [ngClass]="{'active': selectedTab===tab.Payments}"
+                        (click)="selectedTab=tab.Payments"
+                        [routerLink]="['/opd/patient/visit-details',opdPatientId,'Payments']"><i
+                           class="fas fa-hand-holding-usd"></i> Payments</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                     <a class="nav-link" [ngClass]="{'active': selectedTab===tab.LiveConsultation}"
+                        (click)="selectedTab=tab.LiveConsultation"
+                        [routerLink]="['/opd/patient/visit-details',opdPatientId,'LiveConsultation']"><i
+                           class="fa fa-video-camera ftlayer"></i>
+                        Live Consultation</a>
+                  </li> -->
+                  <li class="nav-item">
+                     <a class="nav-link" [ngClass]="{'active': selectedTab===tab.Timeline}"
+                        (click)="selectedTab=tab.Timeline"
+                        [routerLink]="['/opd/patient/visit-details',opdPatientId,'Timeline']"><i
+                           class="far fa-calendar-check"></i> Timeline</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" [ngClass]="{'active': selectedTab===tab.TreatmentHistory}"
+                        (click)="selectedTab=tab.TreatmentHistory"
+                        [routerLink]="['/opd/patient/visit-details',opdPatientId,'TreatmentHistory']"><i
+                           class="fas fa-diagnoses"></i>
+                        Treatment History</a>
+                  </li>
+                  <li class="nav-item">
+                     <a #target class="nav-link" [ngClass]="{'active': selectedTab===tab.Vitals}"
+                        (click)="selectedTab=tab.Vitals"
+                        [routerLink]="['/opd/patient/visit-details',opdPatientId,'Vitals']"><i
+                           class="fas fa-heartbeat"></i> Vitals</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="tab-content bg-white mb-3">
+               <div class="tab-pane" [ngClass]="{'show active': selectedTab===tab.Overview}" id="Overview">
+                  <span *ngIf="selectedTab===tab.Overview">
+                     <app-overview></app-overview>
+                  </span>
+               </div>
+               <div class="tab-pane" [ngClass]="{'show active': selectedTab===tab.Visits}" id="Visits">
+                  <app-visit-list></app-visit-list>
+               </div>
+               <div class="tab-pane" [ngClass]="{'show active': selectedTab===tab.Medication}" id="Medication">
+                  <app-medication></app-medication>
+               </div>
+               <div class="tab-pane" [ngClass]="{'show active': selectedTab===tab.LabInvestigation}"
+                  id="LabInvestigation">
+                  <app-opd-lab-investigation-list></app-opd-lab-investigation-list>
+               </div>
+               <div class="tab-pane" [ngClass]="{'show active': selectedTab===tab.Operations}" id="Operations">
+                  <app-operation-list></app-operation-list>
+               </div>
+               <div class="tab-pane" [ngClass]="{'show active': selectedTab===tab.Charges}" id="Charges">
+                  <app-charge-opd-list></app-charge-opd-list>
+               </div>
+               <div class="tab-pane" [ngClass]="{'show active': selectedTab===tab.Payments}" id="Payments">
+                  <app-payment-list></app-payment-list>
+               </div>
+               <!-- <div class="tab-pane" [ngClass]="{'show active': selectedTab===tab.LiveConsultation}"
+                  id="LiveConsultation">
+                  Live Consultation
+               </div> -->
+               <div class="tab-pane" [ngClass]="{'show active': selectedTab===tab.Timeline}" id="Timeline">
+                  <app-timeline-list></app-timeline-list>
+               </div>
+               <div class="tab-pane" [ngClass]="{'show active': selectedTab===tab.TreatmentHistory}"
+                  id="TreatmentHistory">
+                  <app-treatment-history></app-treatment-history>
+               </div>
+               <div class="tab-pane" [ngClass]="{'show active': selectedTab===tab.Vitals}" id="Vitals">
+                  <app-vital-list></app-vital-list>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

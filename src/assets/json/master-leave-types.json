@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "name": "Casual Leave",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Privilege Leave",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Sick Leave",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Maternity Leave",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Paternity Leave",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Fever Leave",
+      "isActive": true,
+      "id": 6
+    }
+  ]
+}

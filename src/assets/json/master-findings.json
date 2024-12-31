@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "name": "Refractive Errors",
+      "categoryId": 2,
+      "description": "A refractive error is a very common eye disorder. It occurs when the eye cannot clearly focus the images from the outside world. The result of refractive errors is blurred vision, which is sometimes so severe that it causes visual impairment",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Damaged Hair",
+      "categoryId": 3,
+      "description": "Hair damage is more than just split ends. Extremely damaged hair develops cracks in the outside layer (cuticle). Once the cuticle lifts (opens), your hair is at risk for further damage and breakage. It may also look dull or frizzy and be difficult to manage",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Osteoporosis",
+      "categoryId": 4,
+      "description": "Bone density problems may occur because the body loses too much bone tissue, makes too little of it, or some combination of both. It tends to be symptomless. That is, people with osteoporosis tend not to know they have it – until a bone fracture has them visiting a doctor who makes the diagnosis.",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Eczema",
+      "categoryId": 5,
+      "description": "Eczema (atopic dermatitis) is caused by a combination of immune system activation, genetics, environmental triggers and stress. Your immune system. If you have eczema, your immune system overreacts to small irritants or allergens. This overreaction can inflame your skin.",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Rosacea",
+      "categoryId": 5,
+      "description": "Rosacea (roe-ZAY-she-uh) is a common skin condition that causes blushing or flushing and visible blood vessels in your face. It may also produce small, pus-filled bumps. These signs and symptoms may flare up for weeks to months and then go away for a while.",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Hyperhidrosis disorder",
+      "categoryId": 7,
+      "description": "Hyperhidrosis disorder is a condition that results in excessive sweating. This sweating can occur in unusual situations, such as in cooler weather, or without any trigger at all. It can also be caused by other medical conditions, such as menopause or hyperthyroidism. Hyperhidrosis can be uncomfortable.",
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "Flushed complexion or hot skin",
+      "categoryId": 7,
+      "description": "Flushed skin is often a visual sign of embarrassment, anxiety, or being too hot. However, frequent flushing can sometimes indicate an underlying medical condition. Flushed skin occurs when the hundreds of tiny blood vessels just beneath the skin dilate, or widen.",
+      "isActive": true,
+      "id": 7
+    },
+    {
+      "name": "Elevated temperature (above 100.4°)",
+      "categoryId": 7,
+      "description": "The medical community generally defines a fever as a body temperature above 100.4 degrees Fahrenheit. A body temp between 100.4 and 102.2 degree is usually considered a low-grade fever.",
+      "isActive": true,
+      "id": 8
+    },
+    {
+      "name": "Headache",
+      "categoryId": 6,
+      "description": "Typhoid fever and paratyphoid fever are treated with antibiotics.",
+      "isActive": true,
+      "id": 9
+    },
+    {
+      "name": "Diarrhea or constipation",
+      "categoryId": 6,
+      "description": "Some people with typhoid fever or paratyphoid fever develop a rash of flat, rose-colored spots.",
+      "isActive": true,
+      "id": 10
+    },
+    {
+      "name": "Stomach pain",
+      "categoryId": 6,
+      "description": "Typhoid fever and paratyphoid fever have similar symptoms̵. People usually have a sustained fever (one that doesn’t come and go) that can be as high as 103–104°F (39–40°C).",
+      "isActive": true,
+      "id": 11
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+<div>
+   <div class="col-md-12 col-sm-12">
+      <div class="ribbon-wrapper card m-b-10">
+         <div class="card-body">
+            <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>LAB INVESTIGATION</div>
+            <div class="table-responsive">
+               <table class="table table-responsive mb-0">
+                  <thead>
+                     <tr>
+                        <th>Test Name</th>
+                        <th>Lab</th>
+                        <th>Sample Collected</th>
+                        <th>Expected Date</th>
+                        <th>Approved By</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let test of tests; let  i = index">
+                        <td>
+                           <span [innerHtml]="test.name"></span>
+                        </td>
+                        <td>
+                           <span [innerHtml]="test.lab"></span>
+                        </td>
+                        <td>
+                           <span *ngIf="test.sampleCollected?.collectedBy">
+                              <span [innerHtml]="test.sampleCollected?.collectedBy"></span>
+                              <br />
+                              <b><span [innerHtml]="test.lab"></span> Center:</b>&nbsp;<span [innerHtml]="test.sampleCollected?.pathologyCenter"></span>
+                              <br />
+                              <span [innerHtml]="test.sampleCollected?.collectedDate | date : 'MMM dd, yyyy hh:mm aaa'"></span>
+                           </span>
+                        </td>
+                        <td>
+                           <span [innerHtml]="test.reportDate | date : 'MMM dd, yyyy'"></span>
+                        </td>
+                        <td>
+                           <span [innerHtml]="test.approveReport?.approvedBy"></span>
+                           <br />
+                           <span [innerHtml]="test.approveReport?.approvedDate | date : 'MMM dd, yyyy hh:mm aaa'"></span>
+                        </td>
+                     </tr>
+                     <tr *ngIf="tests?.length==0" style="padding-top: 30px; min-height: 70px;display: inline-block;">
+                        No Rows To Show 
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

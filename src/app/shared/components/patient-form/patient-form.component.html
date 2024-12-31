@@ -1,0 +1,187 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Patient</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form class="forms-patient" [formGroup]="patientForm" (ngSubmit)="onSubmit(patientForm)">
+      <div class="row">
+
+         <div class="col-sm-12">
+            <div class="row">
+               <div class="col-md-9">
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <label>Name<span style="color: red">&nbsp;*</span></label>
+                              <input class="form-control" type="text" name="name" id="name" formControlName="name"
+                                 [ngClass]="{
+                                    'is-invalid': f['name'].touched && f['name'].invalid
+                                  }" />
+                              <div class="invalid-feedback" *ngIf="f['name'].invalid && f['name'].touched">
+                                 Please provide the doctor name.
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <label>Guardian Name<span style="color: red">&nbsp;*</span></label>
+                              <input class="form-control" type="text" name="guardianName" id="guardianName"
+                                 formControlName="guardianName" />
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-4">
+                              <label>Gender<span style="color: red">&nbsp;*</span></label>
+                              <select class="form-select form-control" formControlName="genderId" [ngClass]="{
+                                    'is-invalid': f['genderId'].touched && f['genderId'].invalid
+                                 }">
+                                 <option value="">-Select-</option>
+                                 <option *ngFor="let item of genderList" [ngValue]="item.id">{{
+                                    item.name }}</option>
+                              </select>
+                              <div class="invalid-feedback" *ngIf="f['genderId'].invalid && f['genderId'].touched">
+                                 Please provide the gender.
+                              </div>
+                           </div>
+                           <div class="col-md-4">
+                              <label>Date Of Birth</label>
+                              <input class="form-control datetimepicker" type="text" name="dob" id="dob"
+                                 (dateChange)="onDOBSelect($event)" formControlName="dob" placeholder="MM/DD/YY"
+                                 matInput [matDatepicker]="picker1" />
+                              <mat-datepicker #picker1></mat-datepicker>
+                              <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                                 class="activity-datepicker"></mat-datepicker-toggle>
+                           </div>
+                           <div class="col-md-4">
+                              <label>Age (Year-Month-Day)<span style="color: red">&nbsp;*</span></label>
+                              <div class="row">
+                                 <div class="col-md-4">
+                                    <input class="form-control" type="number" name="ageYear" id="ageYear"
+                                       formControlName="ageYear" [ngClass]="{
+                                    'is-invalid': f['ageYear'].touched && f['ageYear'].invalid
+                                 }" />
+                                 </div>
+                                 <div class="col-md-4">
+                                    <input class="form-control" type="number" name="ageMonth" id="ageMonth"
+                                       formControlName="ageMonth" />
+                                 </div>
+                                 <div class="col-md-4">
+                                    <input class="form-control" type="number" name="ageDay" id="ageDay"
+                                       formControlName="ageDay" />
+                                 </div>
+                              </div>
+                              <div class="invalid-feedback" *ngIf="f['ageYear'].invalid && f['ageYear'].touched">
+                                 Please provide the age.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <img
+                     style="width: 100px; height: 100px;margin-bottom: 5px;display: block;margin: auto;border: 1px solid lightgray;"
+                     [src]="f['photo'].value">
+                  <div class="mb-2"></div>
+                  <input type="file" class="form-control" id="attachment" name="attachment"
+                     (change)="handleFileInput($event)" accept=".png,.jpg,.jpeg" style="display:none;" #file>
+                  <button type="button" (click)="file.click()" style="display: block;margin: auto;"
+                     class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Upload
+                     photo</button>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-3">
+                     <label>Blood Group</label>
+                     <select class="form-select form-control" formControlName="bloodGroupId">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of bloodGroupList" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                  </div>
+                  <div class="col-md-3">
+                     <label>Marital Status</label>
+                     <select class="form-select form-control" formControlName="maritalStatusId">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of maritalStatusList" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                  </div>
+                  <div class="col-md-3">
+                     <label>Phone Number</label>
+                     <input class="form-control" type="text" name="phone" id="phone" formControlName="phone" />
+                  </div>
+                  <div class="col-md-3">
+                     <label>Alternate Phone Number</label>
+                     <input class="form-control" type="text" name="alternatePhone" id="alternatePhone"
+                        formControlName="alternatePhone" />
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-4">
+                     <label>Email</label>
+                     <input class="form-control" type="text" name="email" id="email" formControlName="email" />
+                  </div>
+                  <div class="col-md-4">
+                     <label>National Identification Number</label>
+                     <input class="form-control" type="text" name="idProofNo" id="idProofNo"
+                        formControlName="idProofNo" />
+                  </div>
+                  <div class="col-md-4">
+                     <label>Address</label>
+                     <textarea class="form-control" name="address" id="address" formControlName="address"></textarea>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-4">
+                     <label>TPA</label>
+                     <select class="form-select form-control" formControlName="tpaNameId">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of tpaList" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                  </div>
+                  <div class="col-md-4">
+                     <label>TPA ID</label>
+                     <input class="form-control" type="text" name="tpaId" id="tpaId" formControlName="tpaId" />
+                  </div>
+                  <div class="col-md-4">
+                     <label>TPA Validity</label>
+                     <input class="form-control datetimepicker" type="text" name="tpaExpiryDate" id="tpaExpiryDate"
+                        formControlName="tpaExpiryDate" placeholder="MM/DD/YY" matInput [matDatepicker]="picker2" />
+                     <mat-datepicker #picker2></mat-datepicker>
+                     <mat-datepicker-toggle matIconSuffix [for]="picker2"
+                        class="activity-datepicker"></mat-datepicker-toggle>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </div>
+      <div class="text-center">
+         <button type="button" type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

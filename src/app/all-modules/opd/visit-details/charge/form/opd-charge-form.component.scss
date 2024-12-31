@@ -1,0 +1,48 @@
+.activity-datepicker {
+	margin-left: -42px;
+}
+
+.datetimepicker {
+	display: inline-block;
+}
+
+.crms-task-item.active .accordion-body {
+	display: block;
+}
+
+span.checkmark {
+	background-color: white;
+}
+
+.m-b-0 {
+	margin-bottom: 0;
+}
+
+.action-button-sticky {
+	bottom: 15px;
+    position: absolute;
+    background-color: #f7f5f5;
+    margin: -15px;
+    height: 50px;
+    padding-top: 5px;
+    width: -webkit-fill-available;
+}
+
+::ng-deep .size-full .modal-dialog { 
+	max-width: 100% !important;
+	width:  100% !important;
+}
+
+.border-bottom {
+	border-bottom: 1px solid;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}

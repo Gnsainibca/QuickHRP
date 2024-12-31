@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "name": "VKS Pharmacy",
+      "phone": "7546985214",
+      "contactPersonName": "Vinay Shrivastava",
+      "contactPersonPhone": "9754632587",
+      "drugLicenseNo": "DFDR555--000",
+      "address": "Andheri, Mumbai",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Anant Pharmacy",
+      "phone": "9856478521",
+      "contactPersonName": "Anant Singh",
+      "contactPersonPhone": "9856478521",
+      "drugLicenseNo": "SFR-96-HJNFV",
+      "address": "Rohini, New Delhi",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "SGS Pharmacy",
+      "phone": "7864251478",
+      "contactPersonName": "Nitin Viraj",
+      "contactPersonPhone": "7864251478",
+      "drugLicenseNo": "RTD-74586",
+      "address": "Civil lines, New Delhi",
+      "isActive": true,
+      "id": 3
+    }
+  ]
+}

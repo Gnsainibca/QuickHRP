@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "name": "Ultrasound",
+      "referenceRange": "7 mm",
+      "radiologyUnitId": 3,
+      "description": "Ultrasound is sound waves with frequencies higher than the upper audible limit of human hearing. Ultrasound is not different from \"normal\" (audible) sound in its physical properties, except that humans cannot hear it.",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Magnetic resonance imaging (MRI)",
+      "referenceRange": "0.2 and 7 T",
+      "radiologyUnitId": 1,
+      "description": "Magnetic resonance imaging (MRI) is a medical imaging technique used in radiology to form pictures of the anatomy and the physiological processes of the body. MRI scanners use strong magnetic fields, magnetic field gradients, and radio waves to generate images of the organs in the body.",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Fluoroscopy",
+      "referenceRange": "30 mGy/min",
+      "radiologyUnitId": 2,
+      "description": "Fluoroscopy is a study of moving body structures--similar to an X-ray \"movie.\" A continuous X-ray beam is passed through the body part being examined. The beam is transmitted to a TV-like monitor so that the body part and its motion can be seen in detail.",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "MRI Cardiac with Contrast",
+      "referenceRange": "1.5 CT",
+      "radiologyUnitId": 7,
+      "description": "MRI Cardiac with Contrast",
+      "isActive": true,
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "name": "Nose Diseases",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Eye Diseases",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Hair Problems",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Bone Density Problems",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Skin problems",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Typhidot (or Widal Test)",
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "Fever",
+      "isActive": true,
+      "id": 7
+    }
+  ]
+}

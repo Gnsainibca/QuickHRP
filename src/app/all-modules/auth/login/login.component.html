@@ -1,0 +1,88 @@
+<!-- Main Wrapper -->
+  <div class="account-content">
+    <div class="container">
+      <!-- Account Logo -->
+      <div class="account-logo">
+        <a [routerLink]="routes.appointment"
+          ><img src="assets/img/logo.png" alt="Dreamguy's Technologies"
+        /></a>
+      </div>
+      <!-- /Account Logo -->
+
+      <div class="account-box">
+        <div class="account-wrapper">
+          <h3 class="account-title">Login</h3>
+          <p class="account-subtitle">Access to our dashboard</p>
+
+          <!-- Account Form -->
+          <form [formGroup]="form" (ngSubmit)="loginFormSubmit()">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input
+                class="form-control"
+                type="text" formControlName="email"
+                [ngClass]="{
+                  'is-invalid': f['email'].touched && f['email'].invalid
+                }"
+              />
+              <div
+                *ngIf="f['email'].touched && f['email'].invalid"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['email'].errors && f['email'].errors['required']">
+                  Email is required.
+                </div>
+                <div *ngIf="f['email'].errors && f['email'].errors['email']">
+                  Please, enter valid email address.
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <label>Password</label>
+                </div>
+                <div class="col-auto">
+                  <a class="text-muted" [routerLink]="routes.forgotPassword">
+                    Forgot password?
+                  </a>
+                </div>
+              </div>
+              <input
+                class="form-control"
+                type="password" formControlName="password"
+                [ngClass]="{
+                  'is-invalid': f['password'].touched && f['password'].invalid
+                }"
+              />
+              <div
+                *ngIf="f['password'].touched && f['password'].invalid"
+                class="invalid-feedback"
+              >
+                <div
+                  *ngIf="
+                    f['password'].errors && f['password'].errors['required']
+                  "
+                >
+                  Password is required.
+                </div>
+              </div>
+            </div>
+            <div class="form-group text-center">
+              <button [disabled]="form.invalid" class="btn btn-primary account-btn" type="submit">
+                Login
+              </button>
+            </div>
+            <div class="account-footer">
+              <p>
+                Don't have an account yet?
+                <a [routerLink]="routes.register">Register</a>
+              </p>
+            </div>
+          </form>
+          <!-- /Account Form -->
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- /Main Wrapper -->

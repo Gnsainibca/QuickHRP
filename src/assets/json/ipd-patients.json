@@ -1,0 +1,100 @@
+{
+  "data": [
+    {
+      "patientName": "Gaurav Naagwan (3)",
+      "patientId": 3,
+      "symptomsTypes": [
+        {
+          "id": 4,
+          "name": "Skin problems"
+        }
+      ],
+      "symptomsTitles": [
+        {
+          "id": 4,
+          "name": "Atopic dermatitis (Eczema)"
+        }
+      ],
+      "symptomsDescription": "Atopic dermatitis usually develops in early childhood and is more common in people who have a family history of the condition.",
+      "anyKnownAllergies": "Dust Allergies",
+      "previousMedicalIssue": "NA",
+      "note": null,
+      "appointmentDate": "2024-12-20T18:30:00.000Z",
+      "caseId": "TASD1002",
+      "anyCasualty": false,
+      "isOldPatient": false,
+      "reference": "DR Mohit",
+      "consultantDoctorId": 1,
+      "applyTPA": false,
+      "creditLimit": "10000",
+      "bedId": 25,
+      "needLiveConsultation": false,
+      "id": 1002,
+      "ipdNo": "IPDN1002"
+    },
+    {
+      "patientName": "Sachin Gupta (2)",
+      "patientId": 2,
+      "symptomsTypes": [
+        {
+          "id": 7,
+          "name": "Eating or weight problems"
+        }
+      ],
+      "symptomsTitles": [
+        {
+          "id": 7,
+          "name": "Thirst"
+        }
+      ],
+      "symptomsDescription": "Thirst is the feeling of needing to drink something. It occurs whenever the body is dehydrated for any reason. Any condition that can result in a loss of body water can lead to thirst or excessive thirst.",
+      "anyKnownAllergies": "Dust Allergies",
+      "previousMedicalIssue": "NA",
+      "note": "NA",
+      "appointmentDate": "2024-12-06T18:30:00.000Z",
+      "caseId": "TASD1003",
+      "anyCasualty": false,
+      "isOldPatient": false,
+      "reference": "DR Amit",
+      "consultantDoctorId": 3,
+      "applyTPA": false,
+      "creditLimit": "5000",
+      "bedId": 16,
+      "needLiveConsultation": false,
+      "id": 1003,
+      "ipdNo": "IPDN1003"
+    },
+    {
+      "patientName": "Sachin Gupta (2)",
+      "patientId": 2,
+      "symptomsTypes": [
+        {
+          "id": 2,
+          "name": "Stomach problems"
+        }
+      ],
+      "symptomsTitles": [
+        {
+          "id": 2,
+          "name": "Constant or severe abdominal pain"
+        }
+      ],
+      "symptomsDescription": "Diseases that affect the digestive system can also cause chronic abdominal pain. The most common are: gastroesophageal reflux disease (GERD) irritable bowel syndrome or spastic colon (a disorder that causes abdominal pain, cramping, and changes in bowel movements)",
+      "anyKnownAllergies": "Dust Allergies",
+      "previousMedicalIssue": null,
+      "note": null,
+      "appointmentDate": "2024-12-05T18:30:00.000Z",
+      "caseId": "TASD1001",
+      "anyCasualty": false,
+      "isOldPatient": true,
+      "reference": "DR Amit",
+      "consultantDoctorId": 3,
+      "applyTPA": false,
+      "creditLimit": "2000",
+      "bedId": 12,
+      "needLiveConsultation": false,
+      "id": 1001,
+      "ipdNo": "IPDN1001"
+    }
+  ]
+}

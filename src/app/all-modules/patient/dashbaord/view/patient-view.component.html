@@ -1,0 +1,173 @@
+<div class="modal-header">
+   <h4 class="modal-title">Patient Details</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body" style="background-color: aliceblue;">
+   <div class="row" style="margin-top: 15px;margin-bottom: 15px;" *ngIf="patient">
+
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="table-responsive">
+                  <table class="table mb-0">
+                     <tbody>
+                        <tr>
+                           <td class="p-20" style="width: 60%;">
+                              <img style="border-radius: 50%;width: 120px;height: 120px;border: 1px solid lightgray;"
+                                 [src]="patient.photo" />
+                              &nbsp;
+                              <div style="display: inline-block;">
+                                 <span style="font-size: x-large;font-weight: bold;"><span
+                                       [innerHtml]="patient.name"></span> (<span
+                                       [innerHtml]="patient.id"></span>)</span>
+                                 <br>
+                                 <span>
+                                    <i (click)="edit(patient.id)" style="padding-left: 20px;cursor:pointer;"
+                                       class="fa fa-edit" data-bs-toggle="tooltip" title="Edit"></i>
+                                    <i (click)="delete(patient.id)" style="padding-left: 10px;cursor:pointer;"
+                                       class="fa fa-trash" data-bs-toggle="tooltip" title="Delete"></i>
+                                 </span>
+                              </div>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="4" style="padding: 0;">
+                              <table class="table table-bordered mb-0">
+                                 <tbody>
+                                    <tr>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Guardian Name</label>
+                                          <br />
+                                          <span [innerHtml]="patient.guardianName"></span>
+                                       </td>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Gender</label>
+                                          <br />
+                                          <span [innerHtml]="patient.gender"></span>
+                                       </td>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Phone Number</label>
+                                          <br />
+                                          <span [innerHtml]="patient.phone"></span>
+                                       </td>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Blood Group</label>
+                                          <br />
+                                          <span [innerHtml]="patient.bloodGroup"></span>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Date Of Birth</label>
+                                          <br />
+                                          <span [innerHtml]="patient.dob | date : 'MMM dd, yyyy'"></span>
+                                          <br />
+                                          <span [innerHtml]="patient.ageYear"></span> Year(s) <span
+                                             [innerHtml]="patient.ageMonth"></span> Month(s)
+                                       </td>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Marital Status</label>
+                                          <br />
+                                          <span [innerHtml]="patient.maritalStatus"></span>
+                                       </td>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Email</label>
+                                          <br />
+                                          <span [innerHtml]="patient.email"></span>
+                                       </td>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Address</label>
+                                          <br />
+                                          <span [innerHtml]="patient.address"></span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div *ngIf="opdList.length>0" class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="card-header bg-gray">
+                  <h5 class="card-title mb-0">OPD Details</h5>
+               </div>
+               <div class="table-responsive">
+                  <ag-grid-angular class="ag-theme-quartz" [domLayout]="'autoHeight'" [pagination]="pagination"
+                     [paginationPageSize]="paginationPageSize" [paginationPageSizeSelector]="paginationPageSizeSelector"
+                     [rowData]="opdList" [columnDefs]="colDefs_opd" [scrollbarWidth]="11" [context]="this" />
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div *ngIf="ipdList.length>0" class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="card-header bg-gray">
+                  <h5 class="card-title mb-0">IPD Details</h5>
+               </div>
+               <div class="table-responsive">
+                  <ag-grid-angular class="ag-theme-quartz" [domLayout]="'autoHeight'" [pagination]="pagination"
+                     [paginationPageSize]="paginationPageSize" [paginationPageSizeSelector]="paginationPageSizeSelector"
+                     [rowData]="ipdList" [columnDefs]="colDefs_ipd" [scrollbarWidth]="11" [context]="this" />
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div *ngIf="pharmacyList.length>0" class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="card-header bg-gray">
+                  <h5 class="card-title mb-0">Pharmacy Details</h5>
+               </div>
+               <div class="table-responsive">
+                  <ag-grid-angular class="ag-theme-quartz" [domLayout]="'autoHeight'" [pagination]="pagination"
+                     [paginationPageSize]="paginationPageSize" [paginationPageSizeSelector]="paginationPageSizeSelector"
+                     [rowData]="pharmacyList" [columnDefs]="colDefs_pharmacy" [scrollbarWidth]="11" [context]="this" />
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div *ngIf="pathologyList.length>0" class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="card-header bg-gray">
+                  <h5 class="card-title mb-0">Pathology Details</h5>
+               </div>
+               <div class="table-responsive">
+                  <ag-grid-angular class="ag-theme-quartz" [domLayout]="'autoHeight'" [pagination]="pagination"
+                     [paginationPageSize]="paginationPageSize" [paginationPageSizeSelector]="paginationPageSizeSelector"
+                     [rowData]="pathologyList" [columnDefs]="colDefs_pathology" [scrollbarWidth]="11"
+                     [context]="this" />
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div *ngIf="radiologyList.length>0" class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="card-header bg-gray">
+                  <h5 class="card-title mb-0">Radiology Details</h5>
+               </div>
+               <div class="table-responsive">
+                  <ag-grid-angular class="ag-theme-quartz" [domLayout]="'autoHeight'" [pagination]="pagination"
+                     [paginationPageSize]="paginationPageSize" [paginationPageSizeSelector]="paginationPageSizeSelector"
+                     [rowData]="radiologyList" [columnDefs]="colDefs_radiology" [scrollbarWidth]="11"
+                     [context]="this" />
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+</div>

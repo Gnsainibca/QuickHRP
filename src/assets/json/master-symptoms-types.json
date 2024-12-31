@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "name": "Lung problems",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Stomach problems",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Bladder problems",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Skin problems",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Muscle or joint problems",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Emotional problems",
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "Eating or weight problems",
+      "isActive": true,
+      "id": 7
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+<div>
+   <div class="page-wrapper">
+      <div class="content container-fluid">
+         <!-- Page Header -->
+         <div class="crms-title row bg-white mb-3">
+            <div class="col">
+               <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white me-2">
+                     <i class="la la-table"></i>
+                  </span>
+                  <span>Radiology Setup</span>
+               </h3>
+            </div>
+         </div>
+         <div>
+            <div class="col-12">
+               <div class="card flex-fill">
+                  <div class="card-header">
+                     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-solid bg-white">
+                        <li class="nav-item">
+                           <a href="#radiology-category" data-bs-toggle="tab" class="nav-link active">Radiology Category</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#unit" data-bs-toggle="tab" class="nav-link">Unit</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#radiology-parameter" data-bs-toggle="tab" class="nav-link">Radiology Parameter</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="card-body p-t-0">
+                     <div class="tab-content pt-0">
+                        <div id="radiology-category" class="tab-pane fade show active">
+                           <app-setup-radiology-category-list></app-setup-radiology-category-list>
+                        </div>
+                        <div id="unit" class="tab-pane fade">
+                           <app-setup-radiology-unit-list></app-setup-radiology-unit-list>
+                        </div>
+                        <div id="radiology-parameter" class="tab-pane fade">
+                           <app-setup-radiology-parameter-list></app-setup-radiology-parameter-list>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>

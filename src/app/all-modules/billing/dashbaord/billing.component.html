@@ -1,0 +1,108 @@
+<div>
+   <div class="page-wrapper">
+      <div class="content container-fluid">
+         <!-- Page Header -->
+         <div class="crms-title row bg-white mb-3">
+            <div class="col">
+               <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white me-2">
+                     <i class="la la-table"></i>
+                  </span>
+                  <span>Billing</span>
+               </h3>
+            </div>
+         </div>
+         <div>
+            <div class="row">
+               <div class="col-6">
+                  <div class="card flex-fill">
+                     <div class="card-header">
+                        <h5 class="card-title mb-0">Single Module Billing</h5>
+                     </div>
+                     <div class="card-body p-b-0">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="row">
+                                 <div class="col-12 col-md-6 col-lg-4 d-flex">
+                                    <div class="card flex-fill card-button"
+                                       (click)="redirectToModule(billingModule.Appointment)">
+                                       <div class="card-body text-center" style="vertical-align: middle;">
+                                          <i class="fa fa-calendar-check-o"></i>
+                                          <br />
+                                          <p>Appointment</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-12 col-md-6 col-lg-4 d-flex">
+                                    <div class="card flex-fill card-button"
+                                       (click)="redirectToModule(billingModule.OPD)">
+                                       <div class="card-body text-center" style="vertical-align: middle;">
+                                          <i class="fas fa-stethoscope"></i>
+                                          <br />
+                                          <p>OPD</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-12 col-md-6 col-lg-4 d-flex">
+                                    <div class="card flex-fill card-button"
+                                       (click)="redirectToModule(billingModule.IPD)">
+                                       <div class="card-body text-center" style="vertical-align: middle;">
+                                          <i class="fas fa-stethoscope"></i>
+                                          <br />
+                                          <p>IPD</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-12 col-md-6 col-lg-4 d-flex">
+                                    <div class="card flex-fill card-button"
+                                       (click)="redirectToModule(billingModule.Pathology)">
+                                       <div class="card-body text-center" style="vertical-align: middle;">
+                                          <i class="fas fa-flask"></i>
+                                          <br />
+                                          <p>Pathology</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-12 col-md-6 col-lg-4 d-flex">
+                                    <div class="card flex-fill card-button"
+                                       (click)="redirectToModule(billingModule.Radiology)">
+                                       <div class="card-body text-center" style="vertical-align: middle;">
+                                          <i class="fas fa-microscope"></i>
+                                          <br />
+                                          <p>Radiology</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-6">
+                  <div class="card flex-fill">
+                     <div class="card-header">
+                        <h5 class="card-title mb-0">OPD/IPD Billing Through Case Id</h5>
+                     </div>
+                     <div class="card-body">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <input class="form-control search" type="number" [(ngModel)]="caseId"
+                                 placeholder="Search by case id" [ngClass]="{
+                                                'is-invalid': !isValidCaseId
+                                             }" />
+                              <button (click)="search()"
+                                 class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"
+                                 id="search">Search</button>
+                           </div>
+                           <div style="color: red;margin-top: -15px;" *ngIf="!isValidCaseId">
+                              Invalid case id.
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>

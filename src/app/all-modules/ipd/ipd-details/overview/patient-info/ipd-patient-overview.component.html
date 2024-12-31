@@ -1,0 +1,91 @@
+<div class="col-md-12 col-sm-12">
+   <div class="ribbon-wrapper card m-b-10">
+      <div class="card-body" *ngIf="patient">
+         <div class="ribbon ribbon-info" style="width: 100%;">
+            <span [innerHtml]="patient.name"></span>
+            <span class="action-icon">
+               <i *ngIf="hasPatientDischarged" class="fa fa-undo cursor-pointer mr-10" title="Discharge Revert" (click)="dischargeRevert()"></i>
+               <i class="fa fa-hospital-o cursor-pointer" title="Patient Discharge" (click)="discharge()"></i>
+            </span>
+         </div>
+         <div class="row">
+            <div class="col-md-3">
+               <img width="100px" [src]="patient.photo" />
+            </div>
+            <div class="col-md-9">
+               <div class="row mb-2">
+                  <div class="col-md-4">
+                     <label><b>Gender</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span [innerHtml]="patient.gender"></span>
+                  </div>
+               </div>
+               <div class="row mb-2">
+                  <div class="col-md-4">
+                     <label><b>Age</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span [innerHtml]="patient.age"></span>
+                  </div>
+               </div>
+               <div class="row mb-2">
+                  <div class="col-md-4">
+                     <label><b>Guardian Name</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span [innerHtml]="patient.guardianName"></span>
+                  </div>
+               </div>
+               <div class="row mb-2">
+                  <div class="col-md-4">
+                     <label><b>Phone</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span [innerHtml]="patient.phone"></span>
+                  </div>
+               </div>
+               <div class="row mb-2">
+                  <div class="col-md-4">
+                     <label><b>TPA</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span [innerHtml]="patient.tpaName"></span>
+                  </div>
+               </div>
+               <div class="row mb-2">
+                  <div class="col-md-4">
+                     <label><b>TPA ID</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span [innerHtml]="patient.tpaId"></span>
+                  </div>
+               </div>
+               <div class="row mb-2">
+                  <div class="col-md-4">
+                     <label><b>TPA Validity</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span [innerHtml]="patient.tpaExpiryDate | date : 'MMM dd, yyyy'"></span>
+                  </div>
+               </div>
+               <!-- <div class="row mb-2">
+                  <div class="col-md-4">
+                     <label><b>Bar Code</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span></span>
+                  </div>
+               </div>
+               <div class="row mb-2">
+                  <div class="col-md-4">
+                     <label><b>QR Code</b></label>
+                  </div>
+                  <div class="col-md-8">
+                     <span></span>
+                  </div>
+               </div> -->
+            </div>
+         </div>
+      </div>
+   </div>

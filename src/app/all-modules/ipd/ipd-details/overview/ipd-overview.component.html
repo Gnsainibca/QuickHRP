@@ -1,0 +1,57 @@
+<div class="content container-fluid">
+   <div class="col-sm-12">
+      <div class="form-group">
+         <div class="row">
+            <div class="col-md-6">
+               <div class="row">
+                  <app-ipd-patient-overview [opdPatientId]="opdPatientId"></app-ipd-patient-overview>
+               </div>
+               <div class="row">
+                  <app-ipd-info-overview [ipdPatientId]="opdPatientId"></app-ipd-info-overview>
+               </div>
+               <div class="row">
+                  <app-ipd-vital-overview [opdPatientId]="opdPatientId"></app-ipd-vital-overview>
+               </div>
+               <div class="row">
+                  <app-ipd-visit-overview [ipdPatientId]="opdPatientId"></app-ipd-visit-overview>
+               </div>
+               <div class="row">
+                  <app-ipd-timeline-overview [opdPatientId]="opdPatientId"></app-ipd-timeline-overview>
+               </div>
+            </div>
+            <div class="col-md-6 mb-2" style="border-left: 1px solid lightgrey;">
+               <div class="row">
+                  <app-ipd-billing-overview [opdPatientId]="opdPatientId"></app-ipd-billing-overview>
+               </div>
+               <div class="row">
+                  <app-ipd-medication-overview [opdPatientId]="opdPatientId"></app-ipd-medication-overview>
+               </div>
+               <div class="row">
+                  <app-ipd-prescription-overview [ipdPatientId]="opdPatientId"></app-ipd-prescription-overview>
+               </div>
+               <div class="row">
+                  <app-ipd-lab-investigation-overview [ipdPatientId]="opdPatientId"></app-ipd-lab-investigation-overview>
+               </div>
+               <div class="row">
+                  <app-ipd-consultant-register-overview [ipdPatientId]="opdPatientId"></app-ipd-consultant-register-overview>
+               </div>
+               <div class="row">
+                  <app-ipd-operation-overview [opdPatientId]="opdPatientId"></app-ipd-operation-overview>
+               </div>
+               <div class="row">
+                  <app-ipd-charge-overview [opdPatientId]="opdPatientId"></app-ipd-charge-overview>
+               </div>
+               <div class="row">
+                  <app-ipd-payment-overview [opdPatientId]="opdPatientId"></app-ipd-payment-overview>
+               </div>
+               <div class="row">
+                  <app-ipd-treatment-history-overview [ipdPatientId]="opdPatientId"></app-ipd-treatment-history-overview>
+               </div>
+               <div class="row">
+                  <app-ipd-bed-history-overview [ipdPatientId]="opdPatientId"></app-ipd-bed-history-overview>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

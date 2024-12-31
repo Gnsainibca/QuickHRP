@@ -1,0 +1,31 @@
+<div>
+   <div class="col-md-12 col-sm-12">
+      <div class="ribbon-wrapper card m-b-10">
+         <div class="card-body">
+            <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>PAYMENT</div>
+            <div class="table-responsive">
+               <table class="table table-nowrap mb-0">
+                  <thead>
+                     <tr>
+                        <th>Transaction ID</th>
+                        <th>Date</th>
+                        <th>Note</th>
+                        <th>Payment Mode</th>
+                        <th>Paid Amount</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let payment of payments;">
+                        <td>TRANOPD<span [innerHtml]="payment.id"></span></td>
+                        <td><span class="break-word" [innerHtml]="payment.date|date"></span></td>
+                        <td><span class="break-word" [innerHtml]="payment.note"></span></td>
+                        <td><span [innerHtml]="payment.paymentMode"></span></td>
+                        <td><span [innerHtml]="payment.amount"></span></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

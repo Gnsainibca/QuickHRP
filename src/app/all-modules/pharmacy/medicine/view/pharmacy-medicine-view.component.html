@@ -1,0 +1,81 @@
+<div class="modal-header">
+   <h4 class="modal-title">Medicine Details</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <table>
+      <tr>
+         <td style="width: 150px;vertical-align: initial;">
+            <img *ngIf="pharmacyMedicine.imageName" style="height: 100px; width: auto;" [src]="pharmacyMedicine.image"
+               (click)="viewImage()" />
+         </td>
+         <td colspan="5">
+            <table>
+               <tr>
+                  <td style="width: 250px;"><b>Medicine Name:</b></td>
+                  <td><span [innerHtml]="pharmacyMedicine.name"></span></td>
+                  <td style="width: 250px;"><b>Medicine Category:</b></td>
+                  <td><span [innerHtml]="pharmacyMedicine.category"></span></td>
+               </tr>
+               <tr>
+                  <td style="width: 250px;"><b>Medicine Company:</b></td>
+                  <td><span [innerHtml]="pharmacyMedicine.company"></span></td>
+                  <td style="width: 250px;"><b>Medicine Composition:</b></td>
+                  <td><span [innerHtml]="pharmacyMedicine.composition"></span></td>
+               </tr>
+               <tr>
+                  <td style="width: 250px;"><b>Medicine Group:</b></td>
+                  <td><span [innerHtml]="pharmacyMedicine.group"></span></td>
+                  <td style="width: 250px;"><b>Unit:</b></td>
+                  <td><span [innerHtml]="pharmacyMedicine.unit"></span></td>
+               </tr>
+               <tr>
+                  <td style="width: 250px;"><b>Min Level:</b></td>
+                  <td><span [innerHtml]="pharmacyMedicine.minLevel"></span></td>
+                  <td style="width: 250px;"><b>Re-Order Level:</b></td>
+                  <td><span [innerHtml]="pharmacyMedicine.reOrderLevel"></span></td>
+               </tr>
+               <tr>
+                  <td style="width: 250px;"><b>Tax:</b></td>
+                  <td><span [innerHtml]="pharmacyMedicine.tax"></span></td>
+                  <td style="width: 250px;"><b>Box/Packing:</b></td>
+                  <td><span [innerHtml]="pharmacyMedicine.packing"></span></td>
+               </tr>
+               <tr>
+                  <td style="width: 250px;"><b>VAT A/C:</b></td>
+                  <td><span [innerHtml]="pharmacyMedicine.vatAC"></span></td>
+                  <td style="width: 250px;"><b>Rack Number:</b></td>
+                  <td><span [innerHtml]="pharmacyMedicine.rackNumber"></span></td>
+               </tr>
+               <tr>
+                  <td style="width: 250px;"><b>Note:</b></td>
+                  <td colspan="4"><span [innerHtml]="pharmacyMedicine.note"></span></td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <div>
+      <ul class="nav nav-tabs nav-tabs-bottom">
+         <li class="nav-item">
+            <a class="nav-link active" href="#stock" data-bs-toggle="tab">Stock</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="#bad-stock" data-bs-toggle="tab">Bad Stock</a>
+         </li>
+      </ul>
+
+      <div class="tab-content">
+         <div class="tab-pane show active" id="stock">
+            <ag-grid-angular class="ag-theme-quartz" style="height: 47vh;" [pagination]="pagination"
+               [paginationPageSize]="paginationPageSize" [paginationPageSizeSelector]="paginationPageSizeSelector"
+               [rowData]="purchasedMadicines" [columnDefs]="colDefs" [scrollbarWidth]="11" [context]="this" />
+         </div>
+         <div class="tab-pane" id="bad-stock">
+            <ag-grid-angular class="ag-theme-quartz" style="height: 47vh;" [pagination]="pagination"
+               [paginationPageSize]="paginationPageSize" [paginationPageSizeSelector]="paginationPageSizeSelector"
+               [rowData]="badStockMadicines" [columnDefs]="badStockColDefs" [scrollbarWidth]="11" [context]="this" />
+         </div>
+      </div>
+   </div>
+</div>

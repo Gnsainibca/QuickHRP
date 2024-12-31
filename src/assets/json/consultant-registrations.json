@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "ipdPatientId": 1002,
+      "appliedDate": "2024-10-22T18:30:00.000Z",
+      "consultantDate": "2024-10-23T18:30:00.000Z",
+      "doctorId": 1,
+      "instruction": "Take medicine before breakfast"
+    },
+    {
+      "id": 1,
+      "ipdPatientId": 1001,
+      "appliedDate": "2024-10-23T18:30:00.000Z",
+      "consultantDate": "2024-10-24T18:30:00.000Z",
+      "doctorId": 2,
+      "instruction": "Take medicine after lunch"
+    },
+    {
+      "ipdPatientId": 1003,
+      "appliedDate": "2024-12-03T18:30:00.000Z",
+      "consultantDate": "2024-12-20T18:30:00.000Z",
+      "doctorId": 3,
+      "instruction": "Take medicine after lunch ",
+      "id": 2
+    }
+  ]
+}

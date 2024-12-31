@@ -1,0 +1,235 @@
+{
+    "data": [
+        {
+            "name": "OPD Consultation Fees",
+            "chargeTypeId": 11,
+            "description": "O.P.D, also known as Outpatient Consultation Department, includes consulting with patients and offering immediate treatment methods which do not require hospitalization. The type of medical practice done by most physicians falls under the category of O.P.D consultation. Apart from private practitioners and government health centers, private hospitals and nursing homes also offer O.P.D facility for patients.",
+            "isActive": true,
+            "id": 1
+        },
+        {
+            "name": "OPD Service",
+            "chargeTypeId": 11,
+            "description": "It is known as outpatient department in which we provide the facility of diagnosis and take care of the patients who can not stay overnight.",
+            "isActive": true,
+            "id": 2
+        },
+        {
+            "name": "OPD Insurance",
+            "chargeTypeId": 11,
+            "description": "Comprehensive health benefits Add on to your health insurance.",
+            "isActive": true,
+            "id": 3
+        },
+        {
+            "name": "Intensive Care Units",
+            "chargeTypeId": 10,
+            "description": "Intensive care units cater to patients with severe or life-threatening illnesses and injuries, which require constant care, close supervision from life support equipment and medication in order to ensure normal bodily functions.",
+            "isActive": true,
+            "id": 4
+        },
+        {
+            "name": "Admission and Discharge",
+            "chargeTypeId": 10,
+            "description": "Patients are admitted to TMH from different sources: OPD - Doctors may advise for admission to the respective ward. Labour room - Gynecological or Obstetric patients are treated and advised for admission",
+            "isActive": true,
+            "id": 5
+        },
+        {
+            "name": "Maternity patient admissions",
+            "chargeTypeId": 10,
+            "description": "A maternity hospital specializes in caring for women during pregnancy and childbirth. It also provides care for newborn infants, and may act as a centre for clinical training in midwifery and obstetrics.",
+            "isActive": true,
+            "id": 6
+        },
+        {
+            "name": "Nursing Services",
+            "chargeTypeId": 10,
+            "description": "Nursing services means health care services provided to a patient by a registered professional nurse or a licensed practical nurse under the direction of a licensed professional within the scope of practice as defined by state law.",
+            "isActive": true,
+            "id": 7
+        },
+        {
+            "name": "Laundry",
+            "chargeTypeId": 10,
+            "description": "The definition of laundry is a group of clothes or linens that are being washed, or a place where clothing and other fabrics are washed or cleaned. An example of laundry is the batch of dirty towels that you put into the washing machine.",
+            "isActive": true,
+            "id": 8
+        },
+        {
+            "name": "Surgical pathology",
+            "chargeTypeId": 9,
+            "description": "Surgical pathology is the study of tissues removed from living patients during surgery to help diagnose a disease and determine a treatment plan. Often, the surgical pathologist provides consultation services in a wide variety of organ systems and medical subspecialties.",
+            "isActive": true,
+            "id": 9
+        },
+        {
+            "name": "Histopathology",
+            "chargeTypeId": 9,
+            "description": "This refers to the examination of cells under a microscope after they have been stained with appropriate dyes.",
+            "isActive": true,
+            "id": 10
+        },
+        {
+            "name": "Cytopathology",
+            "chargeTypeId": 9,
+            "description": "\tIn cytopathology, cells that have been shed into bodily fluids or have been obtained by scraping or aspirating tissue are examined. Typical examples include cervical smear, sputum and gastric washings.",
+            "isActive": true,
+            "id": 11
+        },
+        {
+            "name": "Forensic pathology",
+            "chargeTypeId": 9,
+            "description": "Forensic pathology involves the post mortem examination of a corpse for cause of death using a process called autopsy.",
+            "isActive": true,
+            "id": 12
+        },
+        {
+            "name": "Dermatopathology",
+            "chargeTypeId": 9,
+            "description": "Dermatopathology concerns the study of skin diseases.",
+            "isActive": true,
+            "id": 13
+        },
+        {
+            "name": "CAD-AI Research Laboratory",
+            "chargeTypeId": 8,
+            "description": "The Computer Aided Diagnosis-Artificial Intelligence (CAD-AI) Laboratory in the Department of Radiology was established in 1989 by Heang-Ping",
+            "isActive": true,
+            "id": 14
+        },
+        {
+            "name": "Digital Image Processing",
+            "chargeTypeId": 8,
+            "description": "Digital image processing is the use of a digital computer to process digital images through an algorithm. ... It allows a much wider range of algorithms to be applied to the input data and can avoid problems such as the build-up of noise and distortion during processing.",
+            "isActive": true,
+            "id": 15
+        },
+        {
+            "name": "Mammographic Tomosynthesis",
+            "chargeTypeId": 8,
+            "description": "Breast tomosynthesis, also called three-dimensional (3-D) mammography and digital breast tomosynthesis (DBT), is an advanced form of breast imaging, or mammography, that uses a low-dose x-ray system and computer reconstructions to create three-dimensional images of the breasts.",
+            "isActive": true,
+            "id": 16
+        },
+        {
+            "name": "Packed Blood Cells",
+            "chargeTypeId": 7,
+            "description": "Packed red blood cells, also known as packed cells, are red blood cells that have been separated for blood transfusion. The packed cells are typically used in anemia that is either causing symptoms or when the hemoglobin is less than usually 70–80 g/L (7–8 g/dL).",
+            "isActive": true,
+            "id": 17
+        },
+        {
+            "name": "Fresh Frozen Plasma",
+            "chargeTypeId": 7,
+            "description": "Fresh frozen plasma is a blood product made from the liquid portion of whole blood.",
+            "isActive": true,
+            "id": 18
+        },
+        {
+            "name": "Platelet Concentrate",
+            "chargeTypeId": 7,
+            "description": "Platelet transfusion, also known as platelet concentrate, is used to prevent or treat bleeding in people with either a low platelet count or poor platelet function. Often this occurs in people receiving cancer chemotherapy. Preventive transfusion is often done in those with platelet levels of less than 10 x 109/L.",
+            "isActive": true,
+            "id": 19
+        },
+        {
+            "name": "Cryoprecipitate",
+            "chargeTypeId": 7,
+            "description": "Cryoprecipitate is a highly concentrated source of fibrinogen. ... The cost per unit of fibrinogen is similar in FFP and Cryoprecipiate. In severe liver disease, pools of 8 to 10 units of Cryoprecipitate may be used so the total cost (and amount of fibrinogen given) may be greater.",
+            "isActive": true,
+            "id": 20
+        },
+        {
+            "name": "Private Ambulance",
+            "chargeTypeId": 6,
+            "description": "Personal Ambulance",
+            "isActive": true,
+            "id": 21
+        },
+        {
+            "name": "ERS/Patient Transport Service",
+            "chargeTypeId": 6,
+            "description": "At ERS Medical, we provide specialist transport services to the healthcare sector. We understand that this is a dynamic and ever-changing industry.",
+            "isActive": true,
+            "id": 22
+        },
+        {
+            "name": "Blood pressure check",
+            "chargeTypeId": 5,
+            "description": "A normal blood pressure level is less than 120/80 mmHg. No matter your age, you can take steps each day to keep your blood pressure in a healthy range.",
+            "isActive": true,
+            "id": 23
+        },
+        {
+            "name": "Eye check",
+            "chargeTypeId": 5,
+            "description": "An eye exam involves a series of tests to evaluate your vision and check for eye diseases. Your eye doctor is likely to use various instruments, shine bright lights at your eyes and request that you look through an array of lenses. Each test during an eye exam evaluates a different aspect of your vision or eye health.",
+            "isActive": true,
+            "id": 24
+        },
+        {
+            "name": "Cholesterol level check",
+            "chargeTypeId": 5,
+            "description": "To check your cholesterol levels, your doctor will need to get a sample of your blood. You will probably have your blood drawn in the morning, sometimes after fasting since the night before. A blood test is an outpatient procedure. It takes only a few minutes and is relatively painless.",
+            "isActive": true,
+            "id": 25
+        },
+        {
+            "name": "Blood sugar test",
+            "chargeTypeId": 7,
+            "description": "A blood glucose test is a blood test that screens for diabetes by measuring the level of glucose (sugar) in a person's blood. Normal blood glucose level (while fasting) range within 70 to 99 mg/dL (3.9 to 5.5 mmol/L). Higher ranges could indicate pre-diabetes or diabetes. Test Details",
+            "isActive": true,
+            "id": 26
+        },
+        {
+            "name": "Sterilization and Cleaning Equipment",
+            "chargeTypeId": 5,
+            "description": "Sterilization.",
+            "isActive": true,
+            "id": 27
+        },
+        {
+            "name": "X-ray",
+            "chargeTypeId": 4,
+            "description": "An X-ray is a quick, painless test that produces images of the structures inside your body — particularly your bones. X-ray beams pass through your body, and they are absorbed in different amounts depending on the density of the material they pass through.",
+            "isActive": true,
+            "id": 28
+        },
+        {
+            "name": "Oxygen cylinder",
+            "chargeTypeId": 3,
+            "description": "Best Overall - OXY5 Portable Pure Oxygen 3+1 Cans with built-in mask for Ambitious People. It has a capacity of almost 600 breaths and is claimed by the company to be India's first refillable can. It is a perfect product for those who are ambitious and want the most out of life.",
+            "isActive": true,
+            "id": 29
+        },
+        {
+            "name": "Appointment Charges",
+            "chargeTypeId": 12,
+            "description": "Define appointment fee. means a non-refundable sum of money payable to body corporate practicing as a Town Planner immediately on his official engagement",
+            "isActive": true,
+            "id": 30
+        },
+        {
+            "name": "Fire extinguisher",
+            "chargeTypeId": 3,
+            "description": "The size of a fire extinguisher indicates the amount of extinguishing agent it holds and is most often measured in pounds. Sizes can range from as small as 2.5 lb. to as large as 350 lb.",
+            "isActive": true,
+            "id": 31
+        },
+        {
+            "name": "Operation Services",
+            "chargeTypeId": 2,
+            "description": "Health care operations include the administrative, financial and legal activities of a hospital, specialty practice, ancillary care provider or remote health service center. Health care professionals need to get a handle on operations because, at minimum, they enable running the business",
+            "isActive": true,
+            "id": 32
+        },
+        {
+            "name": "Other Charges",
+            "chargeTypeId": 1,
+            "description": "Other",
+            "isActive": true,
+            "id": 33
+        }
+    ]
+}

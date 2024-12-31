@@ -1,0 +1,140 @@
+<form class="general-setting" [formGroup]="generalSettingForm" (ngSubmit)="onSubmit()">
+   <div class="row">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="card-header">
+                  <h5 class="card-title mb-0">General Settings</h5>
+               </div>
+               <div class="card-body">
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <label>Hospital Name<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="hospitalName" id="hospitalName"
+                                 formControlName="hospitalName"
+                                 [ngClass]="{'is-invalid': f['hospitalName'].touched && f['hospitalName'].invalid}" />
+                              <div class="invalid-feedback"
+                                 *ngIf="f['hospitalName'].invalid && f['hospitalName'].touched">
+                                 Please provide the hospital name.
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <label>Hospital Code<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="hospitalCode" id="hospitalCode"
+                                 formControlName="hospitalCode"
+                                 [ngClass]="{'is-invalid': f['hospitalCode'].touched && f['hospitalCode'].invalid}" />
+                              <div class="invalid-feedback"
+                                 *ngIf="f['hospitalCode'].invalid && f['hospitalCode'].touched">
+                                 Please provide the hospital code.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <label>Phone<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="phone" id="phone" formControlName="phone"
+                                 [ngClass]="{'is-invalid': f['phone'].touched && f['phone'].invalid}" />
+                              <div class="invalid-feedback" *ngIf="f['phone'].invalid && f['phone'].touched">
+                                 Please provide the phone.
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <label>Email<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="email" id="email" formControlName="email"
+                                 [ngClass]="{'is-invalid': f['email'].touched && f['email'].invalid}" />
+                              <div class="invalid-feedback" *ngIf="f['email'].invalid && f['email'].touched">
+                                 Please provide the email.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <label>Address<span style="color: red">&nbsp;*</span></label>
+                              <textarea class="form-control" name="address" id="address" formControlName="address"
+                                 [ngClass]="{'is-invalid': f['address'].touched && f['address'].invalid}">
+                                          </textarea>
+                              <div class="invalid-feedback" *ngIf="f['address'].invalid && f['address'].touched">
+                                 Please provide the address.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <label>Hospital Logo ( JPG | JPEG | PNG )<span style="color: red">&nbsp;*</span></label>
+                              <input type="file" class="form-control" id="attachment1" name="attachment1"
+                                 (change)="handleHospitalLogoInput($event)" accept="image/*"
+                                 [ngClass]="{'is-invalid': f['hospitalLogo'].touched && f['hospitalLogo'].invalid}">
+                              <img class="img-logo" *ngIf="f['hospitalLogo'].value" style="width: auto;height: 80px;"
+                                 [src]="f['hospitalLogo'].value" (click)="viewHospitalLogo()" />
+                              <div class="invalid-feedback"
+                                 *ngIf="f['hospitalLogo'].invalid && f['hospitalLogo'].touched">
+                                 Please provide the hospital logo.
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <label>Hospital Small Logo ( JPG | JPEG | PNG )<span
+                                    style="color: red">&nbsp;*</span></label>
+                              <input type="file" class="form-control" id="attachment2" name="attachment2"
+                                 (change)="handleHospitalSmallLogoInput($event)" accept="image/*"
+                                 [ngClass]="{'is-invalid': f['hospitalSmallLogo'].touched && f['hospitalSmallLogo'].invalid}">
+                              <img class="img-logo" *ngIf="f['hospitalSmallLogo'].value"
+                                 style="width: auto;height: 80px;" [src]="f['hospitalSmallLogo'].value"
+                                 (click)="viewHospitalSmallLogo()" />
+                              <div class="invalid-feedback"
+                                 *ngIf="f['hospitalSmallLogo'].invalid && f['hospitalSmallLogo'].touched">
+                                 Please provide the hospital small logo.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="card flex-fill">
+               <div class="card-header">
+                  <h5 class="card-title mb-0">Date Time</h5>
+               </div>
+               <div class="card-body">
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <label>Date Format<span style="color: red">&nbsp;*</span></label>
+                              <select class="form-select form-control" formControlName="dateFormat" [ngClass]="{
+                                 'is-invalid': f['dateFormat'].touched && f['dateFormat'].invalid
+                              }">
+                                 <option value="">-Select-</option>
+                                 <option *ngFor="let item of dateFromats" [ngValue]="item">{{
+                                    item }}</option>
+                              </select>
+                              <div class="invalid-feedback" *ngIf="f['dateFormat'].invalid && f['dateFormat'].touched">
+                                 Please provide the date fromat.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="text-center">
+      <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded float-right">
+         Save</button>
+   </div>
+</form>

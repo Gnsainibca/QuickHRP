@@ -1,0 +1,67 @@
+<div class="modal-header">
+   <h4 class="modal-title">View Call Log</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <table>
+      <tr>
+         <td><b>Operation Category:</b></td>
+         <td><span [innerHtml]="operation.operationCategory"></span></td>
+         <td></td>
+         <td><b>Operation Name:</b></td>
+         <td><span [innerHtml]="operation.operationName"></span></td>
+      </tr>
+      <tr>
+         <td><b>Date:</b></td>
+         <td><span [innerHtml]="operation.operationDate"></span></td>
+         <td></td>
+         <td>
+            <b>Consultant Doctor:</b>
+         </td>
+         <td>
+            <span [innerHtml]="operation.doctor"></span>
+         </td>
+      </tr>
+      <tr>
+         <td><b>Assistant Consultant 1:</b></td>
+         <td><span [innerHtml]="operation.assistantConsultant1"></span></td>
+         <td></td>
+         <td><b>Assistant Consultant 2:</b></td>
+         <td><span [innerHtml]="operation.assistantConsultant2"></span></td>
+      </tr>
+      <tr>
+         <td><b>Anesthetist:</b></td>
+         <td><span [innerHtml]="operation.anesthetist"></span></td>
+         <td></td>
+         <td><b>Anaethesia Type:</b></td>
+         <td><span [innerHtml]="operation.anesthesiaType"></span></td>
+      </tr>
+      <tr>
+         <td><b>OT Technician:</b></td>
+         <td><span [innerHtml]="operation.otTechnician"></span></td>
+         <td></td>
+         <td><b>OT Assistant:</b></td>
+         <td><span [innerHtml]="operation.otAssistant"></span></td>
+      </tr>
+      <tr>
+         <td>
+            <b>Remark :</b>
+         </td>
+         <td colspan="4">
+            <span [innerHtml]="operation.remarks"></span>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <b>Result :</b>
+         </td>
+         <td colspan="4">
+            <span [innerHtml]="operation.result"></span>
+         </td>
+      </tr>
+   </table>
+</div>
+<div class="modal-footer text-center">
+   <button class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"
+   aria-label="Close" (click)="activeModal.dismiss('Cross click')">Ok</button>
+</div>

@@ -1,0 +1,391 @@
+<div class="modal-header">
+   <h4 class="modal-title">Staff Details</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body" style="background-color: aliceblue;">
+   <div class="row" style="margin-top: 15px;margin-bottom: 15px;" *ngIf="staff">
+
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="table-responsive">
+                  <table class="table mb-0">
+                     <tbody>
+                        <tr>
+                           <td class="p-20" style="width: 60%;">
+                              <img style="border-radius: 50%;width: 120px;height: 120px;border: 1px solid lightgray;"
+                                 [src]="staff.photo" />
+                              &nbsp;
+                              <div style="display: inline-block;">
+                                 <span style="font-size: x-large;font-weight: bold;"
+                                    [innerHtml]="staff.firstName"></span>&nbsp;<span
+                                    style="font-size: x-large;font-weight: bold;" [innerHtml]="staff.lastName"></span>
+                                 <br>
+                                 <span>
+                                    <i (click)="edit(staff.id)" style="padding-left: 20px;cursor:pointer;"
+                                       class="fa fa-edit" data-bs-toggle="tooltip" title="Edit"></i>
+                                    <i (click)="delete(staff.id)" style="padding-left: 10px;cursor:pointer;"
+                                       class="fa fa-trash" data-bs-toggle="tooltip" title="Delete"></i>
+                                 </span>
+                              </div>
+                           </td>
+                           <td class="p-20">
+                              <label>Staff ID</label>
+                              <br />
+                              <span [innerHtml]="staff.staffId"></span>
+                           </td>
+                           <td class="p-20">
+                              <label>Role</label>
+                              <br />
+                              <span [innerHtml]="staff.role"></span>
+                           </td>
+                           <td class="p-20">
+                              <label>Designation</label>
+                              <br />
+                              <span [innerHtml]="staff.designation"></span>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="4" style="padding: 0;">
+                              <table class="table table-bordered mb-0">
+                                 <tbody>
+                                    <tr>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Department</label>
+                                          <br />
+                                          <span [innerHtml]="staff.department"></span>
+                                       </td>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Specialist</label>
+                                          <br />
+                                          <span [innerHtml]="staff.specialist"></span>
+                                       </td>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>EPF No</label>
+                                          <br />
+                                          <span [innerHtml]="staff.epfNo"></span>
+                                       </td>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Basic Salary</label>
+                                          <br />
+                                          <span [innerHtml]="staff.basicSalary"></span>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Contract Type</label>
+                                          <br />
+                                          <span [innerHtml]="staff.contractType"></span>
+                                       </td>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Work Shift</label>
+                                          <br />
+                                          <span [innerHtml]="staff.workShift"></span>
+                                       </td>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Work Location</label>
+                                          <br />
+                                          <span [innerHtml]="staff.workLocation"></span>
+                                       </td>
+                                       <td class="p-20" style="width: 25%;">
+                                          <label>Date Of Joining</label>
+                                          <br />
+                                          <span [innerHtml]="staff.doj | date : 'MMM dd, yyyy'"></span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="card-header bg-gray">
+                  <h5 class="card-title mb-0">Profile</h5>
+               </div>
+               <div class="table-responsive">
+                  <table class="table table-bordered mb-0">
+                     <tbody>
+                        <tr>
+                           <td style="width: 40%;">Phone</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.phone"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Emergency Contact Number</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.alternatePhone"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Email</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.email"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Gender</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.gender"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Blood Group</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.bloodGroup"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Date Of Birth</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.dob | date : 'MMM dd, yyyy'"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Marital Status</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.maritalStatus"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Father Name</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.fatherName"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Mother Name</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.motherName"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Qualification</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.qualification"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Work Experience</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.workExperience"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Specialization</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.specialization"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Pan Number</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.panNumber"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">National Identification Number</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.nationalIdentificationNumber"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Local Identification Number</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.localIdentificationNumber"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Reference Contact</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.referenceContact"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Note</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.note"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Blood Group</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.bloodGroup"></span></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="card-header bg-gray">
+                  <h5 class="card-title mb-0">Payroll</h5>
+               </div>
+               <div class="table-responsive">
+                  <table class="table table-bordered mb-0">
+                     <tbody>
+                        <tr>
+                           <td style="width: 40%;">EPF No</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.epfNo"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Basic Salary</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.basicSalary"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Contract Type</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.contractType"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Work Shift</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.workShift"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Work Location</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.workLocation"></span></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="card-header bg-gray">
+                  <h5 class="card-title mb-0">Leaves</h5>
+               </div>
+               <div class="table-responsive">
+                  <table class="table table-bordered mb-0">
+                     <tbody>
+                        <tr>
+                           <td style="width: 40%;">Casual Leave</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.casualLeave"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Privilege Leave</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.privilegeLeave"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Sick Leave</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.sickLeave"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Maternity/Paternity Leave</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.maternityLeave"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Floater Leave</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.floaterLeave"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Fixed Leave</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.fixedLeave"></span></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="card-header bg-gray">
+                  <h5 class="card-title mb-0">Bank Account Details</h5>
+               </div>
+               <div class="table-responsive">
+                  <table class="table table-bordered mb-0">
+                     <tbody>
+                        <tr>
+                           <td style="width: 40%;">Account Title</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.accountTitle"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Bank Account No</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.bankAccountNo"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Bank Name</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.bankName"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Bank Branch Name</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.bankBranchName"></span></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">IFSC Code</td>
+                           <td style="width: 60%;"><span [innerHtml]="staff.ifscCode"></span></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="card-header bg-gray">
+                  <h5 class="card-title mb-0">Social Media Link</h5>
+               </div>
+               <div class="table-responsive">
+                  <table class="table table-bordered mb-0">
+                     <tbody>
+                        <tr>
+                           <td style="width: 40%;">Facebook URL</td>
+                           <td style="width: 60%;"><a [href]="staff.accountTitle" target="_blank"><span
+                                    [innerHtml]="staff.facebookURL"></span></a></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Twitter URL</td>
+                           <td style="width: 60%;"><a [href]="staff.twitterURL" target="_blank"><span
+                                    [innerHtml]="staff.twitterURL"></span></a></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Linkedin URL</td>
+                           <td style="width: 60%;"><a [href]="staff.linkedinURL" target="_blank"><span
+                                    [innerHtml]="staff.linkedinURL"></span></a></td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Instagram URL</td>
+                           <td style="width: 60%;"><a [href]="staff.instagramURL" target="_blank"><span
+                                    [innerHtml]="staff.instagramURL"></span></a></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="col-sm-12">
+         <div class="form-group m-0">
+            <div class="card flex-fill m-0">
+               <div class="card-header bg-gray">
+                  <h5 class="card-title mb-0">Uploaded Documents</h5>
+               </div>
+               <div class="table-responsive">
+                  <table class="table table-bordered mb-0">
+                     <tbody>
+                        <tr>
+                           <td style="width: 40%;">Resume</td>
+                           <td style="width: 60%;">
+                              <a *ngIf="staff.resumeFileName" href="javascript:void(0);" (click)="downloadResume()"><i
+                                    class="fa fa-download"></i>&nbsp;<span
+                                    [innerHtml]="staff.resumeFileName"></span></a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Joining Letter</td>
+                           <td style="width: 60%;">
+                              <a *ngIf="staff.joiningLetterFileName" href="javascript:void(0);"
+                                 (click)="downloadJoiningLetter()"><i class="fa fa-download"></i>&nbsp;<span
+                                    [innerHtml]="staff.joiningLetterFileName"></span></a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Resignation Letter</td>
+                           <td style="width: 60%;">
+                              <a *ngIf="staff.resignationLetterFileName" href="javascript:void(0);"
+                                 (click)="downloadResignationLetter()"><i class="fa fa-download"></i>&nbsp;<span
+                                    [innerHtml]="staff.resignationLetterFileName"></span></a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="width: 40%;">Other Documents</td>
+                           <td style="width: 60%;">
+                              <a *ngIf="staff.otherFileName" href="javascript:void(0);"
+                                 (click)="downloadOtherDocuments()"><i class="fa fa-download"></i>&nbsp;<span
+                                    [innerHtml]="staff.otherFileName"></span></a>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </div>

@@ -1,0 +1,125 @@
+{
+  "data": [
+    {
+      "opdPatientId": 11,
+      "patientName": "Sachin Gupta (2)",
+      "patientId": 2,
+      "symptomsTypes": [
+        {
+          "id": 7,
+          "name": "Eating or weight problems"
+        }
+      ],
+      "symptomsTitles": [
+        {
+          "id": 7,
+          "name": "Thirst"
+        }
+      ],
+      "symptomsDescription": "Thirst is the feeling of needing to drink something. It occurs whenever the body is dehydrated for any reason. Any condition that can result in a loss of body water can lead to thirst or excessive thirst.",
+      "anyKnownAllergies": "Thirst",
+      "previousMedicalIssue": "Thirst",
+      "note": "Test Note",
+      "appointmentDate": "2024-10-26T18:30:00.000Z",
+      "caseId": "TASD1334",
+      "anyCasualty": true,
+      "isOldPatient": true,
+      "reference": "Mohit",
+      "consultantDoctorId": "1",
+      "applyTPA": false,
+      "chargeCategoryId": 1,
+      "chargeId": 3,
+      "standardCharge": 150,
+      "appliedCharge": 150,
+      "discount": 10,
+      "tax": 20,
+      "amount": 162,
+      "paidAmount": 162,
+      "paymentMode": "UPI",
+      "needLiveConsultation": true,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "opdPatientId": 11,
+      "symptomsTypes": [
+        "Eating or weight problems"
+      ],
+      "symptomsTitles": [
+        "Thirst"
+      ],
+      "symptomsDescription": "Thirst\n    Thirst is the feeling of needing to drink something. It occurs whenever the body is dehydrated for any reason. Any condition that can result in a loss of body water can lead to thirst or excessive thirst.",
+      "anyKnownAllergies": "Thirst",
+      "previousMedicalIssue": "Thirst",
+      "note": "Test Note",
+      "appointmentDate": "2024-07-08T18:30:00.000Z",
+      "caseId": "TASD1234",
+      "anyCasualty": true,
+      "isOldPatient": true,
+      "reference": "Gaurav",
+      "consultantDoctorId": "1",
+      "applyTPA": false,
+      "chargeCategory": "OPD Service",
+      "charge": "OPD Service",
+      "standardCharge": 120,
+      "appliedCharge": 120,
+      "discount": 10,
+      "tax": 20,
+      "amount": 129.6,
+      "paidAmount": "129.6",
+      "paymentMode": "UPI",
+      "needLiveConsultation": true
+    },
+    {
+      "opdPatientId": 12,
+      "patientName": "Gaurav Naagwan (3)",
+      "patientId": 3,
+      "symptomsTypes": [
+        {
+          "id": "Eating or weight problems",
+          "name": "Eating or weight problems"
+        },
+        {
+          "id": 1,
+          "name": "Lung problems"
+        },
+        {
+          "id": 2,
+          "name": "Stomach problems"
+        }
+      ],
+      "symptomsTitles": [
+        {
+          "id": 1,
+          "name": "Asthma"
+        },
+        {
+          "id": 2,
+          "name": "Constant or severe abdominal pain"
+        }
+      ],
+      "symptomsDescription": "Asthma is a condition in which your airways narrow and swell and may produce extra mucus. This can make breathing difficult and trigger coughing, a whistling sound (wheezing) when you breathe out and shortness of breath. For some people, asthma is a minor nuisance.\n\nDiseases that affect the digestive system can also cause chronic abdominal pain. The most common are: gastroesophageal reflux disease (GERD) irritable bowel syndrome or spastic colon (a disorder that causes abdominal pain, cramping, and changes in bowel movements)",
+      "anyKnownAllergies": "Thirst",
+      "previousMedicalIssue": "Thirst",
+      "note": "Test Note",
+      "appointmentDate": "2024-10-10T18:30:00.000Z",
+      "caseId": "TASD1234",
+      "anyCasualty": true,
+      "isOldPatient": true,
+      "reference": "Vijay Kumar",
+      "consultantDoctorId": 3,
+      "applyTPA": false,
+      "chargeCategoryId": 1,
+      "chargeId": 3,
+      "standardCharge": 150,
+      "appliedCharge": 150,
+      "discount": 10,
+      "tax": 20,
+      "amount": 162,
+      "paidAmount": 162,
+      "paymentMode": "UPI",
+      "needLiveConsultation": true,
+      "id": 3
+    }
+  ]
+}

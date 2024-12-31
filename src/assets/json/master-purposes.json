@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "name": "Seminar",
+      "description": "A seminar may be defined as a gathering of people for the purpose of discussing a stated topic. Such gatherings are usually interactive sessions where the participants engage in discussions about the delineated topic.",
+      "id": 1
+    },
+    {
+      "name": "Inquiry",
+      "description": "Inquiry is an approach to learning that involves a process of exploring the natural or material world, and that leads to asking questions, making discoveries, and testing those discoveries in the search for new understanding.",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Visit",
+      "description": "Visitor centers used to provide fairly basic information about the place, corporation or event they are celebrating, acting more as the entry way to a place. The role of the visitor center has been rapidly evolving over the past 10 years to become more of an experience and to tell the story of the place or brand it represents. Many have become destinations and experiences in their own right.",
+      "isActive": true,
+      "id": 3
+    }
+  ]
+}

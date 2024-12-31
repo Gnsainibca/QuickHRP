@@ -1,0 +1,147 @@
+<form class="prefix-setting" [formGroup]="prefixSettingForm" (ngSubmit)="onSubmit()">
+   <div class="row">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="card flex-fill">
+               <div class="card-header">
+                  <h5 class="card-title mb-0">Prefix Settings</h5>
+               </div>
+               <div class="card-body">
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <label>IPD No<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="ipdNo" id="ipdNo"
+                                 formControlName="ipdNo"
+                                 [ngClass]="{'is-invalid': f['ipdNo'].touched && f['ipdNo'].invalid}" />
+                              <div class="invalid-feedback"
+                                 *ngIf="f['ipdNo'].invalid && f['ipdNo'].touched">
+                                 Please provide the ipd no.
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <label>OPD No<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="opdNo" id="opdNo"
+                                 formControlName="opdNo"
+                                 [ngClass]="{'is-invalid': f['opdNo'].touched && f['opdNo'].invalid}" />
+                              <div class="invalid-feedback"
+                                 *ngIf="f['opdNo'].invalid && f['opdNo'].touched">
+                                 Please provide the opd no.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <label>IPD Prescription<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="ipdPrescription" id="ipdPrescription" formControlName="ipdPrescription"
+                                 [ngClass]="{'is-invalid': f['ipdPrescription'].touched && f['ipdPrescription'].invalid}" />
+                              <div class="invalid-feedback" *ngIf="f['ipdPrescription'].invalid && f['ipdPrescription'].touched">
+                                 Please provide ipd prescription.
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <label>OPD Prescription<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="opdPrescription" id="opdPrescription" formControlName="opdPrescription"
+                                 [ngClass]="{'is-invalid': f['opdPrescription'].touched && f['opdPrescription'].invalid}" />
+                              <div class="invalid-feedback" *ngIf="f['opdPrescription'].invalid && f['opdPrescription'].touched">
+                                 Please provide the opd prescription.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <label>Appointment<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="appointment" id="appointment" formControlName="appointment"
+                                 [ngClass]="{'is-invalid': f['appointment'].touched && f['appointment'].invalid}" />
+                              <div class="invalid-feedback" *ngIf="f['appointment'].invalid && f['appointment'].touched">
+                                 Please provide appointment.
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <label>Pharmacy Bill<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="pharmacyBill" id="pharmacyBill" formControlName="pharmacyBill"
+                                 [ngClass]="{'is-invalid': f['pharmacyBill'].touched && f['pharmacyBill'].invalid}" />
+                              <div class="invalid-feedback" *ngIf="f['pharmacyBill'].invalid && f['pharmacyBill'].touched">
+                                 Please provide the pharmacy Bill.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <label>Operation Reference No<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="operationReferenceNo" id="operationReferenceNo" formControlName="operationReferenceNo"
+                                 [ngClass]="{'is-invalid': f['operationReferenceNo'].touched && f['operationReferenceNo'].invalid}" />
+                              <div class="invalid-feedback" *ngIf="f['operationReferenceNo'].invalid && f['operationReferenceNo'].touched">
+                                 Please provide operation reference no.
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <label>Radiology Bill<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="radiologyBill" id="radiologyBill" formControlName="radiologyBill"
+                                 [ngClass]="{'is-invalid': f['radiologyBill'].touched && f['radiologyBill'].invalid}" />
+                              <div class="invalid-feedback" *ngIf="f['radiologyBill'].invalid && f['radiologyBill'].touched">
+                                 Please provide the radiology bill.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <label>Pathology Bill<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="pathologyBill" id="pathologyBill" formControlName="pathologyBill"
+                                 [ngClass]="{'is-invalid': f['pathologyBill'].touched && f['pathologyBill'].invalid}" />
+                              <div class="invalid-feedback" *ngIf="f['pathologyBill'].invalid && f['pathologyBill'].touched">
+                                 Please provide pathology bill.
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <label>OPD Checkup Id<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="opdCheckupId" id="opdCheckupId" formControlName="opdCheckupId"
+                                 [ngClass]="{'is-invalid': f['opdCheckupId'].touched && f['opdCheckupId'].invalid}" />
+                              <div class="invalid-feedback" *ngIf="f['opdCheckupId'].invalid && f['opdCheckupId'].touched">
+                                 Please provide the opd checkup id.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <label>Pharmacy Purchase No<span style="color: red">&nbsp;*</span></label>
+                              <input type="text" class="form-control" name="pharmacyPurchaseNo" id="pharmacyPurchaseNo" formControlName="pharmacyPurchaseNo"
+                                 [ngClass]="{'is-invalid': f['pharmacyPurchaseNo'].touched && f['pharmacyPurchaseNo'].invalid}" />
+                              <div class="invalid-feedback" *ngIf="f['pharmacyPurchaseNo'].invalid && f['pharmacyPurchaseNo'].touched">
+                                 Please provide pharmacy purchase no.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="text-center">
+      <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded float-right">
+         Save</button>
+   </div>
+</form>

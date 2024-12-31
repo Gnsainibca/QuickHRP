@@ -1,0 +1,86 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Bad Stock</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form class="forms-postal" [formGroup]="badStockMedicineForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Batch No<span style="color: red">&nbsp;*</span></label>
+                  <select class="form-select form-control" formControlName="batchNo" (change)="onBatchChange()" [ngClass]="{
+                     'is-invalid': f['batchNo'].touched && f['batchNo'].invalid
+                  }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of batchesInfo" [ngValue]="item.batchNo">{{ item.batchNo }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['batchNo'].invalid && f['batchNo'].touched">
+                     Please provide the batch no.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Expiry Date<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YYYY" matInput
+                     [matDatepicker]="picker1" name="expiryDate" id="expiryDate" formControlName="expiryDate" [ngClass]="{
+                  'is-invalid': f['expiryDate'].touched && f['expiryDate'].invalid
+                }" />
+                  <mat-datepicker #picker1></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                     class="activity-datepicker"></mat-datepicker-toggle>
+                  <div class="invalid-feedback" *ngIf="f['expiryDate'].invalid && f['expiryDate'].touched">
+                     Please provide the expiry date.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Outward Date<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YYYY" matInput
+                     [matDatepicker]="picker2" name="outwardDate" id="outwardDate" formControlName="outwardDate"
+                     [ngClass]="{
+                  'is-invalid': f['outwardDate'].touched && f['outwardDate'].invalid
+                }" />
+                  <mat-datepicker #picker2></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker2"
+                     class="activity-datepicker"></mat-datepicker-toggle>
+                  <div class="invalid-feedback" *ngIf="f['outwardDate'].invalid && f['outwardDate'].touched">
+                     Please provide the outward date.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Quantity<span style="color: red">&nbsp;*</span></label>
+                  <input type="number" class="form-control" name="quantity" id="quantity" formControlName="quantity"
+                     [ngClass]="{
+                     'is-invalid': f['quantity'].touched && f['quantity'].invalid
+                     } " />
+                  <div class="invalid-feedback" *ngIf="f['quantity'].invalid && f['quantity'].touched">
+                     Please provide the quantity.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-sm-12">
+                  <label>Note</label>
+                  <textarea class="form-control" id="note" name="note" formControlName="note"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="button" type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

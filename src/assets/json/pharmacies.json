@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "patientId": 1,
+      "prescriptionNo": null,
+      "caseId": null,
+      "date": "2024-12-07T16:43:06.783Z",
+      "medicineInnerForm": [
+        {
+          "categoryId": 13,
+          "medicineId": 1,
+          "batchNo": "56655",
+          "expiryDate": "2025-12-04T18:30:00.000Z",
+          "quantity": 10,
+          "salePrice": 80,
+          "tax": 10,
+          "amount": 800,
+          "filteredPharmacyMedicines": [
+            {
+              "id": 1,
+              "name": "Amlodipine",
+              "parentId": 13
+            }
+          ],
+          "filteredBatches": [
+            {
+              "batchNo": "56655",
+              "expiryDate": "2025-12-04T18:30:00.000Z",
+              "salePrice": 80,
+              "tax": 10,
+              "amount": 600
+            }
+          ]
+        }
+      ],
+      "referralDoctorId": 1,
+      "doctorName": null,
+      "totalAmount": 800,
+      "totalTax": 10,
+      "discount": 15,
+      "netAmount": 748,
+      "paymentModeId": 1,
+      "paymentAmount": 748,
+      "note": "Test Note",
+      "billNo": "PHARMAB1",
+      "id": 1
+    }
+  ]
+}

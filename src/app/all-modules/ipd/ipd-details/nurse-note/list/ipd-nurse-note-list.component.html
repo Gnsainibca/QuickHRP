@@ -1,0 +1,91 @@
+<div class="content container-fluid">
+   <!-- Page Header -->
+   <div class="crms-title row bg-white">
+      <div class="col">
+         <h3 class="page-title">
+            <span class="page-title-icon bg-gradient-primary text-white me-2">
+               <i class="la la-table"></i>
+            </span>
+            <ul class="breadcrumb bg-white display-inline-flex m-0 ps-0 pe-0">
+               <li class="breadcrumb-item"><a [routerLink]="routes.ipd">IPD</a></li>
+               <li class="breadcrumb-item active">Nurse Note</li>
+            </ul>
+         </h3>
+      </div>
+      <div class="col text-end" *ngIf="!hasPatientDischarged">
+         <ul class="list-inline-item ps-0 m-0">
+            <li class="list-inline-item">
+               <button class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"
+                  id="add-task" data-bs-toggle="modal" (click)="add()">
+                  Add Nurse Note
+               </button>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div>
+      <!-- /Page Header -->
+      <div class="col-md-12" *ngIf="nurseNotes">
+         <div class="card">
+            <div class="card-body" style="margin-top: 20px;">
+               <ul class="timeline-left">
+                  <li *ngFor="let item of nurseNotes; let  i = index">
+                     <span class="ribbon-success timeline-date"
+                        [innerHtml]="item.date | date : 'MMM dd, yyyy hh:mm a'"></span>
+                     <div class="timeline-badge success">
+                        <i class="fa fa-list-alt"></i>
+                     </div>
+                     <div class="timeline-panel p-0" style="margin-bottom: 35px;margin-left: 6%;">
+                        <div class="ribbon-wrapper">
+                           <div class="card-body">
+                              <div class="ribbon ribbon-info" style="width: 100%;">
+                                 <span [innerHtml]="item.nurse"></span>
+                                 <span style="float:inline-end;" *ngIf="!hasPatientDischarged">
+                                    <i (click)="edit(item.id)" title="Edit" class="fa fa-edit"
+                                       style="padding-left: 10px; cursor: pointer;"></i>
+                                    <i (click)="addComment(item.id)" title="Add Comment" class="fa fa-comment"
+                                       style="padding-left: 10px; cursor: pointer;"></i>
+                                    <i (click)="delete(item.id)" title="Delete" class="fa fa-trash"
+                                       style="padding-left: 10px; cursor: pointer;"></i>
+                                    &nbsp;
+                                 </span>
+                              </div>
+                              <div class="table-responsive">
+                                 <div class="m-b-10">
+                                    <u><span [innerHtml]="item.date | date : 'MMM dd, yyyy hh:mm a'"></span></u>
+                                 </div>
+                                 <div class="m-b-10">
+                                    <div><b>Note</b></div>
+                                    <span [innerHtml]="item.note"></span>
+                                 </div>
+                                 <div>
+                                    <div><b>Comment</b></div>
+                                    <span [innerHtml]="item.comment"></span>
+                                    <span style="float:inline-end;">
+                                       Created By : <span [innerHtml]="item.createdBy"></span>
+                                    </span>
+                                    <div *ngFor="let innerItem of item.nurseNoteComments; let  j = index"
+                                       style="padding-top: 10px;">
+                                       <span [innerHtml]="innerItem.comment"></span>
+                                       <i (click)="deleteComment(innerItem.id)" title="Delete Comment" class="fa fa-trash"
+                                          style="padding-left: 10px; cursor: pointer;"></i>
+                                       <span style="float:inline-end;">
+                                          <span [innerHtml]="innerItem.date | date : 'MMM dd, yyyy hh:mm a'"></span>
+                                          (<span [innerHtml]="innerItem.createdBy"></span>)
+                                       </span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-12" *ngIf="!nurseNotes" style="padding-top: 50px; min-height: 200px;display: inline-block;">
+         No Rows To Show
+      </div>
+   </div>
+</div>

@@ -1,0 +1,54 @@
+<div>
+   <div class="page-wrapper">
+      <div class="content container-fluid">
+         <!-- Page Header -->
+         <div class="crms-title row bg-white mb-3">
+            <div class="col">
+               <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white me-2">
+                     <i class="la la-table"></i>
+                  </span>
+                  <span>Hospital Bed Setup</span>
+               </h3>
+            </div>
+         </div>
+         <div>
+            <div class="col-12">
+               <div class="card flex-fill">
+                  <div class="card-header">
+                     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-solid bg-white">
+                        <li class="nav-item">
+                           <a href="#bed" data-bs-toggle="tab" class="nav-link active">Bed</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#bed-type" data-bs-toggle="tab" class="nav-link">Bed Type</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#bed-group" data-bs-toggle="tab" class="nav-link">Bed Group</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#floor" data-bs-toggle="tab" class="nav-link">Floor</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="card-body p-t-0">
+                     <div class="tab-content pt-0">
+                        <div id="bed" class="tab-pane fade show active">
+                           <app-setup-bed-list></app-setup-bed-list>
+                        </div>
+                        <div id="bed-type" class="tab-pane fade">
+                           <app-setup-bed-type-list></app-setup-bed-type-list>
+                        </div>
+                        <div id="bed-group" class="tab-pane fade">
+                           <app-setup-bed-group-list></app-setup-bed-group-list>
+                        </div>
+                        <div id="floor" class="tab-pane fade">
+                           <app-setup-floor-list></app-setup-floor-list>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>

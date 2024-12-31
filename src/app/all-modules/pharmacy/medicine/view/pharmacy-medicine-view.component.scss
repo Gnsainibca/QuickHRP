@@ -1,0 +1,38 @@
+.p-l-40 {
+	padding-left: 40px;
+}
+
+table {
+	width: 100%;
+}
+
+th,
+td {
+	padding: 5px;
+	text-align: left;
+}
+
+::ng-deep .size-full .modal-dialog {
+	max-width: 100% !important;
+	width: 100% !important;
+}
+
+.ag-grid-wrapper {
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  :host ::ng-deep .ag-root-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  :host ::ng-deep .ag-body-horizontal-scroll {
+    order: -1;
+  }
+  :host ::ng-deep .ag-body-viewport {
+    overflow-x: hidden !important;
+  }
+  :host ::ng-deep .ag-body-horizontal-scroll-viewport{
+    scrollbar-width: thin;
+  }

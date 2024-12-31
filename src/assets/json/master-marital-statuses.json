@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "name": "Not Specified",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Separated",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Widowed",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Married",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Single",
+      "isActive": true,
+      "id": 5
+    }
+  ]
+}

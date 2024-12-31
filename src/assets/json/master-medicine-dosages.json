@@ -1,0 +1,116 @@
+{
+  "data": [
+    {
+      "medicineCategoryId": 10,
+      "name": "2",
+      "medicineUnitId": 2,
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "medicineCategoryId": 10,
+      "name": "1",
+      "medicineUnitId": 2,
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "medicineCategoryId": 11,
+      "name": "1",
+      "medicineUnitId": 3,
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "medicineCategoryId": 11,
+      "name": "0.5",
+      "medicineUnitId": 3,
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "medicineCategoryId": 1,
+      "name": "1",
+      "medicineUnitId": 2,
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "medicineCategoryId": 1,
+      "name": "1/2",
+      "medicineUnitId": 2,
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "medicineCategoryId": 7,
+      "name": "1",
+      "medicineUnitId": 5,
+      "isActive": true,
+      "id": 7
+    },
+    {
+      "medicineCategoryId": 9,
+      "name": "1",
+      "medicineUnitId": 3,
+      "isActive": true,
+      "id": 8
+    },
+    {
+      "medicineCategoryId": 12,
+      "name": "1",
+      "medicineUnitId": 4,
+      "isActive": true,
+      "id": 9
+    },
+    {
+      "medicineCategoryId": 13,
+      "name": "1",
+      "medicineUnitId": 5,
+      "isActive": true,
+      "id": 10
+    },
+    {
+      "medicineCategoryId": 2,
+      "name": "1",
+      "medicineUnitId": 5,
+      "isActive": true,
+      "id": 11
+    },
+    {
+      "medicineCategoryId": 3,
+      "name": "2",
+      "medicineUnitId": 1,
+      "isActive": true,
+      "id": 12
+    },
+    {
+      "medicineCategoryId": 4,
+      "name": "3",
+      "medicineUnitId": 3,
+      "isActive": true,
+      "id": 13
+    },
+    {
+      "medicineCategoryId": 5,
+      "name": "2",
+      "medicineUnitId": 3,
+      "isActive": true,
+      "id": 14
+    },
+    {
+      "medicineCategoryId": 6,
+      "name": "1",
+      "medicineUnitId": 3,
+      "isActive": true,
+      "id": 15
+    },
+    {
+      "medicineCategoryId": 8,
+      "name": "1",
+      "medicineUnitId": 3,
+      "isActive": true,
+      "id": 16
+    }
+  ]
+}

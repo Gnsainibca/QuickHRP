@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "name": "HIPERIN",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Antigout agents",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Antiparasitics",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Antimycobacterials",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Antibacterials",
+      "isActive": true,
+      "id": 5
+    }
+  ]
+}

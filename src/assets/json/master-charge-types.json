@@ -1,0 +1,176 @@
+{
+  "data": [
+    {
+      "name": "Appointment",
+      "moduleInnerForm": [
+        {
+          "id": 1,
+          "selected": true
+        }
+      ],
+      "isActive": true,
+      "id": 12
+    },
+    {
+      "name": "OPD",
+      "moduleInnerForm": [
+        {
+          "id": 2,
+          "selected": true
+        }
+      ],
+      "isActive": true,
+      "id": 11
+    },
+    {
+      "name": "IPD",
+      "moduleInnerForm": [
+        {
+          "id": 3,
+          "selected": true
+        }
+      ],
+      "isActive": true,
+      "id": 10
+    },
+    {
+      "name": "Pathology",
+      "moduleInnerForm": [
+        {
+          "id": 4,
+          "selected": true
+        }
+      ],
+      "isActive": true,
+      "id": 9
+    },
+    {
+      "name": "Radiology",
+      "moduleInnerForm": [
+        {
+          "id": 5,
+          "selected": true
+        }
+      ],
+      "isActive": true,
+      "id": 8
+    },
+    {
+      "name": "Blood Bank",
+      "moduleInnerForm": [
+        {
+          "id": 6,
+          "selected": true
+        }
+      ],
+      "isActive": true,
+      "id": 7
+    },
+    {
+      "name": "Ambulance",
+      "moduleInnerForm": [
+        {
+          "id": 7,
+          "selected": true
+        }
+      ],
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "Procedures",
+      "moduleInnerForm": [
+        {
+          "id": 2,
+          "selected": true
+        },
+        {
+          "id": 3,
+          "selected": true
+        }
+      ],
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Investigations",
+      "moduleInnerForm": [
+        {
+          "id": 4,
+          "selected": true
+        },
+        {
+          "id": 5,
+          "selected": true
+        }
+      ],
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Supplier",
+      "moduleInnerForm": [
+        {
+          "id": 2,
+          "selected": true
+        },
+        {
+          "id": 3,
+          "selected": true
+        }
+      ],
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Operations",
+      "moduleInnerForm": [
+        {
+          "id": 2,
+          "selected": true
+        },
+        {
+          "id": 3,
+          "selected": true
+        }
+      ],
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Others",
+      "moduleInnerForm": [
+        {
+          "id": 1,
+          "selected": true
+        },
+        {
+          "id": 2,
+          "selected": true
+        },
+        {
+          "id": 3,
+          "selected": true
+        },
+        {
+          "id": 4,
+          "selected": true
+        },
+        {
+          "id": 5,
+          "selected": true
+        },
+        {
+          "id": 6,
+          "selected": true
+        },
+        {
+          "id": 7,
+          "selected": true
+        }
+      ],
+      "isActive": true,
+      "id": 1
+    }
+  ]
+}

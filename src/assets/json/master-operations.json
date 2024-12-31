@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "name": "Hydrocele and varicocele excision",
+      "operationCategoryId": 1,
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Dilation and curettage",
+      "operationCategoryId": 7,
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Coronary artery bypass",
+      "operationCategoryId": 2,
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Cataract extraction ophthalmological procedures",
+      "operationCategoryId": 5,
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Bronchoscopy",
+      "operationCategoryId": 2,
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Arthroscopic surgery including ACL repair",
+      "operationCategoryId": 7,
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "Tooth extraction",
+      "operationCategoryId": 7,
+      "isActive": true,
+      "id": 7
+    },
+    {
+      "name": "Facelift Surgery",
+      "operationCategoryId": 3,
+      "isActive": true,
+      "id": 8
+    }
+  ]
+}

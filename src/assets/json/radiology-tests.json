@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "name": "Functional MRI (RI)",
+      "shortName": "FMRI",
+      "type": "FMRI",
+      "categoryId": 8,
+      "subCategory": "FMRI",
+      "reportDays": 1,
+      "chargeCategoryId": 14,
+      "chargeId": 14,
+      "amount": 160,
+      "tax": 18,
+      "testParameterInnerForm": [
+        {
+          "testParameterId": 3,
+          "referenceRange": "30 mGy/min",
+          "unit": "(dGy×cm2)"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Cardiopulmonary Exercise Test",
+      "shortName": "CPET",
+      "type": "CPET",
+      "categoryId": 8,
+      "subCategory": "CPET",
+      "reportDays": 2,
+      "chargeCategoryId": 14,
+      "chargeId": 14,
+      "amount": 160,
+      "tax": 18,
+      "testParameterInnerForm": [
+        {
+          "testParameterId": 2,
+          "referenceRange": "0.2 and 7 T",
+          "unit": "Teslas"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "Magnetic resonance imaging ",
+      "shortName": "MR\t",
+      "type": "Computed Tomography\t",
+      "categoryId": 10,
+      "subCategory": "Computed Tomography\t",
+      "reportDays": 2,
+      "chargeCategoryId": 14,
+      "chargeId": 14,
+      "amount": 160,
+      "tax": 18,
+      "testParameterInnerForm": [
+        {
+          "testParameterId": 2,
+          "referenceRange": "0.2 and 7 T",
+          "unit": "Teslas"
+        }
+      ],
+      "id": 3
+    }
+  ]
+}

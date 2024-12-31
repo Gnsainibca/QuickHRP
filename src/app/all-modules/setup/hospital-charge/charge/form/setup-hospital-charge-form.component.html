@@ -1,0 +1,124 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Charge</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="hospitalChargeForm" name="hospitalChargeForm" [formGroup]="hospitalChargeForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Name<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="name" id="name" formControlName="name"
+                     [ngClass]="{'is-invalid': f['name'].invalid && f['name'].touched}" />
+                  <div class="invalid-feedback" *ngIf="f['name'].invalid && f['name'].touched">
+                     Please provide the name.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Charge Type<span style="color: red">&nbsp;*</span></label>
+                  <select id="chargeTypeId" name="chargeTypeId" class="form-select form-control"
+                     formControlName="chargeTypeId" (change)="onChargeTypeChange()" [ngClass]="{
+                        'is-invalid': f['chargeTypeId'].touched && f['chargeTypeId'].invalid
+                     }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of chargeTypes" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['chargeTypeId'].invalid && f['chargeTypeId'].touched">
+                     Please provide the charge type.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Charge Category<span style="color: red">&nbsp;*</span></label>
+                  <select id="chargeCategoryId" name="chargeCategoryId" class="form-select form-control"
+                     formControlName="chargeCategoryId" [ngClass]="{
+                        'is-invalid': f['chargeCategoryId'].touched && f['chargeCategoryId'].invalid
+                     }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of filteredChargeCategories" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['chargeCategoryId'].invalid && f['chargeCategoryId'].touched">
+                     Please provide the charge category.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Unit Type<span style="color: red">&nbsp;*</span></label>
+                  <select id="unitTypeId" name="unitTypeId" class="form-select form-control"
+                     formControlName="unitTypeId" [ngClass]="{
+                        'is-invalid': f['unitTypeId'].touched && f['unitTypeId'].invalid
+                     }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of unitTypes" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['unitTypeId'].invalid && f['unitTypeId'].touched">
+                     Please provide the unit type.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Tax Category<span style="color: red">&nbsp;*</span></label>
+                  <select id="taxCategoryId" name="taxCategoryId" class="form-select form-control"
+                     formControlName="taxCategoryId" (change)="onTaxCategoryChange()" [ngClass]="{
+                        'is-invalid': f['taxCategoryId'].touched && f['taxCategoryId'].invalid
+                     }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of taxCategories" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['taxCategoryId'].invalid && f['taxCategoryId'].touched">
+                     Please provide the tax category.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Tax (%)</label>
+                  <input class="form-control" type="number" name="tax" id="name" formControlName="tax"
+                     [ngClass]="{'is-invalid': f['tax'].invalid && f['tax'].touched}" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Standard Charge<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="number" name="standardCharge" id="standardCharge"
+                     formControlName="standardCharge"
+                     [ngClass]="{'is-invalid': f['standardCharge'].invalid && f['standardCharge'].touched}" />
+                  <div class="invalid-feedback" *ngIf="f['standardCharge'].invalid && f['standardCharge'].touched">
+                     Please provide the standard charge.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Description</label>
+                  <textarea class="form-control" type="text" name="description" id="description"
+                     formControlName="description"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

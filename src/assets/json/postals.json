@@ -1,0 +1,124 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "fromTitle": "Digital mammography",
+      "referenceNo": "3234",
+      "toTitle" : "Digital mammography",
+      "address" : "Quick HRP Hospital Delhi",
+      "note" : "We have received your postal.",
+      "date": "30-Aug-2024",
+      "type" : "Received"
+    },
+    {
+      "id": 2,
+      "fromTitle": "Patient Reports",
+      "referenceNo": "4322",
+      "toTitle" : "Patient Reports",
+      "address" : "Government Hospital ,Mumbai",
+      "note" : "We have received your postal.",
+      "date": "30-Aug-2024",
+      "type" : "Dispatched"
+    },
+    {
+      "id": 3,
+      "fromTitle": "Patient Food Service",
+      "referenceNo": "1232",
+      "toTitle" : "Nursing Information",
+      "address" : "Medical Clinic",
+      "note" : "We have received your postal.",
+      "date": "30-Aug-2024",
+      "type" : "Received"
+    },
+    {
+      "id": 4,
+      "fromTitle": "CT SCAN Lab",
+      "referenceNo": "4563",
+      "toTitle" : "CT SCAN Lab",
+      "address" : "Private Hospital , Delhi",
+      "note" : "We have received your postal.",
+      "date": "30-Aug-2024",
+      "type" : "Received"
+    },
+    {
+      "id": 5,
+      "fromTitle": "Mortuary Lab",
+      "referenceNo": "8678",
+      "toTitle" : "Mortuary Lab",
+      "address" : "Hospital Delhi",
+      "note" : "We have received your postal.",
+      "date": "30-Aug-2024",
+      "type" : "Dispatched"
+    },
+    {
+      "id": 6,
+      "fromTitle": "Reyaz Hospital",
+      "referenceNo": "3234",
+      "toTitle" : "Reyaz Hospital",
+      "address" : "MAX Hospital Delhi",
+      "note" : "We have received your postal.",
+      "date": "30-Aug-2024",
+      "type" : "Dispatched"
+    },
+    {
+      "id": 7,
+     "fromTitle": "CT SCAN Lab",
+      "referenceNo": "7643",
+      "toTitle" : "CT SCAN Lab",
+      "address" : "Hospital Delhi",
+      "note" : "We have received your postal.",
+      "date": "30-Aug-2024",
+      "type" : "Received"
+    },
+    {
+      "id": 8,
+      "fromTitle": "Pharmacy Information",
+      "referenceNo": "4565",
+      "toTitle" : "Pharmacy Information",
+      "address" : "Hospital Delhi",
+      "note" : "We have received your postal.",
+      "date": "30-Aug-2024",
+      "type" : "Dispatched"
+    },
+    {
+      "id": 9,
+      "fromTitle": "Health Seminar",
+      "referenceNo": "4454",
+      "toTitle" : "Health Seminar",
+      "address" : "Hospital Delhi",
+      "note" : "We have received your postal.",
+      "date": "30-Aug-2024",
+      "type" : "Received"
+    },
+    {
+      "id": 10,
+     "fromTitle": "CT SCAN Lab",
+      "referenceNo": "2232",
+      "toTitle" : "CT SCAN Lab",
+      "address" : "Hospital Delhi",
+      "note" : "We have received your postal.",
+      "date": "30-Aug-2024",
+      "type" : "Received"
+    },
+    {
+      "id": 11,
+      "fromTitle": "Coid-19 Health Seminar",
+      "referenceNo": "5543",
+      "toTitle" : "Coid-19 Health Seminar",
+      "address" : "Hospital Delhi",
+      "note" : "We have received your postal.",
+      "date": "30-Aug-2024",
+      "type" : "Dispatched"
+    },
+    {
+      "id": 12,
+      "fromTitle": "X- Ray Room",
+      "referenceNo": "3234",
+      "toTitle" : "X- Ray Room",
+      "address" : "Hospital Delhi",
+      "note" : "We have received your postal.",
+      "date": "30-Aug-2024",
+      "type" : "Dispatched"
+    }
+  ]
+}

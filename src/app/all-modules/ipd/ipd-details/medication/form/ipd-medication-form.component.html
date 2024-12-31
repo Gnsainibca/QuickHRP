@@ -1,0 +1,108 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Medication Dose</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="medicationForm" name="medicationForm" class="forms-medication" [formGroup]="medicationForm"
+      (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Date<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YYYY" matInput
+                     [matDatepicker]="picker1" name="date" id="date" formControlName="date" [ngClass]="{
+                           'is-invalid': f['date'].touched && f['date'].invalid
+                         }" />
+                  <mat-datepicker #picker1></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                     class="activity-datepicker"></mat-datepicker-toggle>
+                  <div class="invalid-feedback" *ngIf="f['date'].invalid && f['date'].touched">
+                     Please provide the date.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Time<span style="color: red">&nbsp;*</span></label>
+                  <ngx-timepicker-field [controlOnly]="true" class="form-control border-0" type="text" name="time"
+                     id="time" formControlName="time" [ngClass]="{
+                        'is-invalid': f['time'].touched && f['time'].invalid
+                     }"></ngx-timepicker-field>
+                  <!-- <mat-icon class="timepicker-air_icon" (click)="f['time'].setValue(null)">clear</mat-icon> -->
+                  <div class="invalid-feedback" *ngIf="f['time'].invalid && f['time'].touched">
+                     Please provide the time.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Medicine Category<span style="color: red">&nbsp;*</span></label>
+                  <select id="medicineCategoryId" name="medicineCategoryId" class="form-select form-control"
+                     formControlName="medicineCategoryId" (change)="onMedicineCategoryChange()" [ngClass]="{
+                        'is-invalid': f['medicineCategoryId'].touched && f['medicineCategoryId'].invalid
+                     }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of medicineCategories" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback"
+                     *ngIf="f['medicineCategoryId'].invalid && f['medicineCategoryId'].touched">
+                     Please provide the medicine category.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Medicine Name<span style="color: red">&nbsp;*</span></label>
+                  <select id="medicineId" name="medicineId" class="form-select form-control"
+                     formControlName="medicineId" [ngClass]="{
+                     'is-invalid': f['medicineId'].touched && f['medicineId'].invalid
+                  }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of filteredMedicines" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['medicineId'].invalid && f['medicineId'].touched">
+                     Please provide the medicine name.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Dosage<span style="color: red">&nbsp;*</span></label>
+                  <select id="medicineUnitId" name="medicineUnitId" class="form-select form-control"
+                     formControlName="medicineUnitId" [ngClass]="{
+                     'is-invalid': f['medicineUnitId'].touched && f['medicineUnitId'].invalid
+                  }">
+                     <option value="">-Select-</option>
+                     <option *ngFor="let item of filteredMedicineDosageUnits" [ngValue]="item.id">{{ item.name }}</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="f['medicineUnitId'].invalid && f['medicineUnitId'].touched">
+                     Please provide the dosage.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Remarks</label>
+                  <textarea class="form-control" id="remarks" name="remarks" formControlName="remarks"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

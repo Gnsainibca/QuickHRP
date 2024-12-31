@@ -1,0 +1,48 @@
+<div>
+   <div class="page-wrapper">
+      <div class="content container-fluid">
+         <!-- Page Header -->
+         <div class="crms-title row bg-white mb-3">
+            <div class="col">
+               <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white me-2">
+                     <i class="la la-table"></i>
+                  </span>
+                  <span>Pathology Setup</span>
+               </h3>
+            </div>
+         </div>
+         <div>
+            <div class="col-12">
+               <div class="card flex-fill">
+                  <div class="card-header">
+                     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-solid bg-white">
+                        <li class="nav-item">
+                           <a href="#pathology-category" data-bs-toggle="tab" class="nav-link active">Pathology Category</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#unit" data-bs-toggle="tab" class="nav-link">Unit</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#pathology-parameter" data-bs-toggle="tab" class="nav-link">Pathology Parameter</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="card-body p-t-0">
+                     <div class="tab-content pt-0">
+                        <div id="pathology-category" class="tab-pane fade show active">
+                           <app-setup-pathology-category-list></app-setup-pathology-category-list>
+                        </div>
+                        <div id="unit" class="tab-pane fade">
+                           <app-setup-pathology-unit-list></app-setup-pathology-unit-list>
+                        </div>
+                        <div id="pathology-parameter" class="tab-pane fade">
+                           <app-setup-pathology-parameter-list></app-setup-pathology-parameter-list>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>

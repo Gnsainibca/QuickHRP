@@ -1,0 +1,36 @@
+<div>
+   <div class="col-md-12 col-sm-12">
+      <div class="ribbon-wrapper card m-b-10">
+         <div class="card-body">
+            <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>CHARGE</div>
+            <div class="table-responsive">
+               <table class="table table-nowrap mb-0">
+                  <thead>
+                     <tr>
+                        <th>Name</th>
+                        <th>Charge Type</th>
+                        <th>Standard Charge</th>
+                        <th>Discount</th>
+                        <th>Tax</th>
+                        <th>Amount</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let charge of charges;">
+                        <td><span [innerHtml]="charge.charge"></span></td>
+                        <td><span [innerHtml]="charge.chargeType"></span></td>
+                        <td><span [innerHtml]="charge.standardCharge"></span></td>
+                        <td><span [innerHtml]="charge.discountPercentage"></span>%</td>
+                        <td><span [innerHtml]="charge.tax"></span>%</td>
+                        <td><span [innerHtml]="charge.netAmount"></span></td>
+                     </tr>
+                     <tr *ngIf="charges?.length==0" style="padding-top: 30px; min-height: 70px;display: inline-block;">
+                        No Rows To Show 
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

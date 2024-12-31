@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "name": "Urology",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Thoracic Surgery",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Plastic Surgery",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Orthopedic Surgery",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Ophthalmology",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Gynaecology",
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "ENT and Oral Surgery",
+      "isActive": true,
+      "id": 7
+    }
+  ]
+}

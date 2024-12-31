@@ -1,0 +1,121 @@
+<div class="col-md-12 col-sm-12">
+   <div class="ribbon-wrapper card m-b-10">
+      <div class="card-body">
+         <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>PAYMENT/BILLING</div>
+         <div *ngIf="opdBillingInfo">
+            <div class="col-sm-12">
+               <div class="form-group">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="mb-3">
+                           <h4>OPD</h4>
+                        </div>
+                        <div class="mb-2"><span [innerHtml]="opdBillingInfo.percentage | number : '1.2-2'"></span>%
+                           <span class="float-right"><span [innerHtml]="opdBillingInfo.paid | number : '1.2-2'"></span>
+                              Rs/<span [innerHtml]="opdBillingInfo.charge | number : '1.2-2'"></span> Rs</span>
+                        </div>
+                        <div class="progress progress-sm">
+                           <div class="progress-bar" [ngClass]="opdBillingInfo.progressClass" role="progressbar"
+                              [style.width]="opdBillingInfo.percentage + '%'" aria-valuenow="50" aria-valuemin="0"
+                              aria-valuemax="100"></div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="mb-3">
+                           <h4>Pharmacy</h4>
+                        </div>
+                        <div class="mb-2"><span
+                              [innerHtml]="billingInfo_NotImplemented.percentage | number : '1.2-2'"></span>%
+                           <span class="float-right"><span
+                                 [innerHtml]="billingInfo_NotImplemented.paid | number : '1.2-2'"></span> Rs/<span
+                                 [innerHtml]="billingInfo_NotImplemented.charge | number : '1.2-2'"></span> Rs</span>
+                        </div>
+                        <div class="progress progress-sm">
+                           <div class="progress-bar bg-info" role="progressbar"
+                              [style.width]="billingInfo_NotImplemented.percentage + '%'" aria-valuenow="50"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-12">
+               <div class="form-group">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="mb-3">
+                           <h4>Pathology</h4>
+                        </div>
+                        <div class="mb-2"><span
+                              [innerHtml]="billingInfo_NotImplemented.percentage | number : '1.2-2'"></span>%
+                           <span class="float-right"><span
+                                 [innerHtml]="billingInfo_NotImplemented.paid | number : '1.2-2'"></span> Rs/<span
+                                 [innerHtml]="billingInfo_NotImplemented.charge | number : '1.2-2'"></span> Rs</span>
+                        </div>
+                        <div class="progress progress-sm">
+                           <div class="progress-bar bg-info" role="progressbar"
+                              [style.width]="billingInfo_NotImplemented.percentage + '%'" aria-valuenow="50"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="mb-3">
+                           <h4>Radiology</h4>
+                        </div>
+                        <div class="mb-2"><span
+                              [innerHtml]="billingInfo_NotImplemented.percentage | number : '1.2-2'"></span>%
+                           <span class="float-right"><span
+                                 [innerHtml]="billingInfo_NotImplemented.paid | number : '1.2-2'"></span> Rs/<span
+                                 [innerHtml]="billingInfo_NotImplemented.charge | number : '1.2-2'"></span> Rs</span>
+                        </div>
+                        <div class="progress progress-sm">
+                           <div class="progress-bar bg-info" role="progressbar"
+                              [style.width]="billingInfo_NotImplemented.percentage + '%'" aria-valuenow="50"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-12">
+               <div class="form-group">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="mb-3">
+                           <h4>Blood Bank</h4>
+                        </div>
+                        <div class="mb-2"><span
+                              [innerHtml]="billingInfo_NotImplemented.percentage | number : '1.2-2'"></span>%
+                           <span class="float-right"><span
+                                 [innerHtml]="billingInfo_NotImplemented.paid | number : '1.2-2'"></span> Rs/<span
+                                 [innerHtml]="billingInfo_NotImplemented.charge | number : '1.2-2'"></span> Rs</span>
+                        </div>
+                        <div class="progress progress-sm">
+                           <div class="progress-bar bg-info" role="progressbar"
+                              [style.width]="billingInfo_NotImplemented.percentage + '%'" aria-valuenow="50"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="mb-3">
+                           <h4>Ambulance</h4>
+                        </div>
+                        <div class="mb-2"><span
+                              [innerHtml]="billingInfo_NotImplemented.percentage | number : '1.2-2'"></span>%
+                           <span class="float-right"><span
+                                 [innerHtml]="billingInfo_NotImplemented.paid | number : '1.2-2'"></span> Rs/<span
+                                 [innerHtml]="billingInfo_NotImplemented.charge | number : '1.2-2'"></span> Rs</span>
+                        </div>
+                        <div class="progress progress-sm">
+                           <div class="progress-bar bg-info" role="progressbar"
+                              [style.width]="billingInfo_NotImplemented.percentage + '%'" aria-valuenow="50"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

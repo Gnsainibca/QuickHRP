@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "name": "Cardiologists",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "Dermatologists",
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "Endocrinologists",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Gastroenterologists",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Ophthalmologists",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Neuroradiology",
+      "isActive": true,
+      "id": 6
+    }
+  ]
+}

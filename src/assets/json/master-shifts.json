@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "name": "Morning",
+      "timeFrom": "10:00 AM",
+      "timeTo": "4:00 PM",
+      "id": 1
+    },
+    {
+      "name": "Evening",
+      "timeFrom": "4:00 PM",
+      "timeTo": "10:00 PM",
+      "id": 2
+    }
+  ]
+}

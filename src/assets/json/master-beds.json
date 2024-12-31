@@ -1,0 +1,374 @@
+{
+  "data": [
+    {
+      "name": "FF - 145",
+      "bedTypeId": 1,
+      "bedGroupId": 1,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 11
+    },
+    {
+      "name": "FF - 146",
+      "bedTypeId": 2,
+      "bedGroupId": 1,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 10
+    },
+    {
+      "name": "FF - 147",
+      "bedTypeId": 1,
+      "bedGroupId": 1,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 9
+    },
+    {
+      "name": "FF - 148",
+      "bedTypeId": 1,
+      "bedGroupId": 1,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 8
+    },
+    {
+      "name": "FF - 149",
+      "bedTypeId": 1,
+      "bedGroupId": 1,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 7
+    },
+    {
+      "name": "FF - 150",
+      "bedTypeId": 1,
+      "bedGroupId": 1,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "FF - 151",
+      "bedTypeId": 1,
+      "bedGroupId": 1,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "FF - 152",
+      "bedTypeId": 1,
+      "bedGroupId": 1,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "FF - 153",
+      "bedTypeId": 1,
+      "bedGroupId": 1,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "FF - 154",
+      "bedTypeId": 1,
+      "bedGroupId": 1,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "FF - 155",
+      "bedTypeId": 1,
+      "bedGroupId": 1,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "TF - 144",
+      "bedTypeId": 1,
+      "bedGroupId": 5,
+      "isAvailable": true,
+      "id": 12
+    },
+    {
+      "name": "TF - 143",
+      "bedTypeId": 1,
+      "bedGroupId": 5,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 13
+    },
+    {
+      "name": "TF - 142",
+      "bedTypeId": 1,
+      "bedGroupId": 5,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 14
+    },
+    {
+      "name": "TF - 141",
+      "bedTypeId": 1,
+      "bedGroupId": 5,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 15
+    },
+    {
+      "name": "SF - 140",
+      "bedTypeId": 3,
+      "bedGroupId": 4,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 16
+    },
+    {
+      "name": "SF - 139",
+      "bedTypeId": 1,
+      "bedGroupId": 4,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 17
+    },
+    {
+      "name": "SF - 138",
+      "bedTypeId": 3,
+      "bedGroupId": 4,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 18
+    },
+    {
+      "name": "SF - 137",
+      "bedTypeId": 3,
+      "bedGroupId": 4,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 19
+    },
+    {
+      "name": "SF - 136",
+      "bedTypeId": 3,
+      "bedGroupId": 3,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 20
+    },
+    {
+      "name": "SF - 135",
+      "bedTypeId": 2,
+      "bedGroupId": 3,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 21
+    },
+    {
+      "name": "SF - 134",
+      "bedTypeId": 3,
+      "bedGroupId": 3,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 22
+    },
+    {
+      "name": "SF - 133",
+      "bedTypeId": 1,
+      "bedGroupId": 3,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 23
+    },
+    {
+      "name": "SF - 132",
+      "bedTypeId": 1,
+      "bedGroupId": 3,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 24
+    },
+    {
+      "name": "FF - 131",
+      "bedTypeId": 3,
+      "bedGroupId": 2,
+      "isAvailable": true,
+      "id": 25
+    },
+    {
+      "name": "FF - 130",
+      "bedTypeId": 3,
+      "bedGroupId": 2,
+      "isAvailable": true,
+      "id": 26
+    },
+    {
+      "name": "FF - 129",
+      "bedTypeId": 3,
+      "bedGroupId": 2,
+      "isAvailable": true,
+      "id": 27
+    },
+    {
+      "name": "FF - 128",
+      "bedTypeId": 1,
+      "bedGroupId": 2,
+      "isAvailable": true,
+      "id": 28
+    },
+    {
+      "name": "FF - 127",
+      "bedTypeId": 3,
+      "bedGroupId": 2,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 29
+    },
+    {
+      "name": "GF - 126",
+      "bedTypeId": 2,
+      "bedGroupId": 7,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 30
+    },
+    {
+      "name": "GF - 125",
+      "bedTypeId": 2,
+      "bedGroupId": 7,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 31
+    },
+    {
+      "name": "GF - 124",
+      "bedTypeId": 2,
+      "bedGroupId": 7,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 32
+    },
+    {
+      "name": "GF - 123",
+      "bedTypeId": 2,
+      "bedGroupId": 7,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 33
+    },
+    {
+      "name": "GF - 122",
+      "bedTypeId": 2,
+      "bedGroupId": 7,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 34
+    },
+    {
+      "name": "GF - 121",
+      "bedTypeId": 2,
+      "bedGroupId": 7,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 35
+    },
+    {
+      "name": "GF - 120",
+      "bedTypeId": 2,
+      "bedGroupId": 7,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 36
+    },
+    {
+      "name": "GF - 119",
+      "bedTypeId": 2,
+      "bedGroupId": 7,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 37
+    },
+    {
+      "name": "GF - 118",
+      "bedTypeId": 2,
+      "bedGroupId": 7,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 38
+    },
+    {
+      "name": "FF - 117",
+      "bedTypeId": 3,
+      "bedGroupId": 1,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 39
+    },
+    {
+      "name": "FF - 116",
+      "bedTypeId": 3,
+      "bedGroupId": 1,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 40
+    },
+    {
+      "name": "TF - 301",
+      "bedTypeId": 1,
+      "bedGroupId": 5,
+      "isAvailable": true,
+      "id": 41
+    },
+    {
+      "name": "TF - 302",
+      "bedTypeId": 3,
+      "bedGroupId": 5,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 42
+    },
+    {
+      "name": "TF - 303",
+      "bedTypeId": 3,
+      "bedGroupId": 5,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 43
+    },
+    {
+      "name": "TF - 304",
+      "bedTypeId": 1,
+      "bedGroupId": 5,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 44
+    },
+    {
+      "name": "TF - 350",
+      "bedTypeId": 3,
+      "bedGroupId": 6,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 45
+    },
+    {
+      "name": "TF - 351",
+      "bedTypeId": 3,
+      "bedGroupId": 6,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 46
+    },
+    {
+      "name": "TF - 353",
+      "bedTypeId": 3,
+      "bedGroupId": 6,
+      "isAvailable": true,
+      "isActive": true,
+      "id": 47
+    }
+  ]
+}

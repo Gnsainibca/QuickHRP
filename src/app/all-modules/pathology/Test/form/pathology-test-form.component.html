@@ -1,0 +1,189 @@
+<div class="modal-header">
+   <h4 class="modal-title">Pathology Test</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="pathologyTestForm" name="pathologyTestForm" class="forms-pathologyTest" [formGroup]="pathologyTestForm"
+      (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-3">
+                     <label>Test Name<span style="color: red">&nbsp;*</span></label>
+                     <input type="text" class="form-control" name="name" id="name" formControlName="name" [ngClass]="{
+                        'is-invalid': f['name'].touched && f['name'].invalid
+                        } " />
+                     <div class="invalid-feedback" *ngIf="f['name'].invalid && f['name'].touched">
+                        Please provide the test name.
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <label>Short Name<span style="color: red">&nbsp;*</span></label>
+                     <input type="text" class="form-control" name="shortName" id="shortName" formControlName="shortName"
+                        [ngClass]="{
+                           'is-invalid': f['shortName'].touched && f['shortName'].invalid
+                           } " />
+                     <div class="invalid-feedback" *ngIf="f['shortName'].invalid && f['shortName'].touched">
+                        Please provide the short name.
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <label>Test Type</label>
+                     <input type="text" class="form-control" name="type" id="type" formControlName="type" />
+                  </div>
+                  <div class="col-md-3">
+                     <label>Category Name<span style="color: red">&nbsp;*</span></label>
+                     <select id="categoryId" name="categoryId" class="form-select form-control"
+                        formControlName="categoryId" [ngClass]="{
+                        'is-invalid': f['categoryId'].touched && f['categoryId'].invalid
+                        }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of pathologyCategoryList" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['categoryId'].invalid && f['categoryId'].touched">
+                        Please provide the category name.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-3">
+                     <label>Sub Category</label>
+                     <input type="text" class="form-control" name="subCategory" id="subCategory"
+                        formControlName="subCategory" />
+                  </div>
+                  <div class="col-md-3">
+                     <label>Method</label>
+                     <input type="text" class="form-control" name="method" id="method" formControlName="method" />
+                  </div>
+                  <div class="col-md-3">
+                     <label>Report Days<span style="color: red">&nbsp;*</span></label>
+                     <input type="number" class="form-control" name="reportDays" id="type" formControlName="reportDays"
+                        [ngClass]="{
+                        'is-invalid': f['reportDays'].touched && f['reportDays'].invalid
+                        }" />
+                     <div class="invalid-feedback" *ngIf="f['reportDays'].invalid && f['reportDays'].touched">
+                        Please provide the report days.
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <label>Charge Category<span style="color: red">&nbsp;*</span></label>
+                     <select id="chargeCategoryId" name="chargeCategoryId" class="form-select form-control"
+                        (change)="onChargeCategoryChange()" formControlName="chargeCategoryId" [ngClass]="{
+                        'is-invalid': f['chargeCategoryId'].touched && f['chargeCategoryId'].invalid
+                        }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of pathologyChargeCategoryList" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback"
+                        *ngIf="f['chargeCategoryId'].invalid && f['chargeCategoryId'].touched">
+                        Please provide the charge category.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-3">
+                     <label>Charge Name<span style="color: red">&nbsp;*</span></label>
+                     <select id="chargeId" name="chargeId" class="form-select form-control" (change)="onChargeChange()"
+                        formControlName="chargeId" [ngClass]="{
+                        'is-invalid': f['chargeId'].touched && f['chargeId'].invalid
+                        }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of filteredPathologyChargeList" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['chargeId'].invalid && f['chargeId'].touched">
+                        Please provide the charge name.
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <label>Standard Charge (Rs)</label>
+                     <input type="text" class="form-control" name="amount" id="amount" formControlName="amount" />
+                  </div>
+                  <div class="col-md-3">
+                     <label>Tax (%)</label>
+                     <input type="text" class="form-control" name="tax" id="tax" formControlName="tax" />
+                  </div>
+                  <div class="col-md-3">
+                     <label>Total Amount (Rs)</label>
+                     <span class="form-control" style="background-color: #e9ecef;">{{f['chargeId'].value>0 ?
+                        f['amount'].value + (f['amount'].value * f['tax'].value / 100) : null}}</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="form-group" style="background-color:#f8f9fa; margin-top: 30px;">
+            <div class="row">
+               <div formArrayName="testParameterInnerForm">
+                  <table class="table table-nowrap mb-0">
+                     <thead>
+                        <tr>
+                           <th>Test Parameter Name<span style="color: red">&nbsp;*</span></th>
+                           <th>Reference Range</th>
+                           <th>Unit</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let innerForm of testParameterInnerForm.controls; let inxd=index"
+                           [formGroupName]="inxd">
+                           <td>
+                              <select id="testParameterId" name="testParameterId" (change)="onTestParameterChange(inxd)"
+                                 class="form-select form-control"
+                                 formControlName="testParameterId" [ngClass]="{
+                                             'is-invalid': innerForm.get('testParameterId')?.touched && innerForm.get('testParameterId')?.invalid
+                                          }">
+                                 <option value="">-Select-</option>
+                                 <option *ngFor="let item of pathologyParameterList" [ngValue]="item.id">{{
+                                    item.name }}</option>
+                              </select>
+                              <div class="invalid-feedback"
+                                 *ngIf="innerForm.get('testParameterId')?.invalid && innerForm.get('testParameterId')?.touched">
+                                 Please provide the test name.
+                              </div>
+                           </td>
+                           <td>
+                              <input type="text" class="form-control" name="referenceRange" id="referenceRange"
+                                 formControlName="referenceRange" />
+                           </td>
+                           <td>
+                              <input type="text" class="form-control" name="unit" id="unit" formControlName="unit" />
+                           </td>
+                           <td>
+                              <i (click)="deleteTest(inxd)" class="fa fa-close"
+                                 style="font-size: 20px;cursor: pointer;margin-top: 12px;color: red;"
+                                 data-bs-toggle="tooltip" title="Delete"></i>
+                           </td>
+                        </tr>
+                        <tr *ngIf="testParameterInnerForm.controls?.length==0">
+                           <td colspan="3" style="text-align: center;background-color: var(--bs-gray-400);;font-weight: bold;">No Test Parameters</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <div>
+                     <button type="button" (click)="addTest()" style="margin-bottom: 20px;margin-top: 10px;"
+                        class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+                        <i class="fa fa-plus"></i> Add Test Parameter</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center action-button-sticky">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+        "id": 1,
+        "opdPatientId": 12,
+        "date": "2024-10-23T18:30:00.000Z",
+        "amount": 100,
+        "paymentModeId": 4,
+        "paymentMode": "UPI",
+        "note": "Operation Service"
+    },
+    {
+        "id": 2,
+        "opdPatientId": 11,
+        "date": "2024-10-23T18:30:00.000Z",
+        "amount": 129.6,
+        "paymentModeId": 4,
+        "paymentMode": "UPI",
+        "note": "Doctor fee"
+    },
+    {
+        "opdPatientId": 1003,
+        "date": "2024-12-04T18:30:00.000Z",
+        "paymentModeId": 1,
+        "amount": 165,
+        "note": null,
+        "id": 3
+    },
+    {
+        "opdPatientId": 1002,
+        "date": "2024-12-04T18:30:00.000Z",
+        "paymentModeId": 1,
+        "amount": 165,
+        "note": null,
+        "id": 3
+    },
+    {
+        "opdPatientId": 1001,
+        "date": "2024-12-04T18:30:00.000Z",
+        "paymentModeId": 1,
+        "amount": 165,
+        "note": null,
+        "id": 3
+    }
+]
+}

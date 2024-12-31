@@ -1,0 +1,76 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Timeline</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form id="timelineForm" name="timelineForm" class="forms-timeline" [formGroup]="timelineForm"
+      (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Title<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control" type="text" name="title" id="title" formControlName="title" [ngClass]="{
+                     'is-invalid': f['title'].touched && f['title'].invalid
+                   }" />
+                  <div class="invalid-feedback" *ngIf="f['title'].invalid && f['title'].touched">
+                     Please provide the title.
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Date<span style="color: red">&nbsp;*</span></label>
+                  <input class="form-control datetimepicker" type="text" placeholder="MM/DD/YYYY" matInput
+                     [matDatepicker]="picker1" name="date" id="date" formControlName="date" [ngClass]="{
+                           'is-invalid': f['date'].touched && f['date'].invalid
+                         }" />
+                  <mat-datepicker #picker1></mat-datepicker>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                     class="activity-datepicker"></mat-datepicker-toggle>
+                  <div class="invalid-feedback" *ngIf="f['date'].invalid && f['date'].touched">
+                     Please provide the date.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Description</label>
+                  <textarea class="form-control" id="description" name="description"
+                     formControlName="description"></textarea>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="row">
+               <div class="col-md-12">
+                  <label>Attach Document</label>
+                  <input class="form-control" type="file" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-12">
+         <div class="form-group">
+            <div class="col-md-6">
+               <label style="float: inline-start;" class="container-checkbox">
+                  <input type="checkbox" formControlName="visibleToThisPerson" />
+                  <span class="checkmark"></span>
+               </label>
+               <span>Visible to this person</span>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

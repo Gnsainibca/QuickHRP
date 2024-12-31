@@ -1,0 +1,60 @@
+<div>
+   <div class="page-wrapper">
+      <div class="content container-fluid">
+         <!-- Page Header -->
+         <div class="crms-title row bg-white mb-3">
+            <div class="col">
+               <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white me-2">
+                     <i class="la la-table"></i>
+                  </span>
+                  <span>Human Resource Setup</span>
+               </h3>
+            </div>
+         </div>
+         <div>
+            <div class="col-12">
+               <div class="card flex-fill">
+                  <div class="card-header">
+                     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-solid bg-white">
+                        <li class="nav-item">
+                           <a href="#leave-type" data-bs-toggle="tab" class="nav-link active">Leave Type</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#department" data-bs-toggle="tab" class="nav-link">Department</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#designation" data-bs-toggle="tab" class="nav-link">Designation</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#specialist" data-bs-toggle="tab" class="nav-link">Specialist</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="#contract-type" data-bs-toggle="tab" class="nav-link">Contract Type</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="card-body p-t-0">
+                     <div class="tab-content pt-0">
+                        <div id="leave-type" class="tab-pane fade show active">
+                           <app-setup-leave-type-list></app-setup-leave-type-list>
+                        </div>
+                        <div id="department" class="tab-pane fade">
+                           <app-setup-department-list></app-setup-department-list>
+                        </div>
+                        <div id="designation" class="tab-pane fade">
+                           <app-setup-designation-list></app-setup-designation-list>
+                        </div>
+                        <div id="specialist" class="tab-pane fade">
+                           <app-setup-specialist-list></app-setup-specialist-list>
+                        </div>
+                        <div id="contract-type" class="tab-pane fade">
+                           <app-setup-contract-type-list></app-setup-contract-type-list>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>

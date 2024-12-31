@@ -1,0 +1,167 @@
+<div class="modal-header">
+   <h4 class="modal-title">Add Visitor</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <form class="forms-visitor" [formGroup]="visitorForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-6">
+                     <label>Purpose<span style="color: red">&nbsp;*</span></label>
+                     <select id="purposeId" name="purposeId" class="form-select form-control"
+                        formControlName="purposeId"
+                        [ngClass]="{'is-invalid': f['purposeId'].touched && f['purposeId'].invalid}">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of purposeList" [ngValue]="item.id">{{
+                           item.name }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['purposeId'].invalid && f['purposeId'].touched">
+                        Please provide the purpose.
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <label>Name<span style="color: red">&nbsp;*</span></label>
+                     <input class="form-control" type="text" name="name" id="name" formControlName="name" [ngClass]="{
+                        'is-invalid': f['name'].touched && f['name'].invalid
+                      }" />
+                     <div class="invalid-feedback" *ngIf="f['name'].invalid && f['name'].touched">
+                        Please provide the name.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-6">
+                     <label>Phone Number<span style="color: red">&nbsp;*</span></label>
+                     <input class="form-control" type="text" name="phone" id="phone" formControlName="phone" [ngClass]="{
+                        'is-invalid': f['phone'].touched && f['phone'].invalid
+                     }" />
+                     <div class="invalid-feedback" *ngIf="f['phone'].invalid && f['phone'].touched">
+                        Please provide the phone number.
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <label>ID Card<span style="color: red">&nbsp;*</span></label>
+                     <input class="form-control" type="text" name="idCard" id="idCard" formControlName="idCard"
+                        [ngClass]="{
+                        'is-invalid': f['idCard'].touched && f['idCard'].invalid
+                     }" />
+                     <div class="invalid-feedback" *ngIf="f['idCard'].invalid && f['idCard'].touched">
+                        Please provide the id card.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-6">
+                     <label>Visit To<span style="color: red">&nbsp;*</span></label>
+                     <select class="form-select form-control" formControlName="visitTo" (change)="onVisitToChange()"
+                        [ngClass]="{
+                        'is-invalid': f['visitTo'].touched && f['visitTo'].invalid
+                     }">
+                        <option value="">-Select-</option>
+                        <option *ngFor="let item of visitToOptions" [ngValue]="item">{{ item }}</option>
+                     </select>
+                     <div class="invalid-feedback" *ngIf="f['visitTo'].invalid && f['visitTo'].touched">
+                        Please provide the visit to.
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <label>Related To</label>
+                     <input [typeahead]="relatedToOptions" formControlName="relatedTo" class="form-control"
+                        typeaheadOptionField="name"
+                        placeholder="Search..." 
+                        [typeaheadScrollable]="true" 
+                        [typeaheadOptionsInScrollableView]="10"
+                        (typeaheadLoading)="changeTypeaheadLoading($event)"
+                        (typeaheadNoResults)="changeTypeaheadNoResults($event)" [ngClass]="{
+                        'is-invalid': f['relatedTo'].touched && f['relatedTo'].invalid
+                     }">
+                     <div *ngIf="typeaheadLoading===true">Loading</div>
+                     <div *ngIf="typeaheadNoResults===true">&#10060; No Results Found</div>
+                     <div class="invalid-feedback" *ngIf="f['relatedTo'].invalid && f['relatedTo'].touched">
+                        Please provide the related to.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-6">
+                     <label>Number Of Person<span style="color: red">&nbsp;*</span></label>
+                     <input class="form-control" type="text" name="noOfPerson" id="noOfPerson"
+                        formControlName="noOfPerson" [ngClass]="{
+                           'is-invalid': f['noOfPerson'].touched && f['noOfPerson'].invalid
+                        }" />
+                     <div class="invalid-feedback" *ngIf="f['noOfPerson'].invalid && f['noOfPerson'].touched">
+                        Please provide the number of person.
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <label>Date</label>
+                     <input class="form-control" type="text" name="date" id="date" formControlName="date" />
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-6">
+                     <label>In Time<span style="color: red">&nbsp;*</span></label>
+                     <ngx-timepicker-field [controlOnly]="true" class="form-control border-0" type="text" name="inTime"
+                        id="inTime" formControlName="inTime" [ngClass]="{
+                           'is-invalid': f['inTime'].touched && f['inTime'].invalid
+                        }"></ngx-timepicker-field>
+                     <div class="invalid-feedback" *ngIf="f['inTime'].invalid && f['inTime'].touched">
+                        Please provide the in time.
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <label>Out Time</label>
+                     <ngx-timepicker-field [controlOnly]="true" class="form-control border-0" type="text" name="outTime"
+                        id="outTime" formControlName="outTime"></ngx-timepicker-field>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-12">
+                     <label>Note</label>
+                     <textarea class="form-control" id="note" name="note" formControlName="note"></textarea>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="form-group">
+               <div class="row">
+                  <div class="col-md-12">
+                     <label>Attach Document</label>
+                     <input class="form-control" type="file" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="text-center">
+         <button type="button" type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">
+            Save</button>&nbsp;&nbsp;
+         <button type="button" class="btn btn-secondary btn-rounded" (click)="activeModal.close('Close click')">
+            Cancel
+         </button>
+      </div>
+   </form>
+</div>

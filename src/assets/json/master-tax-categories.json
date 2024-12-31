@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "name": "Blood Module",
+      "tax": 20,
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "name": "OPD Tax",
+      "tax": 20,
+      "isActive": true,
+      "id": 2
+    },
+    {
+      "name": "IPD Tax",
+      "tax": 18,
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "name": "Operation Charges",
+      "tax": 10,
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "name": "Pathology Tax",
+      "tax": 18,
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Radiology Tax",
+      "tax": 20,
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "name": "Ambulance Tax",
+      "tax": 15,
+      "isActive": true,
+      "id": 7
+    },
+    {
+      "name": "Procedures",
+      "tax": 10,
+      "isActive": true,
+      "id": 8
+    },
+    {
+      "name": "Investigation Tax",
+      "tax": 10,
+      "isActive": true,
+      "id": 9
+    },
+    {
+      "name": "Supplier",
+      "tax": 10,
+      "isActive": true,
+      "id": 10
+    },
+    {
+      "name": "Others Tax",
+      "tax": 10,
+      "isActive": true,
+      "id": 11
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+<div class="modal-header">
+   <h4 class="modal-title">Radiology Test Details</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+   <table>
+      <tr>
+         <td><b>Test Name:</b></td>
+         <td><span [innerHtml]="radiologyTest.name"></span></td>
+         <td><b>Short Name:</b></td>
+         <td><span [innerHtml]="radiologyTest.shortName"></span></td>
+      </tr>
+      <tr>
+         <td><b>Test Type:</b></td>
+         <td><span [innerHtml]="radiologyTest.type"></span></td>
+         <td><b>Sub Category:</b></td>
+         <td><span [innerHtml]="radiologyTest.subCategory"></span></td>
+      </tr>
+      <tr>
+         <td><b>Report Days:</b></td>
+         <td><span [innerHtml]="radiologyTest.reportDays"></span></td>
+      </tr>
+      <tr>
+         <td><b>Category Name:</b></td>
+         <td><span [innerHtml]="radiologyTest.category"></span></td>
+         <td><b>Charge Name:</b></td>
+         <td><span [innerHtml]="radiologyTest.charge"></span></td>
+      </tr>
+      <tr>
+         <td><b>Charge Category:</b></td>
+         <td><span [innerHtml]="radiologyTest.chargeCategory"></span></td>
+         <td><b>Standard Charge (Rs):</b></td>
+         <td><span [innerHtml]="radiologyTest.amount"></span></td>
+      </tr>
+      <tr>
+         <td><b>Tax (%):</b></td>
+         <td><span [innerHtml]="radiologyTest.tax"></span></td>
+         <td><b>Total Amount (Rs):</b></td>
+         <td><span [innerHtml]="radiologyTest.netAmount"></span></td>
+      </tr>
+      <tr *ngIf="radiologyTest?.testParameterInnerForm" style="background-color:#f8f9fa; margin-top: 30px;">
+         <td colspan="4">
+            <table class="table table-nowrap mb-0">
+               <thead>
+                  <tr>
+                     <th>Test Parameter Name</th>
+                     <th>Reference Range</th>
+                     <th>Unit</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr *ngFor="let testParameter of radiologyTest?.testParameterInnerForm">
+                     <td>
+                        <span [innerHtml]="testParameter.testParameter"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="testParameter.referenceRange"></span>
+                     </td>
+                     <td>
+                        <span [innerHtml]="testParameter.unit"></span>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </td>
+      </tr>
+   </table>
+</div>

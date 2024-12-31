@@ -1,0 +1,40 @@
+<div class="content">
+   <!-- Page Header -->
+   <div class="crms-title row bg-white">
+      <div style="display: contents;">
+         <h4 style="margin-top: 10px;">Doctor Shift List</h4>
+      </div>
+   </div>
+   <div>
+      <hr class="m-t-0" />
+      <div class="table-responsive">
+         <table class="table table-nowrap mb-0">
+            <thead>
+               <tr>
+                  <th style="width: 80px;">Action</th>
+                  <th>Doctor Name</th>
+                  <th style="width: 200px;" *ngFor="let shift of shifts; let i = index"><span [innerHtml]="shift.name"></span></th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let doctorShift of doctorShifts; let i = index">
+                  <td class="break-word">
+                     <i (click)="edit(doctorShift.doctorId)" style="cursor:pointer;" class="fa fa-edit"
+                        data-bs-toggle="tooltip" title="Edit"></i>
+                  </td>
+                  <td>
+                     <span [innerHtml]="doctorShift.doctorName"></span>
+                  </td>
+                  <td *ngFor="let shift of shifts; let i = index">
+                     <i *ngIf="checkForDoctorActiveShift(shift, doctorShift.shiftInnerForm)" class="fa fa-check" style="font-size:20px;color:green;"></i>
+                     <i *ngIf="!checkForDoctorActiveShift(shift, doctorShift.shiftInnerForm)" class="fa fa-close" style="font-size:20px;color:red;"></i>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <div class="col-md-12" *ngIf="doctorShifts?.length==0" style="padding-top: 50px; min-height: 200px;display: inline-block;text-align: center;">
+            No Rows To Show
+         </div>
+      </div>
+   </div>
+</div>

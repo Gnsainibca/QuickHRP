@@ -1,0 +1,32 @@
+<div>
+   <div class="col-md-12 col-sm-12">
+      <div class="ribbon-wrapper card m-b-10">
+         <div class="card-body">
+            <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>CONSULTANT REGISTER</div>
+            <div class="table-responsive">
+               <table class="table table-responsive mb-0">
+                  <thead>
+                     <tr>
+                        <th style="width: 100px;">Applied Date</th>
+                        <th>Consultant Doctor</th>
+                        <th>Instruction</th>
+                        <th style="width: 100px;">Instruction Date</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let consultant of consultants;">
+                        <td><span [innerHtml]="consultant.appliedDate | date : 'MMM dd, yyyy'"></span></td>
+                        <td><span [innerHtml]="consultant.doctor"></span></td>
+                        <td><span [innerHtml]="consultant.instruction"></span></td>
+                        <td><span [innerHtml]="consultant.consultantDate | date : 'MMM dd, yyyy'"></span></td>
+                     </tr>
+                     <tr *ngIf="consultants?.length==0" style="padding-top: 30px; min-height: 70px;display: inline-block;">
+                        No Rows To Show 
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

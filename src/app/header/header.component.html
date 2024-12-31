@@ -1,0 +1,115 @@
+<!-- Header -->
+<div class="header" id="heading">
+  <!-- Logo -->
+  <div class="header-left">
+    <a
+      [routerLink]="routes.appointment"
+      class="logo"
+    >
+      <img [src]="logo" alt="Logo" class="sidebar-logo" />
+      <img [src]="smallLogo" alt="Logo" class="mini-sidebar-logo" />
+    </a>
+  </div>
+  <!-- /Logo -->
+
+  <a (click)="toggleSideBar()" id="toggle_btn" href="javascript:void(0);">
+    <span class="bar-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </a>
+
+  <!-- Header Title -->
+  <div class="page-title-box">
+    <div class="top-nav-search">
+      <a href="javascript:void(0);" class="responsive-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <form action="/search">
+        <input class="form-control" type="text" placeholder="Search here" />
+        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+  <!-- /Header Title -->
+
+  <a id="mobile_btn" class="mobile_btn" (click)="toggleMobileSideBar()"><i class="fa fa-bars"></i></a>
+
+  <!-- Header Menu -->
+  <ul class="nav user-menu">
+    <!-- Search -->
+    <li class="nav-item"></li>
+    <!-- /Search -->
+
+    <!-- Flag -->
+    <li class="nav-item dropdown has-arrow flag-nav">
+      <a
+        class="nav-link dropdown-toggle"
+        data-bs-toggle="dropdown"
+        href="javascript:void(0);"
+        role="button"
+      >
+        <img src="assets/img/flags/us.png" alt="" height="20" />
+        <span>English</span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-end">
+        <a href="javascript:void(0);" class="dropdown-item">
+          <img src="assets/img/flags/us.png" alt="" height="16" /> English
+        </a>
+        <a href="javascript:void(0);" class="dropdown-item">
+          <img src="assets/img/flags/fr.png" alt="" height="16" /> French
+        </a>
+        <a href="javascript:void(0);" class="dropdown-item">
+          <img src="assets/img/flags/es.png" alt="" height="16" /> Spanish
+        </a>
+        <a href="javascript:void(0);" class="dropdown-item">
+          <img src="assets/img/flags/de.png" alt="" height="16" /> German
+        </a>
+      </div>
+    </li>
+    <!-- /Flag -->
+
+    <li class="nav-item dropdown has-arrow main-drop">
+      <a
+        href="javascript:void(0);"
+        class="dropdown-toggle nav-link"
+        data-bs-toggle="dropdown"
+      >
+        <span class="user-img"
+          ><img src="assets/img/profiles/avatar-21.jpg" alt="" />
+          <span class="status online"></span
+        ></span>
+        <span>Admin</span>
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" [routerLink]="routes.profile">My Profile</a>
+        <a class="dropdown-item" [routerLink]="routes.generalSettings"
+          >Settings</a
+        >
+        <a class="dropdown-item" [routerLink]="routes.login">Logout</a>
+      </div>
+    </li>
+  </ul>
+  <!-- /Header Menu -->
+
+  <!-- Mobile Menu -->
+  <div class="dropdown mobile-user-menu">
+    <a
+      href="javascript:void(0);"
+      class="nav-link dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+      ><i class="fa fa-ellipsis-v"></i
+    ></a>
+    <div class="dropdown-menu dropdown-menu-end">
+      <a class="dropdown-item" [routerLink]="routes.profile">My Profile</a>
+      <a class="dropdown-item" [routerLink]="routes.generalSettings"
+        >Settings</a
+      >
+      <a class="dropdown-item" [routerLink]="routes.login">Logout</a>
+    </div>
+  </div>
+  <!-- /Mobile Menu -->
+</div>
+<!-- /Header -->

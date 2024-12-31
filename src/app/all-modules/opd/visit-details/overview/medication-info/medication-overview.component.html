@@ -1,0 +1,32 @@
+<div>
+   <div class="col-md-12 col-sm-12">
+      <div class="ribbon-wrapper card m-b-10">
+         <div class="card-body">
+            <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>MEDICATION</div>
+            <div class="table-responsive">
+               <table class="table table-nowrap mb-0">
+                  <thead>
+                     <tr>
+                        <th>Date</th>
+                        <th>Medicine Name</th>
+                        <th>Dose</th>
+                        <th>Time</th>
+                        <th>Remark</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let medication of medications;">
+                        <td><span [innerHtml]="medication.date|date"></span></td>
+                        <td><span [innerHtml]="medication.medicine"></span> (<span
+                              [innerHtml]="medication.medicineCategory"></span>)</td>
+                        <td><span [innerHtml]="medication.medicineUnit"></span></td>
+                        <td><span [innerHtml]="medication.time"></span></td>
+                        <td><span class="break-word" [innerHtml]="medication.remarks"></span></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

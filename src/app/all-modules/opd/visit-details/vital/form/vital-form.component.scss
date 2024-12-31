@@ -1,0 +1,11 @@
+::ng-deep {
+    .custom-slider-low .ngx-slider .ngx-slider-pointer {
+        background-color: orange;
+    }
+    .custom-slider-normal .ngx-slider .ngx-slider-pointer {
+        background-color: green;
+    }
+    .custom-slider-high .ngx-slider .ngx-slider-pointer {
+        background-color: red;
+    }
+}

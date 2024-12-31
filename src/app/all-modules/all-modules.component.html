@@ -1,0 +1,69 @@
+<div [ngClass]="{
+  'header-solid-black': currentHeaderStyle === '1',
+  'header-solid-pink': currentHeaderStyle === '2',
+  'header-solid-orange': currentHeaderStyle === '3',
+  'header-solid-purple': currentHeaderStyle === '4',
+  'header-solid-green': currentHeaderStyle === '5',
+  'header-gradient-color1': currentHeaderStyle === '6',
+  'header-gradient-color2': currentHeaderStyle === '7',
+  'header-gradient-color3': currentHeaderStyle === '8',
+  'header-gradient-color4': currentHeaderStyle === '9',
+  'header-gradient-color5': currentHeaderStyle === '10',
+  'header-gradient-color6': currentHeaderStyle === '11',
+  'header-gradient-color7': currentHeaderStyle === '12',
+
+  'sidebar-solid-black': currentSidebarStyle === '1',
+  'sidebar-solid-pink': currentSidebarStyle === '2',
+  'sidebar-solid-orange': currentSidebarStyle === '3',
+  'sidebar-solid-purple': currentSidebarStyle === '4',
+  'sidebar-solid-green': currentSidebarStyle === '5',
+  'sidebar-gradient-color1': currentSidebarStyle === '6',
+  'sidebar-gradient-color2': currentSidebarStyle === '7',
+  'sidebar-gradient-color3': currentSidebarStyle === '8',
+  'sidebar-gradient-color4': currentSidebarStyle === '9',
+  'sidebar-gradient-color5': currentSidebarStyle === '10',
+  'sidebar-gradient-color6': currentSidebarStyle === '11',
+  'sidebar-gradient-color7': currentSidebarStyle === '12',
+
+  'roboto': currentFontStyle === '1',
+  'poppins': currentFontStyle === '2',
+  'monstret': currentFontStyle === '3',
+  'inter': currentFontStyle === '4'
+}">
+  <div
+  class="main-wrapper"
+  [ngClass]="{
+    'expand-menu': expandMenu === true && miniSidebar === true,
+    'mini-sidebar': miniSidebar === true,
+    'slide-nav': mobileSidebar === true,
+
+    'default-theme': currentPrimaryTheme === 'default-theme',
+    'green-theme': currentPrimaryTheme === 'green-theme',
+    'blue-theme': currentPrimaryTheme === 'blue-theme',
+    'orange-theme': currentPrimaryTheme === 'orange-theme',
+    'pink-theme': currentPrimaryTheme === 'pink-theme',
+    'purple-theme': currentPrimaryTheme === 'purple-theme',
+    'red-theme': currentPrimaryTheme === 'red-theme',
+    'gradient-blue-theme': currentPrimaryTheme === 'gradient-blue-theme',
+    'gradient-green-theme ': currentPrimaryTheme === 'gradient-green-theme',
+    'gradient-maroon-theme': currentPrimaryTheme === 'gradient-maroon-theme',
+    'gradient-orange-theme': currentPrimaryTheme === 'gradient-orange-theme',
+    'gradient-pink-theme': currentPrimaryTheme === 'gradient-pink-theme'
+  }"
+>
+  <app-header [ngClass]="{
+    'd-none': sideBarActivePath === false && headerActivePath === false}"></app-header>
+  <app-sidebar [ngClass]="{
+    'd-none': sideBarActivePath === false && headerActivePath === false}"></app-sidebar>
+  <app-theme-setting [ngClass]="{
+    'd-none': sideBarActivePath === false && headerActivePath === false}"></app-theme-setting>
+    <router-outlet></router-outlet>
+</div>
+<div
+class="sidebar-overlay"
+(click)="toggleMobileSideBar()"
+[ngClass]="{
+  opened: mobileSidebar === true
+}"
+></div>
+</div>

@@ -1,0 +1,389 @@
+<!--theme settings modal-->
+
+<div
+  class="modal right fade settings"
+  id="settings"
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="toggle-close">
+    <div class="toggle" data-bs-toggle="modal" data-bs-target="#settings">
+      <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
+    </div>
+  </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header p-3">
+        <h4 class="modal-title" id="myModalLabel2">Theme Customizer</h4>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body pb-3">
+        <div class="scroll">
+          <div>
+            <ul class="list-group">
+              <li class="list-group-item border-0">
+                <div class="row">
+                  <div class="col">
+                    <h5 class="pb-2">Primary Skin</h5>
+                  </div>
+                  <div class="col text-end d-none">
+                    <a
+                      (click)="changePrimaryTheme('0')"
+                      class="reset text-white bg-dark"
+                      id="ChangeprimaryDefault"
+                      >Reset Default</a
+                    >
+                  </div>
+                </div>
+                <div class="theme-settings-swatches">
+                  <div class="themes">
+                    <div class="themes-body">
+                      <ul
+                        id="theme-changes"
+                        class="theme-colors border-0 list-inline-item list-unstyled mb-0"
+                      >
+                        <li class="theme-title">Solid Color</li>
+                        <li class="list-inline-item">
+                          <span
+                            id="style"
+                            (click)="changePrimaryTheme('default-theme')"
+                            class="theme-defaults bg-warnings me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changePrimaryTheme('green-theme')"
+                            id="style-green"
+                            class="theme-solid-purple bg-warnings me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            id="style-blue"
+                            (click)="changePrimaryTheme('blue-theme')"
+                            class="theme-solid-black bg-blue me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            id="style-orange"
+                            (click)="changePrimaryTheme('orange-theme')"
+                            class="theme-solid-pink bg-orange me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            id="style-pink"
+                            (click)="changePrimaryTheme('pink-theme')"
+                            class="theme-solid-pink bg-pink me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            id="style-purple"
+                            (click)="changePrimaryTheme('purple-theme')"
+                            class="theme-solid-purle bg-purple me-1"
+                          ></span>
+                        </li>
+                        <li
+                          (click)="changePrimaryTheme('red-theme')"
+                          class="list-inline-item"
+                        >
+                          <span
+                            id="style-red"
+                            class="theme-solid-danger bg-danger"
+                          ></span>
+                        </li>
+                        <li><br /></li>
+                        <li><hr /></li>
+
+                        <li class="theme-title">Gradient Color</li>
+
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changePrimaryTheme('gradient-blue-theme')"
+                            id="style-gradient-blue"
+                            class="theme-orange bg-sunny-mornings me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            id="style-gradient-green"
+                            (click)="changePrimaryTheme('gradient-green-theme')"
+                            class="theme-blue bg-tempting-azures me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            id="style-gradient-maroon"
+                            (click)="changePrimaryTheme('gradient-maroon-theme')"
+                            class="theme-grey bg-amy-crisps me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            id="style-gradient-orange"
+                            (click)="changePrimaryTheme('gradient-orange-theme')"
+                            class="theme-lgrey bg-mean-fruits me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changePrimaryTheme('gradient-pink-theme')"
+                            id="style-gradient-pink"
+                            class="theme-dblue bg-malibu-beachs"
+                          ></span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="list-group">
+              <li class="list-group-item border-0">
+                <div class="row">
+                  <div class="col">
+                    <h5 class="pb-2">Header Style</h5>
+                  </div>
+                  <div class="col text-end">
+                    <a (click)="changeHeaderTheme('0')" class="reset text-white bg-dark" id="ChageheaderDefault"
+                      >Reset Default</a
+                    >
+                  </div>
+                </div>
+                <div class="theme-settings-swatches">
+                  <div class="themes">
+                    <div class="themes-body">
+                      <ul
+                        id="theme-change1"
+                        class="theme-colors border-0 list-inline-item list-unstyled mb-0"
+                      >
+                        <li class="theme-title">Solid Color</li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeHeaderTheme('1')"
+                            class="header-solid-black bg-black me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeHeaderTheme('2')"
+                            class="header-solid-pink bg-primary me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeHeaderTheme('3')"
+                            class="header-solid-orange bg-secondary1 me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeHeaderTheme('4')"
+                            class="header-solid-purple bg-success me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeHeaderTheme('5')"
+                            class="header-solid-green bg-warnings"
+                          ></span>
+                        </li>
+                        <li><br /></li>
+                        <li><hr /></li>
+
+                        <li class="theme-title">Gradient Color</li>
+
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeHeaderTheme('6')"
+                            class="header-gradient-color1 bg-sunny-morning me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeHeaderTheme('7')"
+                            class="header-gradient-color2 bg-tempting-azure me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeHeaderTheme('8')"
+                            class="header-gradient-color3 bg-amy-crisp me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeHeaderTheme('9')"
+                            class="header-gradient-color4 bg-mean-fruit me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeHeaderTheme('10')"
+                            class="header-gradient-color5 bg-malibu-beach me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeHeaderTheme('11')"
+                            class="header-gradient-color6 bg-ripe-malin me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeHeaderTheme('12')"
+                            class="header-gradient-color7 bg-plum-plate"
+                          ></span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="list-group m-0">
+              <li class="list-group-item border-0">
+                <div class="row">
+                  <div class="col">
+                    <h5 class="pb-2">Apps Sidebar Style</h5>
+                  </div>
+                  <div class="col text-end">
+                    <a (click)="changeSidebarTheme('0')" class="reset text-white bg-dark" id="ChagesidebarDefault"
+                      >Reset Default</a
+                    >
+                  </div>
+                </div>
+                <div class="theme-settings-swatches">
+                  <div class="themes">
+                    <div class="themes-body">
+                      <ul
+                        id="theme-change2"
+                        class="theme-colors border-0 list-inline-item list-unstyled"
+                      >
+                        <li class="theme-title">Solid Color</li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeSidebarTheme('1')"
+                            class="sidebar-solid-black bg-black me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeSidebarTheme('2')"
+                            class="sidebar-solid-pink bg-primary me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeSidebarTheme('3')"
+                            class="sidebar-solid-orange bg-secondary1 me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeSidebarTheme('4')"
+                            class="sidebar-solid-purple bg-success me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeSidebarTheme('5')"
+                            class="sidebar-solid-green bg-warnings me-1"
+                          ></span>
+                        </li>
+                        <li><br /></li>
+                        <li><hr /></li>
+
+                        <li class="theme-title">Gradient Color</li>
+
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeSidebarTheme('6')"
+                            class="sidebar-gradient-color1 bg-sunny-morning me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeSidebarTheme('7')"
+                            class="sidebar-gradient-color2 bg-tempting-azure me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeSidebarTheme('8')"
+                            class="sidebar-gradient-color3 bg-amy-crisp me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeSidebarTheme('9')"
+                            class="sidebar-gradient-color4 bg-mean-fruit me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeSidebarTheme('10')"
+                            class="sidebar-gradient-color5 bg-malibu-beach me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeSidebarTheme('11')"
+                            class="sidebar-gradient-color6 bg-ripe-malin me-1"
+                          ></span>
+                        </li>
+                        <li class="list-inline-item">
+                          <span
+                            (click)="changeSidebarTheme('12')"
+                            class="sidebar-gradient-color7 bg-plum-plate"
+                          ></span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="row Default-font">
+              <div class="col">
+                <h5 class="pb-2">Font Style</h5>
+              </div>
+              <div class="col text-end">
+                <a class="reset text-white bg-dark font-Default" (click)="changeFontTheme('0')"
+                  >Reset Default</a
+                >
+              </div>
+            </div>
+            <ul
+              class="list-inline-item list-unstyled font-family border-0 p-0"
+              id="theme-change"
+            >
+              <li class="list-inline-item roboto-font me-1" (click)="changeFontTheme('1')">Roboto</li>
+              <li class="list-inline-item poppins-font me-1" (click)="changeFontTheme('2')">Poppins</li>
+              <li class="list-inline-item montserrat-font me-1" (click)="changeFontTheme('3')">Montserrat</li>
+              <li class="list-inline-item inter-font" (click)="changeFontTheme('4')">Inter</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--theme settings-->
+<div class="sidebar-contact">
+  <div class="toggle" data-bs-toggle="modal" data-bs-target="#settings">
+    <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
+  </div>
+</div>
