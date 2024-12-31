@@ -13,6 +13,8 @@ import { SetupBloodGroupFormComponent } from './blood-group/form/setup-blood-gro
 import { SetupBloodGroupListComponent } from './blood-group/list/setup-blood-group-list.component';
 import { SetupMaritalStatusFormComponent } from './marital-status/form/setup-marital-status-form.component';
 import { SetupMaritalStatusListComponent } from './marital-status/list/setup-marital-status-list.component';
+import { SetupPaymentModeFormComponent } from './payment-mode/form/setup-payment-mode-form.component';
+import { SetupPaymentModeListComponent } from './payment-mode/list/setup-payment-mode-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { SetupMaritalStatusListComponent } from './marital-status/list/setup-mar
     SetupBloodGroupFormComponent,
     SetupBloodGroupListComponent,
     SetupMaritalStatusFormComponent,
-    SetupMaritalStatusListComponent
+    SetupMaritalStatusListComponent,
+    SetupPaymentModeFormComponent,
+    SetupPaymentModeListComponent
   ],
   imports: [
     CommonModule,

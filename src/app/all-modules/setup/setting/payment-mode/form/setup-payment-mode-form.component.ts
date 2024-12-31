@@ -2,8 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToasterService } from 'src/app/shared/core.index';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Master_PaymentMode } from '../../shared/models/master_payment-mode';
-import { HospitalChargeSetupService } from '../../shared/services/hospital-charge-setup.service';
+import { Master_PaymentMode } from '../../../hospital-charge/shared/models/master_payment-mode';
+import { HospitalChargeSetupService } from '../../../hospital-charge/shared/services/hospital-charge-setup.service';
 
 @Component({
   selector: 'app-setup-payment-mode-form',

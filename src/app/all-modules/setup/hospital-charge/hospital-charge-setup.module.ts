@@ -15,8 +15,6 @@ import { SetupHospitalChargeTypeFormComponent } from './charge-type/form/setup-h
 import { SetupHospitalChargeTypeListComponent } from './charge-type/list/setup-hospital-charge-type-list.component';
 import { SetupHospitalChargeCategoryFormComponent } from './charge-category/form/setup-hospital-charge-category-form.component';
 import { SetupHospitalChargeCategoryListComponent } from './charge-category/list/setup-hospital-charge-category-list.component';
-import { SetupPaymentModeFormComponent } from './payment-mode/form/setup-payment-mode-form.component';
-import { SetupPaymentModeListComponent } from './payment-mode/list/setup-payment-mode-list.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +28,7 @@ import { SetupPaymentModeListComponent } from './payment-mode/list/setup-payment
     SetupHospitalChargeCategoryFormComponent,
     SetupHospitalChargeCategoryListComponent,
     SetupHospitalChargeFormComponent,
-    SetupHospitalChargeListComponent,
-    SetupPaymentModeFormComponent,
-    SetupPaymentModeListComponent
+    SetupHospitalChargeListComponent
   ],
   imports: [
     CommonModule,

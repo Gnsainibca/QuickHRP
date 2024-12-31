@@ -3,9 +3,9 @@ import { ColDef } from 'ag-grid-community';
 import { ToasterService } from 'src/app/shared/core.index';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationModalContent } from 'src/app/shared/components/confirmation/confirm-modal.component';
-import { Master_PaymentMode } from '../../shared/models/master_payment-mode';
+import { Master_PaymentMode } from '../../../hospital-charge/shared/models/master_payment-mode';
 import { getColumnDefinations } from './setup-payment-mode-list-column-defination';
-import { HospitalChargeSetupService } from '../../shared/services/hospital-charge-setup.service';
+import { HospitalChargeSetupService } from '../../../hospital-charge/shared/services/hospital-charge-setup.service';
 import { SetupPaymentModeFormComponent } from '../form/setup-payment-mode-form.component';
 
 @Component({
