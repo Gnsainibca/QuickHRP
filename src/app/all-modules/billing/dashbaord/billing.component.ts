@@ -36,6 +36,11 @@ export class BillingComponent {
           this.router.navigate([routes.billingIpd]);
           break;
         }
+      case BillingModules.Pharmacy:
+        {
+          this.router.navigate([routes.billingPharmacy]);
+          break;
+        }
       case BillingModules.Pathology:
         {
           this.router.navigate([routes.billingPathology]);

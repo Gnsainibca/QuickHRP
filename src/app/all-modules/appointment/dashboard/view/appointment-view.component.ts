@@ -15,6 +15,9 @@ export class AppointmentViewComponent {
   public appointment !: AppointmentList;
 
   constructor(public activeModal: NgbActiveModal, private data: AppointmentDataService) {
+  }
+
+  ngOnInit() {
     this.appointment = this.data.getAppointmentById(this.appointmentId);
   }
 }

@@ -9,6 +9,8 @@ import { PharmacyViewComponent } from '../view/pharmacy-view.component';
 import { Pharmacy, PharmacyList } from '../../shared/models/pharmacy';
 import { getColumnDefinations } from './pharmacy-list-column-defination';
 import { PharmacyService } from '../../shared/services/pharmacy.service';
+import { ActivatedRoute } from '@angular/router';
+import { APP_CONSTANT } from 'src/app/shared/constants/app-constant';
 
 @Component({
   selector: 'app-pharmacy-list',
@@ -23,10 +25,14 @@ export class PharmacyListComponent {
   public pagination: boolean = true;
   public paginationPageSize = 20;
   public paginationPageSizeSelector = [10, 15, 20, 100];
+  isBillingModule : boolean = false;
 
-  constructor(private datePipe: DatePipe, private modalService: NgbModal, private data: PharmacyService, private toaster: ToasterService) { }
+  constructor(private datePipe: DatePipe,private route: ActivatedRoute,
+     private modalService: NgbModal, private data: PharmacyService, 
+     private toaster: ToasterService) { }
 
   ngOnInit() {
+    this.isBillingModule = this.route.snapshot.params['module']! === APP_CONSTANT.billingModule;
     this.refereshGrid();
   }
 

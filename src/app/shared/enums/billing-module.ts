@@ -4,4 +4,5 @@ export enum BillingModules {
     IPD = 2,
     Pathology = 3,
     Radiology = 4,
+    Pharmacy = 5,
 }

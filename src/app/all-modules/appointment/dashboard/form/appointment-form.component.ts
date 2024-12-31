@@ -59,6 +59,7 @@ export class AppointmentFormComponent {
   initializerForm() {
     var date = new Date();
     this.appointmentForm = this.fb.group({
+      appointmentNo : [null],
       patientId: ['', [Validators.required]],
       doctorId: ['', [Validators.required]],
       fees: [null, [Validators.required]],
@@ -80,6 +81,7 @@ export class AppointmentFormComponent {
   private setFormControls() {
     if (this.isEdit) {
       let appointment = this.data.getAppointmentById(this.id);
+      this.f['appointmentNo'].setValue(appointment.appointmentNo);
       this.f['patientId'].setValue(appointment.patientId);
       this.f['doctorId'].setValue(appointment.doctorId);
       this.f['fees'].setValue(appointment.fees);
@@ -116,7 +118,6 @@ export class AppointmentFormComponent {
       const appointment: Appointment = this.appointmentForm.getRawValue();
       if (this.isEdit) {
         appointment.id = this.id!;
-        appointment.appointmentNo = appointment.appointmentNo!;
         this.data.updateAppointment(appointment);
       }
       else {

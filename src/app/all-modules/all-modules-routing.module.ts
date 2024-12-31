@@ -57,17 +57,10 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'billing/ipd',
+        path: ':module/ipd',
         loadChildren: () =>
           import('./ipd/ipd.module').then(
             (m) => m.IpdModule
-          ),
-      },
-      {
-        path: 'pharmacy',
-        loadChildren: () =>
-          import('./pharmacy/pharmacy.module').then(
-            (m) => m.PharmacyModule
           ),
       },
       {
@@ -79,6 +72,13 @@ const routes: Routes = [
       },
       {
         path: 'pharmacy',
+        loadChildren: () =>
+          import('./pharmacy/pharmacy.module').then(
+            (m) => m.PharmacyModule
+          ),
+      },
+      {
+        path: ':module/pharmacy',
         loadChildren: () =>
           import('./pharmacy/pharmacy.module').then(
             (m) => m.PharmacyModule

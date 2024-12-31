@@ -95,6 +95,9 @@ export class routes {
   public static get billingPathology(): string {
     return this.baseUrl + '/billing/pathology';
   }
+  public static get billingPharmacy(): string {
+    return this.baseUrl + '/billing/pharmacy';
+  }
   public static get billingRadiology(): string {
     return this.baseUrl + '/billing/radiology';
   }
