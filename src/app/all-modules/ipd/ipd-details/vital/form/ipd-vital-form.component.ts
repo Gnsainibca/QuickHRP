@@ -101,7 +101,7 @@ export class IPDVitalFormComponent {
       opdPatientId: [this.opdPatientId, [Validators.required]],
       vitalId: ['', [Validators.required]],
       value: [null, [Validators.required]],
-      date: [new Date(), [Validators.required]],
+      date: [(new Date()).getDate(), [Validators.required]],
       status: [VitalStatus.Normal],
     }));
   }

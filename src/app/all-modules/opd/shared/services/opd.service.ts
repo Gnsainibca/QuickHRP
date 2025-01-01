@@ -325,12 +325,12 @@ export class OpdDataService extends BaseService {
         this.getVitals().filter(y => y.opdPatientId == opdPatientId).forEach(x => {
             vitalList.push({
                 ...x,
-                // date : new Date(this.datePipe.transform(x.date, 'MM/dd/yyyy')!),
                 vitalName: vitals.find(y => y.id == x.vitalId)?.name!,
             });
         });
 
-        var allDates = vitalList.map(item => item.date).filter((value, index, self) => self.indexOf(value) === index);
+        let dates = vitalList.map(item => this.datePipe.transform(item.date, 'MM/dd/yyyy')!);
+        var allDates = dates.filter((value, index) => dates.indexOf(value) === index);
 
         var finalList: any = [];
         allDates.forEach(date => {
@@ -339,7 +339,7 @@ export class OpdDataService extends BaseService {
                 var obj: any = {};
                 obj.id = vital.id;
                 obj.list = [];
-                var vitalValues = vitalList.filter(x => x.date == date && x.vitalId == vital.id);
+                var vitalValues = vitalList.filter(x => this.datePipe.transform(x.date, 'MM/dd/yyyy') == date && x.vitalId == vital.id);
                 vitalValues.forEach(vitalValue => {
                     obj.list.push({ id: vitalValue.id, date: vitalValue.date, value: vitalValue.value, status: vitalValue.status });
                 });
