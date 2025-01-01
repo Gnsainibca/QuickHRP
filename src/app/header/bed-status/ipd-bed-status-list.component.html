@@ -1,0 +1,36 @@
+<div class="modal-header">
+   <h4 class="modal-title">Bed Status</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body" style="background-color: black;">
+   <div *ngFor="let floor of floors;"
+      style="background-color: lightgray;padding: 20px 10px;border-radius: 15px;margin-bottom: 20px;">
+      <div style="margin-top: -30px;float: left;">
+         <span class="floor" [innerHtml]="floor.name"></span>
+      </div>
+      <div *ngFor="let bedGroup of floor.bedGroups; let  i = index"
+         style="background-color: white;padding: 20px;border-radius: 15px;height: 110px;" [ngClass]="{'m-t-30': i>0}">
+         <span class="bed-group float-right" style="margin-top: -35px;" [innerHtml]="bedGroup.name"></span>
+         <div *ngFor="let bed of bedGroup.beds;" style="float: left;margin-right: 40px;">
+            <span>
+               <ng-template #popTemplate>
+                  <div *ngIf="bed.admittedPatient" style="text-align: left;">
+                     IPD No: <span [innerHtml]="bed.admittedPatient.ipdNo"></span><br />
+                     Name: <span [innerHtml]="bed.admittedPatient.name"></span><br />
+                     Guardian: <span [innerHtml]="bed.admittedPatient.guardianName"></span><br />
+                     Gender: <span [innerHtml]="bed.admittedPatient.gender"></span><br />
+                     Adm Date : <span [innerHtml]="bed.admittedPatient.admissionDate | date : 'MMM dd, yyyy'"></span><br />
+                     Phone: <span [innerHtml]="bed.admittedPatient.phone"></span><br />
+                     Doctor: <span [innerHtml]="bed.admittedPatient.consultantDoctor"></span><br />
+                  </div>
+               </ng-template>
+               <i class="fas fa-bed color-red cursor-pointer" style="font-size: xxx-large;" *ngIf="bed.admittedPatient"
+                  [tooltip]="popTemplate" (click)="redirectToPatientIPD(bed.admittedPatient.ipdPatientId)"></i>
+               <i class="fas fa-bed color-green" style="font-size: xxx-large;" *ngIf="!bed.admittedPatient" (click)="redirectToAdmitPatient()"></i>
+            </span>
+            <br />
+            <span [innerHtml]="bed.name"></span>
+         </div>
+      </div>
+   </div>
+</div>

@@ -17,6 +17,8 @@ import { RadiologyDataService } from 'src/app/all-modules/radiology/shared/servi
 import { Prefix_Screen } from 'src/app/shared/enums/prefix-screen';
 import { Discharge } from '../models/ipd-patient-discharge';
 import { SettingService } from 'src/app/all-modules/setup/setting/shared/services/setting.service';
+import { Master_BedDetails } from 'src/app/all-modules/setup/bed/shared/models/master-bed';
+import { Master_BedStaus_AdmittedPatient, Master_BedStaus_Bed, Master_BedStaus_BedGroup, Master_BedStaus_Floor } from 'src/app/header/bed-status/master-bed-status';
 
 @Injectable({
     providedIn: 'root',
@@ -55,6 +57,7 @@ export class IpdDataService extends BaseService {
             opdPatients.push({
                 ...ipdPatient,
                 patientName: patient?.name!,
+                guardianName: patient?.guardianName!,
                 gender: genderList.find(x => x.id === patient?.genderId)?.name,
                 phone: patient?.phone!,
                 bed: this.getBedByIpdPatientId(ipdPatient.id),
@@ -382,5 +385,50 @@ export class IpdDataService extends BaseService {
 
     public getCaseIdByIpdPatientId(ipdPatientId: number): string {
         return this.getIpdPatientById(ipdPatientId).caseId;
+    }
+
+    public getBedListWithStatus(): Array<Master_BedStaus_Floor> {
+        let beds = this.bedSetupService.getBedList().sort((a, b) => b.id - a.id) as Array<Master_BedDetails>;
+        let floorIds = beds.map(x => x.floorId);
+        var allFloors = floorIds.filter((value, index) => floorIds.indexOf(value) === index);
+
+        let floors: Array<Master_BedStaus_Floor> = [];
+        allFloors.forEach(floorId => {
+            let bedsInAFloor = beds.filter(x => x.floorId == floorId);
+            let bedGroupIds = bedsInAFloor.map(x => x.bedGroupId);
+
+            var allBedGroups = bedGroupIds.filter((value, index) => bedGroupIds.indexOf(value) === index);
+
+            let bedGroupList: Array<Master_BedStaus_BedGroup> = [];
+
+            allBedGroups.forEach(bedGroupId => {
+                let bedList: Array<Master_BedStaus_Bed> = [];
+                let bedDateList = beds.filter(x => x.bedGroupId == bedGroupId);
+                bedDateList.forEach(bed => {
+                    bedList.push({ id: bed.id, name: bed.name!, admittedPatient: this.getAdmittedPatientDetail(bed.id) });
+                });
+                bedGroupList.push({ id: bedDateList[0].id, name: bedDateList[0].bedGroup!, beds: bedList });
+            });
+            floors.push({ id: bedsInAFloor[0].id, name: bedsInAFloor[0].floor!, bedGroups: bedGroupList });
+        });
+        return floors;
+    }
+
+    private getAdmittedPatientDetail(bedId: number): Master_BedStaus_AdmittedPatient | undefined {
+        let ipdPatientId = this.getBedHistories().find(x => x.isActive && x.bedId == bedId)?.ipdPatientId;
+        if (ipdPatientId) {
+            let ipdPatient = this.getIpdPatientList().find(x => x.id == ipdPatientId)!;
+            return {
+                ipdPatientId: ipdPatient.id,
+                ipdNo: ipdPatient.ipdNo,
+                name: ipdPatient.patientName!,
+                admissionDate: ipdPatient.appointmentDate,
+                gender: ipdPatient.gender!,
+                phone: ipdPatient.phone!,
+                consultantDoctor: ipdPatient.consultantDoctor,
+                guardianName: ipdPatient.guardianName!
+            };
+        }
+        return undefined
     }
 }

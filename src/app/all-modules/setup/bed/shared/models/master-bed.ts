@@ -3,11 +3,13 @@ export interface Master_Bed {
   name : string,
   bedTypeId : number,
   bedGroupId : number,
+  floorId?: number,
   isAvailable : boolean,
   isActive : boolean
 }
 
 export interface Master_BedDetails extends Master_Bed {
   bedType ?: string,
-  bedGroup ?: string
+  bedGroup ?: string,
+  floor ?: string
 }

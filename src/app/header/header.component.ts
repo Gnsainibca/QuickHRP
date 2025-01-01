@@ -4,6 +4,8 @@ import { routes } from 'src/app/shared/core.index'
 import { SideBarService } from '../shared/side-bar/side-bar.service';
 import { BaseService } from '../shared/data/base.service';
 import { APP_CONSTANT } from '../shared/constants/app-constant';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { IPDBedStatusListComponent } from './bed-status/ipd-bed-status-list.component';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -17,7 +19,8 @@ export class HeaderComponent {
   logo : string = '';
   smallLogo : string = '';
   
-  constructor(public router: Router, private sideBar: SideBarService, baseService : BaseService) {
+  constructor(public router: Router, private sideBar: SideBarService, 
+    baseService : BaseService, private modalService: NgbModal) {
     let generalSetting = baseService.get(this.id, this.lsKey);
     this.logo = generalSetting?.hospitalLogo;
     this.smallLogo = generalSetting?.hospitalSmallLogo;
@@ -36,4 +39,10 @@ export class HeaderComponent {
     this.sideBar.switchMobileSideBarPosition();
   }
   
+  public viewBedStatus() {
+    const modalRef = this.modalService.open(IPDBedStatusListComponent, { windowClass: 'right size-full', backdrop: 'static', scrollable: true });
+    modalRef.componentInstance.onSave.subscribe((res: any) => {
+      modalRef.close();
+    });
+  }
 }

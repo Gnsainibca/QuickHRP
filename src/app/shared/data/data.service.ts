@@ -158,7 +158,7 @@ export class DataService {
               menuValue: 'Bed',
               route: routes.bed,
               base: [routes.bed],
-              icon: 'fa-procedures fas'
+              icon: 'fas fa-bed'
             },
             {
               menuValue: 'Front Office',

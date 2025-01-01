@@ -10,11 +10,13 @@ import { ThemeSettingComponent } from './theme-setting/theme-setting.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { IPDBedStatusListComponent } from '../header/bed-status/ipd-bed-status-list.component';
 
 @NgModule({
   declarations: [
     AllModulesComponent,
     HeaderComponent,
+    IPDBedStatusListComponent,
     SidebarComponent,
     ThemeSettingComponent,
     LoginComponent,

@@ -2,10 +2,7 @@
 <div class="header" id="heading">
   <!-- Logo -->
   <div class="header-left">
-    <a
-      [routerLink]="routes.appointment"
-      class="logo"
-    >
+    <a [routerLink]="routes.appointment" class="logo">
       <img [src]="logo" alt="Logo" class="sidebar-logo" />
       <img [src]="smallLogo" alt="Logo" class="mini-sidebar-logo" />
     </a>
@@ -35,6 +32,7 @@
   <!-- /Header Title -->
 
   <a id="mobile_btn" class="mobile_btn" (click)="toggleMobileSideBar()"><i class="fa fa-bars"></i></a>
+  
 
   <!-- Header Menu -->
   <ul class="nav user-menu">
@@ -42,14 +40,13 @@
     <li class="nav-item"></li>
     <!-- /Search -->
 
+    <div style="float: right;position: relative;padding-top: 20px;">
+      <i class="fas fa-bed cursor-pointer" style="font-size: large;" title="Bed Status" (click)="viewBedStatus()"></i>
+    </div>
+
     <!-- Flag -->
     <li class="nav-item dropdown has-arrow flag-nav">
-      <a
-        class="nav-link dropdown-toggle"
-        data-bs-toggle="dropdown"
-        href="javascript:void(0);"
-        role="button"
-      >
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="javascript:void(0);" role="button">
         <img src="assets/img/flags/us.png" alt="" height="20" />
         <span>English</span>
       </a>
@@ -71,22 +68,14 @@
     <!-- /Flag -->
 
     <li class="nav-item dropdown has-arrow main-drop">
-      <a
-        href="javascript:void(0);"
-        class="dropdown-toggle nav-link"
-        data-bs-toggle="dropdown"
-      >
-        <span class="user-img"
-          ><img src="assets/img/profiles/avatar-21.jpg" alt="" />
-          <span class="status online"></span
-        ></span>
+      <a href="javascript:void(0);" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+        <span class="user-img"><img src="assets/img/profiles/avatar-21.jpg" alt="" />
+          <span class="status online"></span></span>
         <span>Admin</span>
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" [routerLink]="routes.profile">My Profile</a>
-        <a class="dropdown-item" [routerLink]="routes.generalSettings"
-          >Settings</a
-        >
+        <a class="dropdown-item" [routerLink]="routes.generalSettings">Settings</a>
         <a class="dropdown-item" [routerLink]="routes.login">Logout</a>
       </div>
     </li>
@@ -95,18 +84,11 @@
 
   <!-- Mobile Menu -->
   <div class="dropdown mobile-user-menu">
-    <a
-      href="javascript:void(0);"
-      class="nav-link dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-      ><i class="fa fa-ellipsis-v"></i
-    ></a>
+    <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i
+        class="fa fa-ellipsis-v"></i></a>
     <div class="dropdown-menu dropdown-menu-end">
       <a class="dropdown-item" [routerLink]="routes.profile">My Profile</a>
-      <a class="dropdown-item" [routerLink]="routes.generalSettings"
-        >Settings</a
-      >
+      <a class="dropdown-item" [routerLink]="routes.generalSettings">Settings</a>
       <a class="dropdown-item" [routerLink]="routes.login">Logout</a>
     </div>
   </div>

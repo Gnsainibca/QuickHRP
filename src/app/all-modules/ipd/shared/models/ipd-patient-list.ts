@@ -22,6 +22,7 @@ export interface IpdPatientList extends Discharge {
     reference: string,
     consultantDoctorId:number;
     consultantDoctor:string;
+    guardianName ?:string;
     applyTPA : boolean,
     creditLimit:number;
     bedId:number;

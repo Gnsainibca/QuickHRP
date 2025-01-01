@@ -3,14 +3,14 @@
     {
       "id": 1,
       "ipdPatientId": 1001,
-      "bedId": 16,
+      "bedId": 20,
       "fromDate": "2024-12-05T18:30:00.000Z",
       "isActive": true
     },
     {
       "id": 2,
       "ipdPatientId": 1002,
-      "bedId": 46,
+      "bedId": 45,
       "fromDate": "2024-12-05T18:30:00.000Z",
       "isActive": true
     },

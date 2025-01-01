@@ -1,0 +1,38 @@
+::ng-deep .size-full .modal-dialog {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.bed-group {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.floor {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.m-t-30 {
+  margin-top: 30px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.float-right {
+  float: right;
+}
+
+.color-red {
+  color: red;
+}
+
+.color-green {
+  color: green;
+}

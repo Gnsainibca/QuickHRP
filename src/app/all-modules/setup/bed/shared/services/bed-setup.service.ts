@@ -31,7 +31,9 @@ export class BedSetupService extends BaseService {
         {
           ...item,
           bedType: bedTypes.find(x => x.id == item.bedTypeId)?.name,
-          bedGroup: `${bedGroup?.name} - ${floor?.name}`
+          bedGroup: bedGroup?.name,
+          floor : floor?.name,
+          floorId : floor?.id
         });
     });
     return result;
