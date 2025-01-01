@@ -31,7 +31,7 @@ export class DischargeFormComponent {
 
   initializerForm() {
     this.dischargeForm = this.fb.group({
-      dischargeDate: [null, [Validators.required]],
+      dischargeDate: [new Date(), [Validators.required]],
       dischargeStatusId: ['', [Validators.required]],
       dischargeNote: [null],
       dischargeOperation: [null],

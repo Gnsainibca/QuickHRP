@@ -32,7 +32,7 @@ export class IPDConsultantRegistrationFormComponent {
   initializerForm() {
     this.consultantForm = this.fb.group({
       ipdPatientId: [this.ipdPatientId, [Validators.required]],
-      appliedDate: [null, [Validators.required]],
+      appliedDate: [new Date(), [Validators.required]],
       consultantDate: [null, [Validators.required]],
       doctorId: ['', [Validators.required]],
       instruction: [null, [Validators.required]],

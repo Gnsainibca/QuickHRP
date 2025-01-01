@@ -26,7 +26,7 @@
                </ng-template>
                <i class="fas fa-bed color-red cursor-pointer" style="font-size: xxx-large;" *ngIf="bed.admittedPatient"
                   [tooltip]="popTemplate" (click)="redirectToPatientIPD(bed.admittedPatient.ipdPatientId)"></i>
-               <i class="fas fa-bed color-green" style="font-size: xxx-large;" *ngIf="!bed.admittedPatient" (click)="redirectToAdmitPatient()"></i>
+               <i class="fas fa-bed color-green cursor-pointer" style="font-size: xxx-large;" *ngIf="!bed.admittedPatient" (click)="redirectToAdmitPatient(bed.id)"></i>
             </span>
             <br />
             <span [innerHtml]="bed.name"></span>

@@ -27,8 +27,9 @@ export class IPDBedStatusListComponent {
     this.onSave.next(true);
   }
 
-  redirectToAdmitPatient() {
-
+  redirectToAdmitPatient(bedId : number) {
+    this.router.navigate([`/ipd/bed/${bedId}`]);
+    this.onSave.next(true);
   }
 
   private getList(): void {

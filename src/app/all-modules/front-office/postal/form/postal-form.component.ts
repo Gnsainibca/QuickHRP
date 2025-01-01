@@ -1,5 +1,4 @@
-import { DatePipe } from '@angular/common';
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToasterService } from 'src/app/shared/core.index';
 import { FrontOfficeDataService } from '../../shared/services/front-office.service';
@@ -19,7 +18,8 @@ export class PostalFormComponent {
   @Input() id: number = 0;
   @Output() onSave = new EventEmitter<boolean>();
 
-  constructor(public activeModal: NgbActiveModal, private toaster: ToasterService, private fb: FormBuilder, private datePipe: DatePipe, private data: FrontOfficeDataService) {
+  constructor(public activeModal: NgbActiveModal, private toaster: ToasterService, 
+    private fb: FormBuilder, private data: FrontOfficeDataService) {
   }
 
   ngOnInit() {
@@ -28,14 +28,13 @@ export class PostalFormComponent {
   }
 
   initializerForm() {
-    var date = new Date();
     this.postalForm = this.fb.group({
       fromTitle: [null, [Validators.required]],
       referenceNo: [null, [Validators.required]],
       toTitle: [null, [Validators.required]],
       address: [null],
       note: [null],
-      date: [this.datePipe.transform(date, "dd-MMM-yyyy"), [Validators.required]],
+      date: [new Date(), [Validators.required]],
       type: ['', [Validators.required]]
     });
     this.setFormControls();

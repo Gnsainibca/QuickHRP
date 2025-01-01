@@ -1,4 +1,3 @@
-import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { DataService, ToasterService } from 'src/app/shared/core.index';
@@ -39,7 +38,7 @@ export class AppointmentFormComponent {
   @Output() onSave = new EventEmitter<boolean>();
 
   constructor(private modalService: NgbModal, public activeModal: NgbActiveModal, private toaster: ToasterService,
-    private fb: FormBuilder, private datePipe: DatePipe, private data: AppointmentDataService, dataService: DataService, 
+    private fb: FormBuilder, private data: AppointmentDataService, dataService: DataService, 
     private commonService : CommonService, appointmentSetupService : AppointmentSetupService, 
     hospitalChargeSetupService : HospitalChargeSetupService) {
     this.doctors = this.commonService.getDoctorsNameList();
@@ -57,14 +56,13 @@ export class AppointmentFormComponent {
   }
 
   initializerForm() {
-    var date = new Date();
     this.appointmentForm = this.fb.group({
       appointmentNo : [null],
       patientId: ['', [Validators.required]],
       doctorId: ['', [Validators.required]],
       fees: [null, [Validators.required]],
       shiftId: ['', [Validators.required]],
-      appointmentDate: [this.datePipe.transform(date, "dd-MMM-yyyy")],
+      appointmentDate: [new Date()],
       slotId: ['', [Validators.required]],
       priorityId: ['', [Validators.required]],
       paymentModeId: ['', [Validators.required]],

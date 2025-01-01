@@ -1,4 +1,3 @@
-import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { OpdDataService } from '../../shared/services/opd.service';
@@ -47,7 +46,7 @@ export class OpdFormComponent {
   doctors: Array<SimpleRecord> = [];
 
   constructor(private modalService: NgbModal, public activeModal: NgbActiveModal, private toaster: ToasterService,
-    private fb: FormBuilder, private datePipe: DatePipe, private data: OpdDataService, private commonService: CommonService,
+    private fb: FormBuilder, private data: OpdDataService, private commonService: CommonService,
     private hospitalChargeService: HospitalChargeSetupService,
     symptomsSetupService: SymptomsSetupService) {
     this.symptomsTitles = symptomsSetupService.getSymptomsHeadList();
@@ -58,7 +57,6 @@ export class OpdFormComponent {
   }
 
   ngOnInit() {
-    var date = new Date();
     this.opdForm = this.fb.group({
       opdPatientId: [null],
       patientName: [null, [Validators.required]],
@@ -69,7 +67,7 @@ export class OpdFormComponent {
       anyKnownAllergies: [null],
       previousMedicalIssue: [null],
       note: [null],
-      appointmentDate: [this.datePipe.transform(date, "dd-MMM-yyyy"), [Validators.required]],
+      appointmentDate: [new Date(), [Validators.required]],
       caseId: [null],
       anyCasualty: [false],
       isOldPatient: [false],

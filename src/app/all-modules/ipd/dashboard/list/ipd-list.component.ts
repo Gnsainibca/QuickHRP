@@ -9,6 +9,7 @@ import { IpdViewComponent } from '../view/ipd-view.component';
 import { IPDFormComponent } from '../form/ipd-form.component';
 import { IpdDataService } from '../../shared/servives/Ipd.service';
 import { IpdPatientList } from '../../shared/models/ipd-patient-list';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ipd-list',
@@ -18,17 +19,26 @@ import { IpdPatientList } from '../../shared/models/ipd-patient-list';
 export class IPDListComponent {
   public ipdPatientList: Array<IpdPatientList> = [];
   public pagination: boolean = true;
+  public bedId: number = 0;
   public paginationPageSize = 10;
   public paginationPageSizeSelector = [10, 15, 20, 100];
-   public routes = routes;
+  public routes = routes;
 
   // Column Definitions: Defines the columns to be displayed.
   colDefs: ColDef[] = getColumnDefinations(this.datePipe);
 
-  constructor(private datePipe: DatePipe, private modalService: NgbModal, private service: IpdDataService, private toaster: ToasterService) { }
+  constructor(private route: ActivatedRoute, private datePipe: DatePipe, private modalService: NgbModal,
+    private service: IpdDataService, private toaster: ToasterService) {
+
+  }
 
   ngOnInit() {
     this.refereshGrid();
+
+    this.bedId =  parseInt(this.route.snapshot.params['bedId']!);
+    if (this.bedId > 0) {
+      this.openModal_Add();
+    }
   }
 
   public refereshGrid() {
@@ -59,6 +69,7 @@ export class IPDListComponent {
   private openModal_Add() {
     const modalRef = this.modalService.open(IPDFormComponent, { windowClass: 'right size-full', backdrop: 'static', scrollable: true });
     modalRef.componentInstance.isEdit = false;
+    modalRef.componentInstance.bedId = this.bedId;
     modalRef.componentInstance.onSave.subscribe((res: any) => {
       this.refereshGrid();
       modalRef.close();

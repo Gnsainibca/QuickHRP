@@ -1,4 +1,3 @@
-import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToasterService } from 'src/app/shared/core.index';
@@ -21,8 +20,8 @@ import { PatientFormComponent } from 'src/app/shared/components/patient-form/pat
   styleUrls: ['./ipd-form.component.scss']
 })
 export class IPDFormComponent {
-
-  @Input() isEdit !: boolean;
+  @Input() isEdit : boolean = false;
+  @Input() bedId: number = 0;
   @Output() onSave = new EventEmitter<boolean>();
 
   // In case of visit
@@ -44,7 +43,7 @@ export class IPDFormComponent {
   doctors: Array<SimpleRecord> = [];
 
   constructor(private modalService: NgbModal, public activeModal: NgbActiveModal, private toaster: ToasterService,
-    private fb: FormBuilder, private datePipe: DatePipe, private data: IpdDataService, private commonService: CommonService,
+    private fb: FormBuilder, private data: IpdDataService, private commonService: CommonService,
     private bedService: BedSetupService, private bedSetupService: BedSetupService, symptomsSetupService: SymptomsSetupService) {
     this.symptomsTitles = symptomsSetupService.getSymptomsHeadList();
     this.symptomsTypes = symptomsSetupService.getSymptomsTypeList();
@@ -54,7 +53,6 @@ export class IPDFormComponent {
   }
 
   ngOnInit() {
-    var date = new Date();
     this.ipdForm = this.fb.group({
       ipdNo: [null],
       patientName: [null, [Validators.required]],
@@ -65,7 +63,7 @@ export class IPDFormComponent {
       anyKnownAllergies: [null],
       previousMedicalIssue: [null],
       note: [null],
-      appointmentDate: [this.datePipe.transform(date, "dd-MMM-yyyy"), [Validators.required]],
+      appointmentDate: [new Date(), [Validators.required]],
       caseId: [null],
       anyCasualty: [false],
       isOldPatient: [false],
@@ -117,6 +115,11 @@ export class IPDFormComponent {
       this.onBedGroupChange();
       this.f['bedId'].setValue(ipdPatient.bedId);
       this.f['needLiveConsultation'].setValue(ipdPatient.needLiveConsultation);
+    }
+    else if(this.bedId > 0) {
+      this.f['bedGroupId'].setValue(this.bedSetupService.getBed(this.bedId)?.bedGroupId);
+      this.onBedGroupChange();
+      this.f['bedId'].setValue(this.bedId);
     }
     this.f['date']?.disable();
   }

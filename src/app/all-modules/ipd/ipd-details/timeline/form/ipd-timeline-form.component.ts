@@ -29,7 +29,7 @@ export class IPDTimelineFormComponent {
     this.timelineForm = this.fb.group({
       opdPatientId: [this.opdPatientId, [Validators.required]],
       title: [null, [Validators.required]],
-      date: [null, [Validators.required]],
+      date: [new Date(), [Validators.required]],
       description: [null],
       attachment: [null],
       visibleToThisPerson: [null]

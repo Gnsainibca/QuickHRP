@@ -1,4 +1,3 @@
-import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToasterService } from 'src/app/shared/core.index';
@@ -26,7 +25,7 @@ export class VisitorFormComponent {
   typeaheadNoResults: boolean = false;
   purposeList: Array<SimpleRecord> = [];
 
-  constructor(public activeModal: NgbActiveModal, private toaster: ToasterService, private fb: FormBuilder, private datePipe: DatePipe,
+  constructor(public activeModal: NgbActiveModal, private toaster: ToasterService, private fb: FormBuilder,
     private data: FrontOfficeDataService, setupService: FrontOfficeSetupService, private commonService: CommonService) {
     this.purposeList = setupService.getPurposeList();
   }
@@ -37,7 +36,6 @@ export class VisitorFormComponent {
   }
 
   initializerForm() {
-    var date = new Date();
     this.visitorForm = this.fb.group({
       purposeId: ['', [Validators.required]],
       name: [null, [Validators.required]],
@@ -46,7 +44,7 @@ export class VisitorFormComponent {
       relatedTo: ['', [Validators.required]],
       noOfPerson: [null, [Validators.required]],
       phone: [null, [Validators.required]],
-      date: [this.datePipe.transform(date, "dd-MMM-yyyy")],
+      date: [new Date()],
       inTime: [null, [Validators.required]],
       outTime: [null],
       note: [null]

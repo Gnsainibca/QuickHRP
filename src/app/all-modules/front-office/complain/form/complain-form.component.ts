@@ -1,4 +1,3 @@
-import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToasterService } from 'src/app/shared/core.index';
@@ -23,7 +22,7 @@ export class ComplainFormComponent {
   sourceList : Array<SimpleRecord> = [];
   complainTypeList : Array<SimpleRecord> = [];
 
-  constructor(public activeModal: NgbActiveModal, private toaster: ToasterService, private fb: FormBuilder, private datePipe: DatePipe, 
+  constructor(public activeModal: NgbActiveModal, private toaster: ToasterService, private fb: FormBuilder, 
     private data: FrontOfficeDataService, setupService : FrontOfficeSetupService) {
       this.sourceList = setupService.getSourceList();
       this.complainTypeList = setupService.getComplainTypeList();
@@ -35,13 +34,12 @@ export class ComplainFormComponent {
   }
 
   initializerForm() {
-    var date = new Date();
     this.complainForm = this.fb.group({
       complainTypeId: ['', [Validators.required]],
       sourceId: ['', [Validators.required]],
       complainBy: [null, [Validators.required]],
       phone: [null],
-      date: [this.datePipe.transform(date, "dd-MMM-yyyy"), [Validators.required]],
+      date: [new Date(), [Validators.required]],
       description: [null],
       actionTaken: [null],
       assigned: [null],

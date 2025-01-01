@@ -38,7 +38,7 @@ export class OpdChargeFormComponent {
   ngOnInit() {
     this.chargeForm = this.fb.group({
       opdPatientId: [this.opdPatientId, [Validators.required]],
-      date: [null, [Validators.required]],
+      date: [new Date(), [Validators.required]],
       applyTPA: [null],
       chargeTypeId: ['', [Validators.required]],
       chargeCategoryId: ['', [Validators.required]],

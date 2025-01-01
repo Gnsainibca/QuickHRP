@@ -38,7 +38,7 @@ export class IPDChargeFormComponent {
   ngOnInit() {
     this.chargeForm = this.fb.group({
       opdPatientId: [this.ipdPatientId, [Validators.required]],
-      date: [null, [Validators.required]],
+      date: [new Date(), [Validators.required]],
       applyTPA: [null],
       chargeTypeId: ['', [Validators.required]],
       chargeCategoryId: ['', [Validators.required]],

@@ -6,6 +6,7 @@ import { IPDDischargedPatientListComponent } from './dashboard/discharged-patien
 
 const routes: Routes = [
   { path: '', component: IPDListComponent },
+  { path: 'bed/:bedId', component: IPDListComponent },
   { path: 'discharged-patient', component: IPDDischargedPatientListComponent },
   { path: 'patient/:id/:tab', component: IPDDetailsComponent }
 ];

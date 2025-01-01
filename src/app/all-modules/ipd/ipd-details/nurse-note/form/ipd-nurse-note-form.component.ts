@@ -35,7 +35,7 @@ export class IPDNurseNoteFormComponent {
     this.nurseNoteForm = this.fb.group({
       ipdPatientId: [this.ipdPatientId, [Validators.required]],
       nurseId: ['', [Validators.required]],
-      date: [null, [Validators.required]],
+      date: [new Date(), [Validators.required]],
       note: [null, [Validators.required]],
       comment: [null, [Validators.required]],
     });

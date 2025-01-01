@@ -33,7 +33,7 @@ export class IPDPaymentFormComponent {
   initializerForm() {
     this.paymentForm = this.fb.group({
       opdPatientId: [this.opdPatientId, [Validators.required]],
-      date: [null, [Validators.required]],
+      date: [new Date(), [Validators.required]],
       paymentModeId: ['', [Validators.required]],
       amount: [null, [Validators.required]],
       note: [null]

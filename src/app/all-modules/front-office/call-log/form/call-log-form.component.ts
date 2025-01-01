@@ -1,5 +1,4 @@
-import { DatePipe } from '@angular/common';
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToasterService } from 'src/app/shared/core.index';
 import { FrontOfficeDataService } from '../../shared/services/front-office.service';
@@ -19,7 +18,8 @@ export class CallLogFormComponent {
   @Input() id: number = 0;
   @Output() onSave = new EventEmitter<boolean>();
 
-  constructor(public activeModal: NgbActiveModal, private toaster: ToasterService, private fb: FormBuilder, private datePipe: DatePipe, private data: FrontOfficeDataService) {
+  constructor(public activeModal: NgbActiveModal, private toaster: ToasterService,
+     private fb: FormBuilder, private data: FrontOfficeDataService) {
   }
 
   ngOnInit() {
@@ -28,11 +28,10 @@ export class CallLogFormComponent {
   }
 
   initializerForm() {
-    var date = new Date();
     this.callLogForm = this.fb.group({
       name: [null, [Validators.required]],
       phone: [null, [Validators.required]],
-      date: [this.datePipe.transform(date, "dd-MMM-yyyy"), [Validators.required]],
+      date: [new Date(), [Validators.required]],
       description: [null],
       nextFollowUpDate: [''],
       callDuration: [''],

@@ -40,7 +40,7 @@ export class IPDOperationFormComponent {
       operationCategoryId: ['', [Validators.required]],
       opdPatientId: [this.opdPatientId, [Validators.required]],
       operationId: ['', [Validators.required]],
-      operationDate: [null, [Validators.required]],
+      operationDate: [new Date(), [Validators.required]],
       doctorId: ['', [Validators.required]],
       assistantConsultant1: [null],
       assistantConsultant2: [null],
