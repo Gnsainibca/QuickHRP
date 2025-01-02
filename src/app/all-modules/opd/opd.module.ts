@@ -42,6 +42,7 @@ import { OPDLabInvestigationListComponent } from './visit-details/lab-investigat
   declarations: [
     OPDListComponent,
     OpdFormComponent,
+    OpdViewComponent,
     VisitDetailsComponent,
     VisitListComponent,
     MedicationComponent,
@@ -77,8 +78,7 @@ import { OPDLabInvestigationListComponent } from './visit-details/lab-investigat
     NgxMaterialTimepickerModule,
     NgxSliderModule,
     NgMultiSelectDropDownModule.forRoot(),
-    TypeaheadModule.forRoot(),
-    OpdViewComponent
+    TypeaheadModule.forRoot()
   ],
   providers: [
     OpdDataService,

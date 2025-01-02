@@ -2,7 +2,7 @@
    <div class="ribbon-wrapper card m-b-10">
       <div class="card-body">
          <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>TIMELINE</div>
-         <div class="col-md-12" *ngIf="timelines">
+         <div class="col-md-12" *ngIf="timelines.length>0">
 
             <ul class="timeline">
                <li *ngFor="let item of timelines; let  i = index" [ngClass]="{'timeline-inverted' : i%2==1 }">

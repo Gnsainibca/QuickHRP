@@ -24,8 +24,10 @@
                         <td><span [innerHtml]="charge.tax"></span>%</td>
                         <td><span [innerHtml]="charge.netAmount"></span></td>
                      </tr>
-                     <tr *ngIf="charges?.length==0" style="padding-top: 30px; min-height: 70px;display: inline-block;">
-                        No Rows To Show 
+                     <tr *ngIf="charges?.length==0">
+                        <td colspan="6" style="padding-top: 30px; height: 70px;text-align: center;">
+                           No Rows To Show
+                        </td>
                      </tr>
                   </tbody>
                </table>

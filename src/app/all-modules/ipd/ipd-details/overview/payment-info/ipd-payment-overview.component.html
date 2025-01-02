@@ -22,8 +22,10 @@
                         <td><span [innerHtml]="payment.paymentMode"></span></td>
                         <td><span [innerHtml]="payment.amount"></span></td>
                      </tr>
-                     <tr *ngIf="payments?.length==0" style="padding-top: 30px; min-height: 70px;display: inline-block;">
-                        No Rows To Show 
+                     <tr *ngIf="payments?.length==0">
+                        <td colspan="5" style="padding-top: 30px; height: 70px;text-align: center;">
+                           No Rows To Show
+                        </td>
                      </tr>
                   </tbody>
                </table>

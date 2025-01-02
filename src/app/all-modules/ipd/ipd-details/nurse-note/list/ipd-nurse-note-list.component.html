@@ -25,7 +25,7 @@
    </div>
    <div>
       <!-- /Page Header -->
-      <div class="col-md-12" *ngIf="nurseNotes">
+      <div class="col-md-12" *ngIf="nurseNotes.length!>0">
          <div class="card">
             <div class="card-body" style="margin-top: 20px;">
                <ul class="timeline-left">
@@ -67,7 +67,7 @@
                                     <div *ngFor="let innerItem of item.nurseNoteComments; let  j = index"
                                        style="padding-top: 10px;">
                                        <span [innerHtml]="innerItem.comment"></span>
-                                       <i (click)="deleteComment(innerItem.id)" title="Delete Comment" class="fa fa-trash"
+                                       <i *ngIf="!hasPatientDischarged" (click)="deleteComment(innerItem.id)" title="Delete Comment" class="fa fa-trash"
                                           style="padding-left: 10px; cursor: pointer;"></i>
                                        <span style="float:inline-end;">
                                           <span [innerHtml]="innerItem.date | date : 'MMM dd, yyyy hh:mm a'"></span>
@@ -84,7 +84,7 @@
             </div>
          </div>
       </div>
-      <div class="col-md-12" *ngIf="!nurseNotes" style="padding-top: 50px; min-height: 200px;display: inline-block;">
+      <div class="col-md-12" *ngIf="nurseNotes.length==0" style="padding-top: 50px; min-height: 200px;display: inline-block;text-align: center;">
          No Rows To Show
       </div>
    </div>

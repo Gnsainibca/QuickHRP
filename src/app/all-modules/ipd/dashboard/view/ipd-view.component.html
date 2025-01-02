@@ -20,7 +20,7 @@
       </tr>
       <tr>
          <td><b>Appointment Date:</b></td>
-         <td><span [innerHtml]="ipdPatient.appointmentDate"></span></td>
+         <td><span [innerHtml]="ipdPatient.appointmentDate | date : 'MMM dd, yyyy'"></span></td>
          <td></td>
          <td><b>Casualty:</b></td>
          <td><span>{{ipdPatient.anyCasualty?'Yes' : 'No'}}</span></td>

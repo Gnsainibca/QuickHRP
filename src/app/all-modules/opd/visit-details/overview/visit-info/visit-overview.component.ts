@@ -19,7 +19,7 @@ export class VisitOverviewComponent {
   ngOnInit() {
     let patientVisits = this.opdDataService.getPatientVisits().filter(x => x.opdPatientId == this.opdPatientId);
 
-    const knownAllergies = patientVisits.map(x => x.anyKnownAllergies);
+    const knownAllergies = patientVisits.map(x => x.anyKnownAllergies).filter(x=>x.length>0);
     this.knownAllergies = [...new Set(knownAllergies.map(obj => obj))]; // distinct
 
     let symptoms = patientVisits.map(x => x.symptomsDescription);

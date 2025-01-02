@@ -6,17 +6,11 @@
 <div class="modal-body" *ngIf="prescription">
    <table>
       <tr>
-         <td colspan="4">
-            <img src="https://demo.smart-hospital.in/uploads/printing/3.jpg?1731863963" style="height:100px; width:100%;" class="img-responsive">
-         </td>
-      </tr>
-      <tr>
          <td>
             Prescription: <span [innerHtml]="prescription.prescriptionNo"></span>
          </td>
          <td>&nbsp;</td>
-         <td>&nbsp;</td>
-         <td style="float: right;">Date: <span [innerHtml]="prescription.date | date : 'MMM dd, yyyy'"></span></td>
+         <td colspan="2" style="text-align: right;">Date: <span [innerHtml]="prescription.date | date : 'MMM dd, yyyy'"></span></td>
       </tr>
       <tr>
          <td colspan="4">

@@ -23,8 +23,10 @@
                         <td><span [innerHtml]="medication.time"></span></td>
                         <td><span class="break-word" [innerHtml]="medication.remarks"></span></td>
                      </tr>
-                     <tr *ngIf="medications?.length==0" style="padding-top: 30px; min-height: 70px;display: inline-block;">
-                        No Rows To Show 
+                     <tr *ngIf="medications?.length==0">
+                        <td colspan="5" style="padding-top: 30px; height: 70px;text-align: center;">
+                           No Rows To Show
+                        </td>
                      </tr>
                   </tbody>
                </table>

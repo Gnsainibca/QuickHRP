@@ -20,8 +20,10 @@
                         <td><span [innerHtml]="consultant.instruction"></span></td>
                         <td><span [innerHtml]="consultant.consultantDate | date : 'MMM dd, yyyy'"></span></td>
                      </tr>
-                     <tr *ngIf="consultants?.length==0" style="padding-top: 30px; min-height: 70px;display: inline-block;">
-                        No Rows To Show 
+                     <tr *ngIf="consultants?.length==0">
+                        <td colspan="4" style="padding-top: 30px; height: 70px;text-align: center;">
+                           No Rows To Show
+                        </td>
                      </tr>
                   </tbody>
                </table>

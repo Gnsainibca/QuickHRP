@@ -9,7 +9,7 @@
             <ul class="breadcrumb bg-white display-inline-flex m-0 ps-0 pe-0">
                <li class="breadcrumb-item"><a [routerLink]="routes.opd">OPD</a></li>
                <li class="breadcrumb-item active">Vital</li>
-           </ul>
+            </ul>
          </h3>
       </div>
       <div class="col text-end">
@@ -29,7 +29,8 @@
             <thead>
                <tr>
                   <th>Date</th>
-                  <th *ngFor="let vitalType of vitalTypes; let  i = index"><span [innerHtml]="getVitalRange(vitalType)"></span></th>
+                  <th *ngFor="let vitalType of vitalTypes; let  i = index"><span
+                        [innerHtml]="getVitalRange(vitalType)"></span></th>
                </tr>
             </thead>
             <tbody>
@@ -39,17 +40,23 @@
                   </td>
                   <td *ngFor="let vitalItem of vital.list; let j = index">
                      <div *ngFor="let item of vitalItem.list; let k = index">
-                        <span [ngClass]="item.status == vitalStatus.Normal ? 'normal' : (item.status == vitalStatus.High ? 'high' : 'low')">
-                           <span [innerHtml]="item.value"></span> (<span [innerHtml]="item.date| date :'shortTime'"></span>)
+                        <span
+                           [ngClass]="item.status == vitalStatus.Normal ? 'normal' : (item.status == vitalStatus.High ? 'high' : 'low')">
+                           <span [innerHtml]="item.value"></span> (<span
+                              [innerHtml]="item.date| date :'shortTime'"></span>)
                         </span>
-                       <i (click)="edit(item.id)" title="Edit" class="fa fa-edit" style="padding-left: 10px; cursor: pointer;"></i>
-                       <i (click)="delete(item.id)" title="Delete" class="fa fa-trash" style="padding-left: 5px; cursor: pointer;"></i>
-                       <br />
+                        <i (click)="edit(item.id)" title="Edit" class="fa fa-edit"
+                           style="padding-left: 10px; cursor: pointer;"></i>
+                        <i (click)="delete(item.id)" title="Delete" class="fa fa-trash"
+                           style="padding-left: 5px; cursor: pointer;"></i>
+                        <br />
                      </div>
                   </td>
                </tr>
-               <tr *ngIf="vitalList?.length==0" style="padding-top: 50px; min-height: 200px;display: inline-block;">
-                  No Rows To Show 
+               <tr *ngIf="vitalList?.length==0">
+                  <td colspan="20" style="padding-top: 50px; height: 200px;text-align: center;">
+                     No Rows To Show
+                  </td>
                </tr>
             </tbody>
          </table>

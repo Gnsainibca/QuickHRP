@@ -5,7 +5,6 @@ import { IpdDataService } from '../../shared/servives/Ipd.service';
 
 @Component({
   selector: 'app-ipd-view',
-  standalone : true,
   templateUrl: './ipd-view.component.html',
   styleUrls: ['./ipd-view.component.scss']
 })

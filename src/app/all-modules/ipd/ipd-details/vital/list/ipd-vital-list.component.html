@@ -53,8 +53,10 @@
                      </div>
                   </td>
                </tr>
-               <tr *ngIf="vitalList?.length==0" style="padding-top: 50px; min-height: 200px;display: inline-block;">
-                  No Rows To Show
+               <tr *ngIf="vitalList?.length==0">
+                  <td colspan="20" style="padding-top: 50px; height: 200px;text-align: center;">
+                     No Rows To Show
+                  </td>
                </tr>
             </tbody>
          </table>

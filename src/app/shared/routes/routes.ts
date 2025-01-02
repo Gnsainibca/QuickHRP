@@ -120,7 +120,7 @@ export class routes {
     return this.baseUrl + '/setup/operation';
   }
   public static get PharmacySetup(): string {
-    return this.baseUrl + '/setup/pharmacy';
+    return this.baseUrl + '/setup/pharmacy-setting';
   }
   public static get PathologySetup(): string {
     return this.baseUrl + '/setup/pathology-setting';

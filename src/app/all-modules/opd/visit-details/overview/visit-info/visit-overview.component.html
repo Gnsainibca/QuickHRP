@@ -2,7 +2,7 @@
    <div class="ribbon-wrapper card m-b-10">
       <div class="card-body">
          <div class="ribbon ribbon-success"><i class="fa fa-paperclip fa-lg m-1"></i>KNOWN ALLERGIES</div>
-         <ul>
+         <ul *ngIf="knownAllergies?.length!>0">
             <li *ngFor="let knownAllergy of knownAllergies;">
                <span [innerHtml]="knownAllergy"></span>
             </li>

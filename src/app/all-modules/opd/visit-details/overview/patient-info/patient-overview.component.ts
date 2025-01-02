@@ -1,4 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { CommonService } from 'src/app/shared/data/common.service';
+import { PatientList } from 'src/app/shared/models/patient';
+import { OpdDataService } from '../../../shared/services/opd.service';
 
 @Component({
   selector: 'app-patient-overview',
@@ -7,14 +10,13 @@ import { Component, Input } from '@angular/core';
 })
 export class PatientOverviewComponent {
 
-  public patient = {
-    name : 'Vijay Kumar (2338)', gender : 'Male', age : '28 Year 2 Month 14 Days', guardianName : 'Dharampal Singh',
-    phone : '9990935485', tpa : '	Health Life Insurance', tpaId : 788909678, tpaValidity : '29 Dec, 2024', barCode : '', qrCode : ''
-  };
+  @Input() opdPatientId: number = 0;
+  public   patient !: PatientList;
 
-  constructor() { }
+  constructor(private commonService: CommonService, private opdService : OpdDataService) { }
 
   ngOnInit() {
-
+    let ipdPatient = this.opdService.getOpdPatientById(this.opdPatientId);
+    this.patient = this.commonService.getPatientById(ipdPatient.patientId)!;
   }
 }

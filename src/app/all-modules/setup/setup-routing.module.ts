@@ -46,7 +46,7 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'pharmacy',
+        path: 'pharmacy-setting',
         loadChildren: () =>
           import('./pharmacy/pharmacy-setup.module').then(
             (m) => m.PharmacySetupModule

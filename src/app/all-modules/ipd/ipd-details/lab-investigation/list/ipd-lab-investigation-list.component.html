@@ -9,7 +9,7 @@
             <ul class="breadcrumb bg-white display-inline-flex m-0 ps-0 pe-0">
                <li class="breadcrumb-item"><a [routerLink]="routes.ipd">IPD</a></li>
                <li class="breadcrumb-item active">Lab Investigation</li>
-           </ul>
+            </ul>
          </h3>
       </div>
    </div>
@@ -37,9 +37,11 @@
                      <span *ngIf="test.sampleCollected?.collectedBy">
                         <span [innerHtml]="test.sampleCollected?.collectedBy"></span>
                         <br />
-                        <b><span [innerHtml]="test.lab"></span> Center:</b>&nbsp;<span [innerHtml]="test.sampleCollected?.pathologyCenter"></span>
+                        <b><span [innerHtml]="test.lab"></span> Center:</b>&nbsp;<span
+                           [innerHtml]="test.sampleCollected?.pathologyCenter"></span>
                         <br />
-                        <span [innerHtml]="test.sampleCollected?.collectedDate | date : 'MMM dd, yyyy hh:mm aaa'"></span>
+                        <span
+                           [innerHtml]="test.sampleCollected?.collectedDate | date : 'MMM dd, yyyy hh:mm aaa'"></span>
                      </span>
                   </td>
                   <td>
@@ -51,8 +53,10 @@
                      <span [innerHtml]="test.approveReport?.approvedDate | date : 'MMM dd, yyyy hh:mm aaa'"></span>
                   </td>
                </tr>
-               <tr *ngIf="tests?.length==0" style="padding-top: 50px; min-height: 200px;display: inline-block;">
-                  No Rows To Show 
+               <tr *ngIf="tests?.length==0">
+                  <td colspan="5" style="padding-top: 50px; height: 200px;text-align: center;">
+                     No Rows To Show
+                  </td>
                </tr>
             </tbody>
          </table>

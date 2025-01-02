@@ -5,7 +5,6 @@ import { OpdPatientList } from '../../shared/models/opd-patient-list';
 
 @Component({
   selector: 'app-opd-view',
-  standalone : true,
   templateUrl: './opd-view.component.html',
   styleUrls: ['./opd-view.component.scss']
 })

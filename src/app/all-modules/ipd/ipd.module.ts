@@ -60,6 +60,7 @@ import { IPDDischargedPatientListComponent } from './dashboard/discharged-patien
     IPDListComponent,
     IPDDischargedPatientListComponent,
     IPDFormComponent,
+    IpdViewComponent,
     IPDDetailsComponent,
     IPDMedicationComponent,
     IPDMedicationFormComponent,
@@ -111,8 +112,7 @@ import { IPDDischargedPatientListComponent } from './dashboard/discharged-patien
     NgxMaterialTimepickerModule,
     NgxSliderModule,
     NgMultiSelectDropDownModule.forRoot(),
-    TypeaheadModule.forRoot(),
-    IpdViewComponent
+    TypeaheadModule.forRoot()
   ],
   providers: [
     IpdDataService,
