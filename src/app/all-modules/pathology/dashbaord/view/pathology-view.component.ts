@@ -4,6 +4,8 @@ import { PathologyDataService } from '../../shared/services/pathology-data.servi
 import { PathologyList } from '../../shared/models/pathology';
 import { SampleCollectionFormComponent } from '../sample-collection/sample-collection-form.component';
 import { ApproveReportFormComponent } from '../approve-report/approve-report-form.component';
+import { PatientList } from 'src/app/shared/models/patient';
+import { CommonService } from 'src/app/shared/data/common.service';
 
 @Component({
   selector: 'app-pathology-view',
@@ -14,12 +16,15 @@ export class PathologyViewComponent {
 
   @Input() id: number = 0;
   public pathology !: PathologyList;
+  patient !: PatientList;
 
-  constructor(private modalService: NgbModal, public activeModal: NgbActiveModal, private data: PathologyDataService) {
+  constructor(private modalService: NgbModal, public activeModal: NgbActiveModal, 
+    private data: PathologyDataService, private commonService: CommonService) {
   }
 
   ngOnInit() {
     this.pathology = this.data.getPathologyList().find(x => x.id == this.id)!;
+    this.patient = this.commonService.getPatientById(this.pathology.patientId)!;
   }
 
   addCollectionPerson(testId: number) {

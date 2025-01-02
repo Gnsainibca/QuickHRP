@@ -19,25 +19,25 @@
       </tr>
       <tr>
          <td>Patient Name:</td>
-         <td>Vijay Sharma</td>
+         <td><span [innerHtml]="patient.name"></span></td>
          <td>Age:</td>
-         <td>24 Year 7 Month 5 Days</td>
+         <td><span [innerHtml]="patient.age"></span></td>
       </tr>
       <tr>
          <td>Gender:</td>
-         <td>Male</td>
+         <td><span [innerHtml]="patient.gender"></span></td>
          <td>Blood Group:</td>
-         <td>B+</td>
+         <td><span [innerHtml]="patient.bloodGroup"></span></td>
       </tr>
       <tr>
          <td>Phone:</td>
-         <td>9990935485</td>
+         <td><span [innerHtml]="patient.phone"></span></td>
          <td>Prescribe By:</td>
          <td><span [innerHtml]="prescription.prescribeBy"></span></td>
       </tr>
       <tr>
          <td>Email:</td>
-         <td>sharmavijay1003@gmail.com</td>
+         <td><span [innerHtml]="patient.email"></span></td>
          <td>Consultant Doctor:</td>
          <td><span [innerHtml]="prescription.prescribeBy"></span></td>
       </tr>
@@ -51,14 +51,14 @@
          </td>
       </tr>
       <tr>
-         <td colspan="2">
-            <b>Symptoms:</b><br />
+         <td colspan="4">
+            <b>Findings:</b><br />
             <span [innerHtml]="prescription.findingDescription"></span>
          </td>
-         <td colspan="2" *ngIf="prescription.printFindings">
+         <!-- <td colspan="2" *ngIf="prescription.printFindings">
             <b>Finding:</b><br />
             <span [innerHtml]="prescription.findingDescription"></span>
-         </td>
+         </td> -->
       </tr>
       <tr>
          <td colspan="4">

@@ -12,25 +12,25 @@
       </tr>
       <tr>
          <td>Patient Name:</td>
-         <td>Vijay Sharma</td>
+         <td><span [innerHtml]="patient.name"></span></td>
          <td>Age:</td>
-         <td>24 Year 7 Month 5 Days</td>
+         <td><span [innerHtml]="patient.age"></span></td>
       </tr>
       <tr>
          <td>Gender:</td>
-         <td>Male</td>
+         <td><span [innerHtml]="patient.gender"></span></td>
          <td>Blood Group:</td>
-         <td>B+</td>
+         <td><span [innerHtml]="patient.bloodGroup"></span></td>
       </tr>
       <tr>
          <td>Phone:</td>
-         <td>9990935485</td>
+         <td><span [innerHtml]="patient.phone"></span></td>
          <td>Prescription No:</td>
          <td><span [innerHtml]="pathology.prescriptionNo"></span></td>
       </tr>
       <tr>
          <td>Email:</td>
-         <td>sharmavijay1003@gmail.com</td>
+         <td><span [innerHtml]="patient.email"></span></td>
          <td>Doctor Name:</td>
          <td><span [innerHtml]="pathology.doctor"></span></td>
       </tr>

@@ -32,8 +32,8 @@ export class CommonService extends BaseService {
   public getPatients(): Array<PatientList> {
     let patients = this.list(APP_CONSTANT.localStorage.key.patients) as Array<PatientList>;
     let genderList = this.settingService.getGenderList();
-    let maritalStatusList = this.settingService.getBloodGroupList();
-    let bloodGroupList = this.settingService.getMaritalStatusList();
+    let bloodGroupList = this.settingService.getBloodGroupList();
+    let maritalStatusList = this.settingService.getMaritalStatusList();
     let result: Array<PatientList> = [];
     patients.forEach(patient => {
       this.setPatientAge(patient);

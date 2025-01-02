@@ -61,6 +61,7 @@ export class IPDPrescriptionListComponent {
   private openModal_View(id: number) {
     const modalRef = this.modalService.open(IpdPrescriptionViewComponent, { backdrop: 'static', size: 'xl', scrollable: true });
     modalRef.componentInstance.id = id;
+    modalRef.componentInstance.ipdPatientId = this.ipdPatientId;
     modalRef.componentInstance.onEdit.subscribe((res: any) => {
       modalRef.close();
       this.openModal_Edit(id);

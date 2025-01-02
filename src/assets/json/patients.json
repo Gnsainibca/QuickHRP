@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Vimal Kumar",
       "guardianName": "Mr. Dharmpal",
-      "genderId": 1,
+      "genderId": 2,
       "address": "New panchwati, Ghaziabad, U.P. 201001",
       "ageYear": 32,
       "ageMonth": 0,
@@ -24,7 +24,7 @@
     {
       "name": "Sachin Gupta",
       "guardianName": "Mr Ramlal",
-      "genderId": 1,
+      "genderId": 2,
       "dob": "1994-03-02T18:30:00.000Z",
       "ageYear": 30,
       "ageMonth": 9,
@@ -46,7 +46,7 @@
     {
       "name": "Gaurav Naagwan",
       "guardianName": "Mr Charan Lal",
-      "genderId": 1,
+      "genderId": 2,
       "dob": "1992-02-18T18:30:00.000Z",
       "ageYear": 32,
       "ageMonth": 10,

@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class IPDOverviewComponent {
   public opdPatientId : number = 0;
   public routes = routes;
-  constructor(private route: ActivatedRoute, ) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.opdPatientId = this.route.snapshot.params['id']!;

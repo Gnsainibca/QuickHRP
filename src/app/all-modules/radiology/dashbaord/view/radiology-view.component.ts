@@ -4,6 +4,8 @@ import { RadiologyDataService } from '../../shared/services/radiology-data.servi
 import { RadiologyList } from '../../shared/models/radiology';
 import { RadiologySampleCollectionFormComponent } from '../sample-collection/radiology-sample-collection-form.component';
 import { RadiologyApproveReportFormComponent } from '../approve-report/radiology-approve-report-form.component';
+import { PatientList } from 'src/app/shared/models/patient';
+import { CommonService } from 'src/app/shared/data/common.service';
 
 @Component({
   selector: 'app-radiology-view',
@@ -14,12 +16,15 @@ export class RadiologyViewComponent {
 
   @Input() id: number = 0;
   public radiology !: RadiologyList;
+  patient !: PatientList;
 
-  constructor(private modalService: NgbModal, public activeModal: NgbActiveModal, private data: RadiologyDataService) {
+  constructor(private modalService: NgbModal, public activeModal: NgbActiveModal, 
+    private data: RadiologyDataService, private commonService: CommonService) {
   }
 
   ngOnInit() {
     this.radiology = this.data.getRadiologyList().find(x => x.id == this.id)!;
+    this.patient = this.commonService.getPatientById(this.radiology.patientId)!;
   }
 
   addCollectionPerson(testId: number) {
