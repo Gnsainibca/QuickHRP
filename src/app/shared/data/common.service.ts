@@ -102,8 +102,8 @@ export class CommonService extends BaseService {
     let specialistList = this.hrSetupService.getSpecialistList();
     let contractTypeList = this.hrSetupService.getContractTypeList();
     let genderList = this.settingService.getGenderList();
-    let maritalStatusList = this.settingService.getBloodGroupList();
-    let bloodGroupList = this.settingService.getMaritalStatusList();
+    let bloodGroupList = this.settingService.getBloodGroupList();
+    let maritalStatusList = this.settingService.getMaritalStatusList();
     let roleList: Array<SimpleRecord> = this.getRoles();
     this.getStaffs().forEach(staff => {
       staffList.push({

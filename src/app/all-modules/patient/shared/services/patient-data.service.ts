@@ -18,8 +18,8 @@ export class PatientService extends BaseService {
   public getPatientList(): Array<PatientList> {
     let patientList: Array<PatientList> = [];
     let genderList = this.settingService.getGenderList();
-    let maritalStatusList = this.settingService.getBloodGroupList();
-    let bloodGroupList = this.settingService.getMaritalStatusList();
+    let bloodGroupList = this.settingService.getBloodGroupList();
+    let maritalStatusList = this.settingService.getMaritalStatusList();
     this.getPatients().forEach(patient => {
       patientList.push({
         ...patient,

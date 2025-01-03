@@ -33,7 +33,7 @@
                                  [innerHtml]="pharmacyBillingInfo.charge | number : '1.2-2'"></span> Rs</span>
                         </div>
                         <div class="progress progress-sm">
-                           <div class="progress-bar bg-info" role="progressbar"
+                           <div class="progress-bar" role="progressbar" [ngClass]="pharmacyBillingInfo.progressClass"
                               [style.width]="pharmacyBillingInfo.percentage + '%'" aria-valuenow="50"
                               aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
@@ -56,7 +56,7 @@
                                  [innerHtml]="pathologyBillingInfo.charge | number : '1.2-2'"></span> Rs</span>
                         </div>
                         <div class="progress progress-sm">
-                           <div class="progress-bar bg-info" role="progressbar"
+                           <div class="progress-bar" role="progressbar" [ngClass]="pathologyBillingInfo.progressClass"
                               [style.width]="pathologyBillingInfo.percentage + '%'" aria-valuenow="50"
                               aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
@@ -73,7 +73,7 @@
                                  [innerHtml]="radiologyBillingInfo.charge | number : '1.2-2'"></span> Rs</span>
                         </div>
                         <div class="progress progress-sm">
-                           <div class="progress-bar bg-info" role="progressbar"
+                           <div class="progress-bar" role="progressbar" [ngClass]="radiologyBillingInfo.progressClass"
                               [style.width]="radiologyBillingInfo.percentage + '%'" aria-valuenow="50"
                               aria-valuemin="0" aria-valuemax="100"></div>
                         </div>

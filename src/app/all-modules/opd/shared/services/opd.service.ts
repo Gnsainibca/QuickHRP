@@ -84,6 +84,10 @@ export class OpdDataService extends BaseService {
         return this.list(APP_CONSTANT.localStorage.key.patientVisits) as Array<PatientVisit>;
     }
 
+    public getCaseIdByOpdPatientId(opdPatientId: number): string {
+        return this.getOpdPatientById(opdPatientId).caseId;
+    }
+
     public getOpdPatientById(opdPatientId: number): OpdPatientList {
         return this.getOpdPatientList(0).find(x => x.id == opdPatientId)!;
     }
@@ -439,7 +443,9 @@ export class OpdDataService extends BaseService {
         let vitalTypes = this.vitalSetupService.getVitalList();
         let result: Array<PatientVital> = [];
         vitalTypes.forEach(vitalType => {
-            let vital = patientVitals.sort((a, b) => b.id - a.id).find(x => x.vitalId == vitalType.id);
+            let vital = patientVitals
+            .sort((a,b) => (b.date as any) - (a.date as any))
+            .find(x => x.vitalId == vitalType.id);
             if (vital) {
                 result.push({
                     ...vitalType,
